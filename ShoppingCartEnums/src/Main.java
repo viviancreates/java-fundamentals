@@ -1,6 +1,20 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+
+    enum OrderStatus {
+        PENDING,
+        PROCESSING,
+        SHIPPED,
+        DELIVERED
+    }
+
+    enum ShippingStatus {
+        STANDARD,
+        TWO_DAY,
+        OVERNIGHT
+    }
+
     public static void main(String[] args) {
         int productId = 1;
         int productCategory = 2;
@@ -19,5 +33,19 @@ public class Main {
         //total profit
         double totalProfit = profitMargin * productQuantity;
         System.out.println("$" + totalProfit);
+
+        //Shopping Cart APP with Enums
+        System.out.println(ShippingStatus.STANDARD);
+        System.out.println(ShippingStatus.TWO_DAY);
+        System.out.println(ShippingStatus.OVERNIGHT);
+        OrderStatus orderStatus = OrderStatus.PROCESSING;
+        System.out.println("Order Status: " + orderStatus);
+
+        System.out.println(OrderStatus.PENDING);
+        System.out.println(OrderStatus.PROCESSING);
+        System.out.println(OrderStatus.SHIPPED);
+        System.out.println(OrderStatus.DELIVERED);
+        ShippingStatus shipStatus = ShippingStatus.TWO_DAY;
+        System.out.println("Ship Status: " + shipStatus);
     }
 }
