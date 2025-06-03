@@ -2,23 +2,29 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        //add variables
+        String enterCave = "";
+        String direction = "";
+        String actionTaken = "";
+        String treasure = "";
+
         //Starting prompt where player enters the cave or leaves
         System.out.println("Welcome to Viv's Stardew Valley");
         Scanner console = new Scanner(System.in);
 
         System.out.println("Do you want to enter the dark cave? (yes/no) ");
-        String enterCave = console.nextLine();
+        enterCave = console.nextLine();
         if ("yes".equalsIgnoreCase(enterCave)){
             System.out.println("Let's go explore!");
             System.out.println("Which way do you want to go? (left/right) ");
-            String direction = console.nextLine();
+            direction = console.nextLine();
                 if ("left".equalsIgnoreCase(direction)){
                     System.out.println("Omg, there's a zombie!");
                     System.out.println("Do you want to fight or flee?");
-                    String actionChosen = console.nextLine();
-                        if ("fight".equalsIgnoreCase(actionChosen)){
+                    actionTaken = console.nextLine();
+                        if ("fight".equalsIgnoreCase(actionTaken)){
                             System.out.println("You have defeated the zombies, congrats!!!");
-                        }else if("flee".equalsIgnoreCase(actionChosen)){
+                        }else if("flee".equalsIgnoreCase(actionTaken)){
                             System.out.println("Coward.. bye bye!");
                         }else{
                             System.out.println("Invalid choice.");
@@ -36,7 +42,7 @@ public class Main {
                         System.out.println("Which treasure do you choose?");
 
                         //capture console input into variable
-                        String treasure = console.nextLine().toLowerCase();
+                        treasure = console.nextLine().toLowerCase();
 
                         //case statements evaluate one case at a atime
                         switch(treasure) {
@@ -72,7 +78,18 @@ public class Main {
 
         //final message
         System.out.println("Thank you for playing Viv's game!");
-        System.out.println("")
+        //game summary
+        if ("yes".equalsIgnoreCase(enterCave)) {
+            if ("left".equalsIgnoreCase(direction)) {
+                System.out.println("You chose to go " + direction + " and  decided to " + actionTaken + ".");
+            } else if ("right".equalsIgnoreCase(direction)) {
+                System.out.println("You chose to go " + direction + " and selected the " + treasure + " as your treasure.");
+            } else {
+                System.out.println("You entered the cave, but got lost??????");
+            }
+        } else {
+            System.out.println("You chose to end the game early!");
+        }
 
     }
 }
