@@ -69,19 +69,35 @@ public class Main {
         double totalProfit = profitMargin * productQuantity;
         System.out.println("$" + totalProfit);
 
-        //collect user info and answers
-        System.out.print("Are you tax-exempt? (y/n) ");
-        String taxExempt = console.nextLine();
+        //variables declared outside of the loop so they can be accessed after the loop exists
+        //keeps them in scope after the code exits
+        boolean isConfirmed = false;
 
-        System.out.print("Shipping? (standard/overnight/twoday) ");
-        String shipping = console.nextLine();
+        String taxExempt = "";
+        String shipping = "";
+        String promoCode = "";
+        int orderQuantity = 0;
 
-        System.out.print("Order quantity? ");
-        String quantityStr = console.nextLine();
-        int orderQuantity = Integer.parseInt(quantityStr);
+        while (!isConfirmed) {
+            System.out.println("Confirm Order y/n");
+            isConfirmed = "y".equals(console.nextLine());
 
-        System.out.print("Promo code for free shipping? (y/n) ");
-        String promoCode = console.nextLine();
+            //collect user info and answers
+            System.out.print("Are you tax-exempt? (y/n) ");
+            taxExempt = console.nextLine();
+
+            System.out.print("Shipping? (standard/overnight/twoday) ");
+            shipping = console.nextLine();
+
+            System.out.print("Order quantity? ");
+            String quantityStr = console.nextLine();
+            orderQuantity = Integer.parseInt(quantityStr);
+
+            System.out.print("Promo code for free shipping? (y/n) ");
+            promoCode = console.nextLine();
+
+        }
+
 
         //print out user info
         System.out.println("Details: ");
