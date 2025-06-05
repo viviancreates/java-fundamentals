@@ -44,7 +44,7 @@ public class Main {
         //loop over the elements in an array
         //use loop to print each student and their grades
         for (int i = 0; i < students.length; i++) {
-            System.out.println("Student [" + i + "]) = " + students[i] + ", grade = " + grades[i]);
+            System.out.println("Student [" + i + "] = " + students[i] + ", grade = " + grades[i]);
         }
         //students.length: Loops through each index of the students array
         //System.out.println(...): Prints each student's name and grade on a separate line
