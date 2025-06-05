@@ -37,9 +37,59 @@ public class Main {
             System.out.println("City [" + i + "] = " + cities[i]);
         }
 
-        //find a specfic element
+        //find a specific element
         System.out.println("Enter a city name: ");
         String name = console.nextLine();
+        //check if the city is in the array
+        //easier to assume the city is not int the list until I find it
+        boolean inArray = false;
+        for (int i = 0; i < cities.length; i++) {
+            if (cities[i].equalsIgnoreCase(name)) {
+                inArray = true;
+                break;
+            }
+        }
 
+        if (inArray) {
+            System.out.println("City found");
+        }else{
+            System.out.println("City not found!");
+        }
+
+        //part3: Numeric Arrays and Calculations
+        //sum of numbers in an array
+        int[] scores = {100, 90, 80, 70, 60};
+        int totalScore = 0;
+        //totalScore = scores[0] + scores[1] + scores[2] + scores[3] + scores[4];
+        //System.out.println(totalScore);
+        for (int i = 0; i < scores.length; i++ ){
+            totalScore += scores[i];
+            System.out.println(totalScore);
+        }
+        System.out.println(totalScore);
+
+        //find the maximum and minimum
+        //starting with the first element...
+        int max = scores[0];
+        int min = scores[0];
+
+        //...loop through each element and compare to previous
+        for (int i = 1; i < scores.length; i++) {
+            if (scores[i] > max) {
+                max = scores[i];
+            }
+            if (scores[i] < min) {
+                min = scores[i];
+            }
+        }
+        System.out.println("Max#: " + max);
+        System.out.println("Min#: " + min);
+
+        //find the average score
+        int average = (totalScore / scores.length);
+        System.out.println("Average Score: " + average);
+
+        //part 4: advanced challenges
+        //count occurances of a value
     }
 }
