@@ -42,6 +42,14 @@ public class Main {
         ShippingStatus shipStatus = ShippingStatus.TWO_DAY;
         System.out.println("Ship Status: " + shipStatus);
 
+        //create arrays to contain addresses and sizes
+        String[] addresses = {"123 Main st", "456 Main st", "789 Main St"};
+        String[] sizes = {"small", "medium", "large"};
+
+        int addressIndex = 0;
+        int sizeIndex = 0;
+
+
         //product info
         int productId = 1;
         int productCategory = 2;
@@ -96,6 +104,26 @@ public class Main {
             System.out.print("Promo code for free shipping? (y/n) ");
             promoCode = console.nextLine();
 
+            //prompt for shipping address
+            System.out.println("Choose shipping address: ");
+            for (int i = 0; i < addresses.length; i++) {
+                System.out.println((i + 1) + ". " + addresses[i]);
+            }
+
+            System.out.print("Shipping address? ");
+            String address = console.nextLine();
+            addressIndex = Integer.parseInt(address);
+
+            //prompt for product size
+            System.out.println("Choose product size: ");
+            for (int i = 0; i < sizes.length; i++) {
+                System.out.println((i + 1) + ". " + sizes[i]);
+            }
+
+            System.out.print("Size? ");
+            String size = console.nextLine();
+            sizeIndex = Integer.parseInt(size);
+
         }
 
 
@@ -105,6 +133,8 @@ public class Main {
         System.out.println("Shipping: "+ shipping);
         System.out.println("Order quantity: " + orderQuantity);
         System.out.println("Promo code: " + promoCode);
+        System.out.println("Shipping address: " + addresses[addressIndex - 1]);
+        System.out.println("Size: " + sizes[sizeIndex - 1]);
 
         //Apply tax, if necessary
         //checking to see if the order is tax exempt, use if statement
