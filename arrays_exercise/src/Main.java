@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,7 +25,7 @@ public class Main {
         //part 2: Iterating Over Arrays
         //print array elements using a loop
         //loop through ciity names arrays using for loop and print each city
-        for  (int i = 0; i < cities.length; i++ ) {
+        for (int i = 0; i < cities.length; i++) {
             System.out.println("City [" + i + "] = " + cities[i]);
         }
 
@@ -33,7 +34,7 @@ public class Main {
         //start at the last index of the array (cities.length - 1)
         //loop continues as long as index i is greater than or equal to 0
         //decrement i in each iteration to move backwards through the array
-        for (int i = cities.length-1; i >= 0; i--){
+        for (int i = cities.length - 1; i >= 0; i--) {
             System.out.println("City [" + i + "] = " + cities[i]);
         }
 
@@ -52,7 +53,7 @@ public class Main {
 
         if (inArray) {
             System.out.println("City found");
-        }else{
+        } else {
             System.out.println("City not found!");
         }
 
@@ -62,7 +63,7 @@ public class Main {
         int totalScore = 0;
         //totalScore = scores[0] + scores[1] + scores[2] + scores[3] + scores[4];
         //System.out.println(totalScore);
-        for (int i = 0; i < scores.length; i++ ){
+        for (int i = 0; i < scores.length; i++) {
             totalScore += scores[i];
             System.out.println(totalScore);
         }
@@ -73,7 +74,7 @@ public class Main {
         int max = scores[0];
         int min = scores[0];
 
-        //...loop through each element and compare to previous
+        //...loop through each element and compare to previous element
         for (int i = 1; i < scores.length; i++) {
             if (scores[i] > max) {
                 max = scores[i];
@@ -90,6 +91,61 @@ public class Main {
         System.out.println("Average Score: " + average);
 
         //part 4: advanced challenges
-        //count occurances of a value
+        //count occurrences of a value
+
+        //create an array of 10 random numbers between 1 and 5
+        //count how many times the number 3 appears
+        Random rng = new Random();
+
+        int[] numbers = new int[10];
+
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = rng.nextInt(5) + 1;
+            System.out.println(numbers[i]);
+        }
+
+        int number3 = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == 3) {
+                number3++;
+            }
+        }
+
+        System.out.println(number3 + " is how many times #3 appears");
+
+        //shift elements in an array
+        int nums[] = {1, 2, 3, 4, 5};
+        for (int i = 0; i < nums.length; i++) {
+            System.out.println(nums[i]);
+        }
+
+        //shift all the nums left one step, first element moves to last position
+        //output: {2,3,4,5,1}
+        int first = nums[0];
+        for (int i = 0; i < nums.length - 1; i++) {
+            nums[i] = nums[i + 1];
+        }
+
+        nums[nums.length - 1] = first;
+
+        System.out.println("New array: ");
+        for (int i = 0; i < nums.length; i++) {
+            System.out.println(nums[i]);
+        }
+
+        //check for dupes
+        String nombres[] = {"Vivian", "Vivian", "Andrea", "Warren", "Kobe", "Dora"};
+        for (int i = 0; i < nombres.length; i++) {
+            System.out.println(nombres[i]);
+            //compare nombre[0] to nombre[1]...
+            //nested loop
+            for (int j = i + 1; j < nombres.length; j++) {
+                if (nombres[i].equals(nombres[j])) {
+                    System.out.println("Duplicates found! " + nombres[i] + " and " + nombres[j]);
+                }
+            }
+
+
+        }
     }
 }
