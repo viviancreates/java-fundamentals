@@ -12,7 +12,11 @@ public class Main {
         //attach method to the class to print the menu
         io.printMenu();
 
-        //do methods word
+        //prompt for user choice
+        System.out.println("Choose Menu option: ");
+        int choice = io.getIntInput("Enter the option: ");
+
+        //do methods work
         String connect = io.getStringInput("How are you? " );
         System.out.println(connect);
 
