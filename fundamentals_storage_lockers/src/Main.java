@@ -6,6 +6,7 @@ public class Main {
         Scanner console = new Scanner(System.in);
 
         //create an instance method
+        //doing this allows us to not call scanner eaxh time
         UserIO io = new UserIO();
 
         //attach method to the class to print the menu
