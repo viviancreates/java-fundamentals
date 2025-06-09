@@ -18,6 +18,9 @@ public class Main {
 
         int number = io.getIntInput("Choose a number...");
         System.out.println(number);
+
+        LockerService lockerService = new LockerService(5);
+        lockerService.printLockerStatus();
     }
 
 }
