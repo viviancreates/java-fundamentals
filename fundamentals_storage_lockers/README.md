@@ -55,8 +55,29 @@ class Result {
 - create in main bc it what the user decides
 - add the methods to locker service bc
     
-4. efresfewsf
+4. work on locker - bc how can we create the methods without knowing thee data
+- each locker rented need to generate a pin 
+- is the locker rented
+- decided between 2 constructors below
+```
+//constructor with no arguments
+     public Locker() {
+        isRented = false;
+     }
+```
 
+```
+//constructor with several arguments
+//we want to have this constructor because we are creatijgnseveral lockers
+    public Locker (String lockerNumber, String pin, boolean isRented){
+        this.lockerNumber = lockerNumber;
+        this.isRented = isRented;
+        this.pin = pin;
+}
+```
+- if went with the constructor with arguments, the data would be hardcoded?
+- right???
+- 
 
 # misc
 -locker just holds the data (REMEMBER architecture does 3 things ->tasks, main, data)
