@@ -14,6 +14,9 @@ public class Main {
         //do methods word
         String connect = io.getStringInput("How are you? " );
         System.out.println(connect);
+
+        int number = io.getIntInput("Choose a number...");
+        System.out.println(number);
     }
 
 }
