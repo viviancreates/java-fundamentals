@@ -50,5 +50,15 @@ class Result {
         // if release a locker, reset pin
 
     //any other key to exit
+
+- create this if else statement in main vs lcoker service
+- create in main bc it what the user decides
+- add the methods to locker service bc
     
 4. efresfewsf
+
+
+# misc
+-locker just holds the data (REMEMBER architecture does 3 things ->tasks, main, data)
+- question -> how do you decide what to work on first, flow seems easiest, then the methods, but how to check... 
+  - right now i am just making sure they connect, does that seem right????

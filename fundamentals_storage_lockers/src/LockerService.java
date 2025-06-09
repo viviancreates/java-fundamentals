@@ -20,14 +20,17 @@ public class LockerService {
         }
     }
 
-    //rent a locker
-    //create e method to give a user one of these lockers
 
+    public void rentLocker() {
+        System.out.println("say hello and rent");
+    }
 
-    //access a locker
+    public void accessLocker() {
+        System.out.println("say hello and access");
+    }
 
-    //release a locker
-
-    //create a pin
+    public void releaseLocker() {
+        System.out.println("say hello and release");
+    }
 
 }

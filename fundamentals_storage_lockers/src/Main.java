@@ -25,6 +25,16 @@ public class Main {
 
         LockerService lockerService = new LockerService(5);
         lockerService.printLockerStatus();
+
+        if (choice == 1) {
+            lockerService.rentLocker();
+        }else if(choice == 2){
+            lockerService.accessLocker();
+        }else if(choice == 3){
+            lockerService.releaseLocker();
+        }else{
+            System.out.println("Invalid choice. Pick again pls.");
+        }
     }
 
 }
