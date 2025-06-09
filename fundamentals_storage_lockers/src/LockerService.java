@@ -20,13 +20,6 @@ public class LockerService {
         }
     }
 
-    //print choice
-    public static void displayChoices(String[] choices) {
-        for (int i = 0; i < choices.length; i++) {
-            System.out.println((i + 1) + ". " + choices[i]);
-        }
-    }
-
     //rent a locker
     //create e method to give a user one of these lockers
 
