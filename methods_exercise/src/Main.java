@@ -29,6 +29,30 @@ public class Main {
         }
     }
 
+    //5. print a string multiple times
+    public static void printMultipleTimes(String text, int times){
+        for (int x = 0; x < times; x++ ) {
+            System.out.println(text);
+        }
+    }
+
+    //6. find the maximum of three numbers
+    public static int findMax(int a, int b, int c){
+        int max = Math.max(a, b);
+        return Math.max(c, max);
+    }
+
+    //7. factorial using recursion
+    public static int factorial(int n){
+        int factorial = (n! = n * (n-1)!);
+        return factorial;
+        //pause here, look at factorials
+    }
+
+    //8. method overloading
+
+    //9. count vowels in a string
+
     //main method
     public static void main(String[] args){
         //1. call the simple method inside main
@@ -46,10 +70,18 @@ public class Main {
         boolean checkNumber = isEven(10);
         System.out.println(checkNumber);
 
+        //5.
+        printMultipleTimes("hellllooooooooo", 5);
 
+        //6.
+        int result = findMax(1, 2, 3);
+        System.out.println(result);
 
+        //7.
 
+        //8.
 
+        //9.
 
 
     }
