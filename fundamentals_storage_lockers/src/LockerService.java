@@ -47,7 +47,7 @@ public class LockerService {
                 //assign a random pin
                 String pin = String.format("%02d", (int) (Math.random() * 10000));
                 //assign the locker number
-                String lockerNumber = "Locker " + (i + 1);
+                String lockerNumber = String.valueOf(i + 1);
                 //tell the locker objecect locker[i] that its rented
                 lockers[i].rentLocker(pin, lockerNumber);
 
