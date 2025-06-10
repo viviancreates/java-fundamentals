@@ -16,6 +16,11 @@ public class UserIO {
         //reminder to add validation to printmenu
     }
 
+    //add a method to print message
+    public void print(String message){
+        System.out.println(message);
+    }
+
     //method prints a prompt to user, rec user input as string string
     public String getStringInput(String prompt) {
         System.out.print(prompt);

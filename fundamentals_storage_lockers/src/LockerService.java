@@ -19,21 +19,6 @@ public class LockerService {
         }
     }
 
-    public void printLockerStatus() {
-        for (int i = 0; i < lockers.length; i++) {
-            System.out.println("Locker " + (i + 1) );
-            //create the status variable(not needed for me)
-            String status = "";
-            if (lockers[i].isRented()){
-                status = "rented";
-            }else{
-                status = "available";
-            }
-            System.out.println("Locker " + (i + 1) + "is" + status);
-        }
-    }
-
-
     public void rentLocker() {
         System.out.println("say hello and rent");
         //Assign next available locker number

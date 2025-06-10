@@ -3,15 +3,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner console = new Scanner(System.in);
-
-        //moved outside loop bc do not want to create new lockers each time
-        LockerService lockerService = new LockerService(5);
-
-
+        //delete scanner here and bring it in from user io which we did below
+        // Scanner console = new Scanner(System.in);
         //create an instance method
         //doing this allows us to not call scanner eaxh time
         UserIO io = new UserIO();
+
+        //moved outside loop bc do not want to create new lockers each time
+        LockerService lockerService = new LockerService(5);
 
         while(true) {
             //attach method to the class to print the menu
@@ -21,8 +20,6 @@ public class Main {
             //prompt for user choice
             System.out.println("Choose Menu option: ");
             int choice = io.getIntInput("Enter the option: ");
-
-            lockerService.printLockerStatus();
 
             if (choice == 1) {
                 lockerService.rentLocker();

@@ -36,6 +36,7 @@ class Result {
 
 2. take user input - gave user menu, take input
 - i tried to add a display choice loop, unneccesaary, took it out
+- ... i lied, it does need to be inside a loop for it to remember the data -> see step 8
 
 3. Once user input is taken, what happens with each choice 
 
@@ -96,11 +97,17 @@ class Result {
   - to rent the locker, asks for the pin and number
   - to access locker, asks for the pin
   - to release the locker, n/a just set it back to available
+- service methods finished
 
 7. go back to locker
 - encapsulation continued
 
 8. flow in main
+  - added the while true loop to remember the objects(arrays?)
+
+9. make sure all scanner info and user io is in io class
+- biggest issue was lockerservice -> want to have lockerservice only receive parameters and return results, not to to chat with the user(io), that should only be io class
+
 
 # misc
 -locker just holds the data (REMEMBER architecture does 3 things ->tasks, main, data)
@@ -112,6 +119,8 @@ class Result {
 - fields are just class variables and always have getters and setters ->private, can it be public?
 
 # reminders
-- break loop on menu
+
 - add validation
 - try catch at the end
+- add leading zeros to pin
+- 
