@@ -77,9 +77,41 @@ class Result {
 ```
 - if went with the constructor with arguments, the data would be hardcoded?
 - right???
-- 
+
+- lockers class represents one locker, with its own state
+  - is the locker rented or available?
+  - what is the locker pin
+  - what is the locker number
+- give the locker private fields (private variables)
+- when we first create the lcoker object, it starts out available, with no pin or number
+- bc the variables are private, we give controlledf access with getters and setters
+
+5. add getters(returns value of a field, return locker #) and setters (set the value of a field, ex change the pin) for data(variables)
+
+6. lockerservice -> hold methods
+- manage all the lockers
+- call methods on individual lockers
+- does not change pin, or availability
+- only asks locker (blackbox from each other)
+  - to rent the locker, asks for the pin and number
+  - to access locker, asks for the pin
+  - to release the locker, n/a just set it back to available
+
+7. go back to locker
+- encapsulation continued
+
+8. flow in main
 
 # misc
 -locker just holds the data (REMEMBER architecture does 3 things ->tasks, main, data)
 - question -> how do you decide what to work on first, flow seems easiest, then the methods, but how to check... 
   - right now i am just making sure they connect, does that seem right????
+
+- better to do the opposite and build back to front
+
+- fields are just class variables and always have getters and setters ->private, can it be public?
+
+# reminders
+- break loop on menu
+- add validation
+- try catch at the end

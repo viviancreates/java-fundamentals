@@ -12,6 +12,8 @@ public class UserIO {
         System.out.println("3. Release a Locker");
         System.out.println("---");
         System.out.println("Any other key to exit.");
+
+        //reminder to add validation to printmenu
     }
 
     //method prints a prompt to user, rec user input as string string

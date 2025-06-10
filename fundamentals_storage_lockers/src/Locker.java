@@ -1,4 +1,4 @@
-import java.util.concurrent.BlockingDeque;
+import java.util.Scanner;
 
 public class Locker {
 //holds state and if rented, give a pin, access, check the pin, if release, ?
@@ -50,6 +50,30 @@ public class Locker {
         return isRented;
     }
 
+    public String getLockerNumber(){
+        return lockerNumber;
+    }
+
+    public void setLockerNumber(String lockerNumber){
+        this.lockerNumber = lockerNumber;
+    }
+
+    //if the locker is rented
+    public void rentLocker(String pin, String lockerNumber) {
+        this.isRented = true;
+        this.pin = pin;
+        this.lockerNumber = lockerNumber;
+    }
+    //to release the locker
+    public void releaseLocker() {
+        this.isRented = false;
+        this.pin = "";
+        this.lockerNumber = "";
+    }
+    //to check the pin
+    public boolean checkPin(String enteredPin) {
+        return this.pin.equals(enteredPin);
+    }
 }
 
 
