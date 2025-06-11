@@ -1,10 +1,9 @@
-import java.util.Scanner;
-
 public class LockerService {
     //create an array
     //this is to hold locker objects created
     private Locker[] lockers;
-    Scanner console = new Scanner(System.in);
+
+    UserIO io = new UserIO();
 
 
     //create a constructor -> fill the array up
@@ -20,7 +19,8 @@ public class LockerService {
     }
 
     public void rentLocker() {
-        System.out.println("say hello and rent");
+        //REMINDER grabbing from io print void method
+        io.print("say hello and rent");
         //Assign next available locker number
         //Generate and display a 4-digit PIN (as a String with leading zeros)
         //Store locker and PIN in array
@@ -36,26 +36,31 @@ public class LockerService {
                 //tell the locker objecect locker[i] that its rented
                 lockers[i].rentLocker(pin, lockerNumber);
 
-                System.out.println("Locker rented!");
-                System.out.println("Your locker number: " + lockerNumber);
-                System.out.println("Your PIN: " + pin);
+                io.print("Locker rented!");
+                io.print("Your locker number: " + lockerNumber);
+                io.print("Your PIN: " + pin);
                 return;
             }
         }
+        io.print("No available lockers.");
     }
 
     public void accessLocker() {
-        System.out.println("say hello and access");
+        io.print("say hello and access");
         //Prompt user for locker number and PIN
         //Validate input against stored data
         //Grant access if match is found, else show error
 
         //prompting user for locker and pin
-        System.out.print("Enter your locker number: ");
-        String number = console.nextLine();
+        //System.out.print("Enter your locker number: ");
+        //String number = console.nextLine();
+        //USE THE IO get string input
+        String number = io.getStringInput("Enter your locker number: ");
 
-        System.out.print("Enter your PIN: ");
-        String pin = console.nextLine();
+        //SAME
+        //System.out.print("Enter your PIN: ");
+        //String pin = console.nextLine();
+        String pin = io.getStringInput("Enter your PIN: ");
 
         //loop to go through all the lockers and match locker number and pin
         for (int i = 0; i < lockers.length; i++) {
@@ -63,52 +68,49 @@ public class LockerService {
 
             if (locker.getLockerNumber().equals(number)) {
                 if (locker.checkPin(pin)) {
-                    System.out.println("Access granted!");
+                    io.print("Access granted!");
                 } else {
-                    System.out.println("Wrong PIN.");
+                    io.print("Wrong PIN.");
                 }
                 return;
             }
         }
 
-        System.out.println("Locker not found.");
+        io.print("Locker not found.");
     }
 
     public void releaseLocker() {
-        System.out.println("say hello and release");
+        io.print("say hello and release");
         //Prompt for locker number and PIN
         //Confirm action: “Are you sure?” (Yes/No)
         //Clear data from array if confirmed
         //Show error for incorrect PIN or locker
 
-        System.out.print("Enter your locker number: ");
-        String number = console.nextLine();
+        String number = io.getStringInput("Enter your locker number: ");
 
-        System.out.print("Enter your PIN: ");
-        String pin = console.nextLine();
+        String pin = io.getStringInput("Enter your PIN ");
 
         for (int i = 0; i < lockers.length; i++) {
             Locker locker = lockers[i];
             if (locker.getLockerNumber().equals(number)) {
                 if (locker.checkPin(pin)) {
                     //confirm
-                    System.out.print("Are you sure? (yes/no): ");
-                    String confirm = console.nextLine();
+                    String confirm = io.getStringInput("Are you sure? (yes/no): ");
                     if (confirm.equalsIgnoreCase("yes")) {
                        //release the locker -> pulled from locker class
                         locker.releaseLocker();
-                        System.out.println("Locker released.");
+                        io.print("Locker released.");
                     } else {
-                        System.out.println("Locker not released");
+                        io.print("Locker not released");
                     }
                 } else {
-                    System.out.println("Wrong PIN number.");
+                    io.print("Wrong PIN number.");
                 }
                 return;
             }
         }
 
-        System.out.println("Locker not found.");
+        io.print("Locker not found.");
     }
 }
 

@@ -28,6 +28,7 @@ public class UserIO {
     }
 
     //method prints a prompt to user, rec user input as string and converts to integer
+
     public int getIntInput(String prompt) {
         System.out.print(prompt);
         return Integer.parseInt(console.nextLine());

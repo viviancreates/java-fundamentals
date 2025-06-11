@@ -18,8 +18,7 @@ public class Main {
 
 
             //prompt for user choice
-            System.out.println("Choose Menu option: ");
-            int choice = io.getIntInput("Enter the option: ");
+            int choice = io.getIntInput("Enter the menu option: ");
 
             if (choice == 1) {
                 lockerService.rentLocker();
@@ -28,7 +27,7 @@ public class Main {
             } else if (choice == 3) {
                 lockerService.releaseLocker();
             } else {
-                System.out.println("Invalid choice. Pick again pls.");
+                io.print("Invalid choice. Pick again pls.");
                 break;
             }
 

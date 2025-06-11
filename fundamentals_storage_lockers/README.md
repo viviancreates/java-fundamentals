@@ -107,7 +107,7 @@ class Result {
 
 9. make sure all scanner info and user io is in io class
 - biggest issue was lockerservice -> want to have lockerservice only receive parameters and return results, not to to chat with the user(io), that should only be io class
-
+  - ****** UserIO io = new UserIO(); add to locker service, delete utiil, replace all print statements (similar to main)
 
 # misc
 -locker just holds the data (REMEMBER architecture does 3 things ->tasks, main, data)
@@ -123,4 +123,3 @@ class Result {
 - add validation
 - try catch at the end
 - add leading zeros to pin
-- 
