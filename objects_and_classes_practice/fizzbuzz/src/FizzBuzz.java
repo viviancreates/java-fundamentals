@@ -17,7 +17,8 @@ public class FizzBuzz {
             }else if (i % 5 == 0) {
                 io.print("Buzz");
             } else {
-                io.print("not valid");
+                //io.print(i); -> this needs to be string
+                io.print(Integer.toString(i));
 
             }
 
