@@ -17,7 +17,7 @@ public class UserIO {
     }
 
     //add a method to print message
-    public void print(String message){
+    public void print(String message) {
         System.out.println(message);
     }
 
@@ -30,7 +30,23 @@ public class UserIO {
     //method prints a prompt to user, rec user input as string and converts to integer
 
     public int getIntInput(String prompt) {
-        System.out.print(prompt);
-        return Integer.parseInt(console.nextLine());
+
+        //missing return statement, add while loop -> if parsing fails, catch, print error, loop runs again, re prompt
+        while (true) {
+            System.out.print(prompt);
+            //turn to string to catch the bad input and it doesnt go cray
+            //get input first
+            String input = console.nextLine();
+
+            //"unreachable statement??? bc i had left return above, once something is returned by methid, code after will not be reached
+            try {
+                //try to parse the input
+                return Integer.parseInt(input);
+            } catch (NumberFormatException exception) {
+                //if fail, loop again
+                System.out.println("Invalid. Please enter a number.");
+            }
+        }
     }
 }
+

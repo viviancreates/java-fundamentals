@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Locker {
 //holds state and if rented, give a pin, access, check the pin, if release, ?
     //each locker rented need to generate a pin - random 4 digit string

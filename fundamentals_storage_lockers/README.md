@@ -109,6 +109,11 @@ class Result {
 - biggest issue was lockerservice -> want to have lockerservice only receive parameters and return results, not to to chat with the user(io), that should only be io class
   - ****** UserIO io = new UserIO(); add to locker service, delete utiil, replace all print statements (similar to main)
 
+10. add try catch statements
+    - strings do not need?
+    - in io this gave an unreachable statement - showing example below 
+      - turn it into a string first to catch input *******
+
 # misc
 -locker just holds the data (REMEMBER architecture does 3 things ->tasks, main, data)
 - question -> how do you decide what to work on first, flow seems easiest, then the methods, but how to check... 
@@ -118,6 +123,20 @@ class Result {
 
 - fields are just class variables and always have getters and setters ->private, can it be public?
 
+- example to remember
+```
+public int getIntInput(String prompt) {
+  System.out.print(prompt);
+  return Integer.parseInt(console.nextLine());
+
+        //"unreachable statement??? bc i had left return above, once something is returned by methid, code after will not be reached
+        try {
+            return Integer.parseInt(console.nextLine());
+        } catch (NumberFormatException exception) {
+            System.out.println("Invalid. Please enter a number.");
+        }
+  }
+```
 # reminders
 
 - add validation

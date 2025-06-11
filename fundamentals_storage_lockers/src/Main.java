@@ -1,6 +1,3 @@
-import java.util.Scanner;
-
-
 public class Main {
     public static void main(String[] args) {
         //delete scanner here and bring it in from user io which we did below
@@ -17,21 +14,25 @@ public class Main {
             io.printMenu();
 
 
-            //prompt for user choice
-            int choice = io.getIntInput("Enter the menu option: ");
+            try {
+                //prompt for user choice
+                int choice = io.getIntInput("Enter the menu option: ");
 
-            if (choice == 1) {
-                lockerService.rentLocker();
-            } else if (choice == 2) {
-                lockerService.accessLocker();
-            } else if (choice == 3) {
-                lockerService.releaseLocker();
-            } else {
-                io.print("Invalid choice. Pick again pls.");
-                break;
+                if (choice == 1) {
+                    lockerService.rentLocker();
+                } else if (choice == 2) {
+                    lockerService.accessLocker();
+                } else if (choice == 3) {
+                    lockerService.releaseLocker();
+                } else {
+                    io.print("Invalid choice. Pick again pls.");
+                    break;
+                }
+
+                //catch is -> catch([exception type][variable name]) and the code only runs if an exception occurs
+            } catch (NumberFormatException exception) {
+                io.print("Invalid choice. Please enter a number.");
             }
-
         }
     }
-
 }
