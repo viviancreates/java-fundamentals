@@ -5,6 +5,14 @@ public class LockerService {
 
     UserIO io = new UserIO();
 
+    private boolean pinValidation(Locker locker, String pin) {
+        if (locker.checkPin(pin)) {
+            return true;
+        } else {
+            io.print("Wrong PIN");
+            return false;
+        }
+    }
 
     //create a constructor -> fill the array up
     //initialize the array of lockers
@@ -67,10 +75,8 @@ public class LockerService {
             Locker locker = lockers[i];
 
             if (locker.getLockerNumber().equals(number)) {
-                if (locker.checkPin(pin)) {
+                if (pinValidation(locker, pin)) {
                     io.print("Access granted!");
-                } else {
-                    io.print("Wrong PIN.");
                 }
                 return;
             }
@@ -93,24 +99,22 @@ public class LockerService {
         for (int i = 0; i < lockers.length; i++) {
             Locker locker = lockers[i];
             if (locker.getLockerNumber().equals(number)) {
-                if (locker.checkPin(pin)) {
+                if (pinValidation(locker, pin)) {
                     //confirm
                     String confirm = io.getStringInput("Are you sure? (yes/no): ");
                     if (confirm.equalsIgnoreCase("yes")) {
-                       //release the locker -> pulled from locker class
+                        //release the locker -> pulled from locker class
                         locker.releaseLocker();
                         io.print("Locker released.");
                     } else {
-                        io.print("Locker not released");
+                        io.print("Wrong PIN number.");
                     }
-                } else {
-                    io.print("Wrong PIN number.");
                 }
-                return;
+                    return;
+                }
             }
+
+            io.print("Locker not found.");
         }
 
-        io.print("Locker not found.");
     }
-}
-
