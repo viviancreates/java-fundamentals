@@ -40,7 +40,7 @@ public class Locker {
         return pin;
     }
 
-    public void setPin(String pin) {
+    private void setPin(String pin) {
         this.pin = pin;
     }
 
@@ -52,7 +52,7 @@ public class Locker {
         return lockerNumber;
     }
 
-    public void setLockerNumber(String lockerNumber){
+    private void setLockerNumber(String lockerNumber){
         this.lockerNumber = lockerNumber;
     }
 
@@ -73,5 +73,3 @@ public class Locker {
         return this.pin.equals(enteredPin);
     }
 }
-
-

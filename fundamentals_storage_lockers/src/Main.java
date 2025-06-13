@@ -25,8 +25,7 @@ public class Main {
                 } else if (choice == 3) {
                     lockerService.releaseLocker();
                 } else {
-                    io.print("Invalid choice. Pick again pls.");
-                    break;
+                    io.print("Invalid choice. Please pick again.");
                 }
 
                 //catch is -> catch([exception type][variable name]) and the code only runs if an exception occurs
