@@ -2,9 +2,10 @@ public class Audio extends Media {
     private int duration;
     private String artist;
 
-    public Audio() {
+    public Audio(int duration, String artist, String name) {
         this.duration = duration;
         this.artist = artist;
+        this.name = name;
     }
 
     public int getDuration() {
@@ -15,11 +16,11 @@ public class Audio extends Media {
         return artist;
     }
 
-    private int setDuration() {
-        return this.duration;
+    private void int setDuration(int duration) {
+        this.duration = duration;
     }
 
-    private String setArtist() {
-        return this.Artist;
+    private void String setArtist(String artist) {
+        this.artist = artist;
     }
 }

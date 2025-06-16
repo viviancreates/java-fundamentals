@@ -2,9 +2,10 @@ public class Image {
     private String dimensions;
     private String fileFormat;
 
-    public Image() {
+    public Image(String dimensions, String fileFormat, String name) {
         this.dimensions = dimensions;
         this.fileFormat = fileFormat;
+        this.name = name;
     }
 
     public int getDimensions() {
@@ -15,11 +16,11 @@ public class Image {
         return fileFormat;
     }
 
-    private String setDimensions() {
-        return this.dimensions;
+    private void String setDimensions(String dimensions) {
+        this.dimensions = dimensions;
     }
 
-    private String setFileFormat() {
-        return this.fileFormat;
+    private void String setFileFormat(String fileFormat) {
+        this.fileFormat = fileFormat;
     }
 }

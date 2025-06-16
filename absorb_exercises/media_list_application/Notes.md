@@ -13,5 +13,6 @@ Initially, I wanted to set up the project based on all specs given so it would b
 - Next time, I would start with just the media abstract class, and one subclass like video
 - 
 # Questions
+- how to decide when setters are needed? added all to skeleton
 
 # Reminders

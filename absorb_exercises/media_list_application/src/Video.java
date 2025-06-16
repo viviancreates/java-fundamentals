@@ -2,7 +2,8 @@ public class Video extends Media {
     private int duration;
     private String resolution;
 
-    public Video() {
+    //add parameters to constructor
+    public Video(String name, int duration, String resolution) {
         this.duration = duration;
         this.resolution = resolution;
         //inherited from media
@@ -17,11 +18,24 @@ public class Video extends Media {
         return resolution;
     }
 
-    private int setDuration() {
-        return this.duration;
+    //add coid to setters - a setter method is meant to change a field inside an object, not return anything
+    private void int setDuration(int duration) {
+        this.duration = duration;
     }
 
-    private String setResolution() {
-        return this.resoltion;
+    private void String setResolution(String resolution) {
+        this.resolution = resolution;
+    }
+
+    //add abstract methodds from media with override
+
+    @Override
+    public void play(){
+
+    }
+
+    @Override
+    public String getDescription(){
+        
     }
 }
