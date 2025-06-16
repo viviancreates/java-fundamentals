@@ -1,5 +1,12 @@
+import java.util.ArrayList;
+
 public class MediaService {
+    private ArrayList<Media> mediaList = new ArrayList<Media>();
+
     //addMedia(Media media) - adds media to the list
+    public void addMedia(Media media){
+        mediaList.add(media);
+    }
 
     //removeMedia(String name) - removes media by name, returns boolean success
 
