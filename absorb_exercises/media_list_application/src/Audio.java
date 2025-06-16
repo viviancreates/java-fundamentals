@@ -1,4 +1,4 @@
-/*public class Audio extends Media {
+public class Audio extends Media {
     private int duration;
     private String artist;
 
@@ -26,6 +26,14 @@
 
     //add abstract methodds from media with override
 
+    @Override
     //Audio: "Playing audio '[name]' using audio player software"
+    public void play(){
+        System.out.println("Playing audio " + name + " using audio player software.");
+    };
+
+    @Override
+    public String getDescription(){
+        return "Audio: "+ name + "\nDuration: " + duration +"\nArtist: " + artist;
+    };
 }
-*/

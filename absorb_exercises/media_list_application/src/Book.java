@@ -1,4 +1,4 @@
-/*public class Book extends Media {
+public class Book extends Media {
     private String author;
     private int pageCount;
 
@@ -26,5 +26,11 @@
 
     //add abstract methodds from media with override
     //Book: "Opening book '[name]' using e-reader software"
+    @Override
+    public void play(){
+        System.out.println("Opening book " + name + " using e-reader software.");
+    };
+    public String getDescription(){
+        return "Book: "+ name + "\nAuthor: " + author +"\nPage Count: " + pageCount;
+    };
 }
-*/

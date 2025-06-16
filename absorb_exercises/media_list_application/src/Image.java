@@ -1,4 +1,4 @@
-/*public class Image {
+public class Image extends Media {
     private String dimensions;
     private String fileFormat;
 
@@ -8,7 +8,7 @@
         this.name = name;
     }
 
-    public int getDimensions() {
+    public String getDimensions() {
         return dimensions;
     }
 
@@ -27,6 +27,16 @@
     //add abstract methodds from media with override
 
     //Image: "Displaying image '[name]' using image viewer software"
+    @Override
+    public void play(){
+        System.out.println("Displaying image " + name + " using image viewer software.");
+    };
+
+
+    @Override
+    public String getDescription(){
+        return "Image: "+ name + "\nDimensions: " + dimensions +"\nFile Format: " + fileFormat;
+    };
 }
 
- */
+
