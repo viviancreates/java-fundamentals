@@ -5,6 +5,8 @@ public class Video extends Media {
     public Video() {
         this.duration = duration;
         this.resolution = resolution;
+        //inherited from media
+        this.name = name;
     }
 
     public int getDuration() {
