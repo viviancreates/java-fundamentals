@@ -8,11 +8,11 @@ public class Video extends Media {
     }
 
     public int getDuration() {
-        return duration
+        return duration;
     }
 
-    public getResolution() {
-        return resolution
+    public String getResolution() {
+        return resolution;
     }
 
     private int setDuration() {

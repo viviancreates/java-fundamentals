@@ -1,4 +1,8 @@
+import java.util.Scanner;
+
 public class TerminalUtils {
+    Scanner console = new Scanner(System.in);
+
     //displayMenu();
     public static void displayMenu() {
         System.out.println("=== Media List Application ===");
@@ -10,6 +14,7 @@ public class TerminalUtils {
         System.out.println("Choose an option: ");
         //reminder to add validation to printmenu
     }
+
 
     //getMenuChoice();
 
