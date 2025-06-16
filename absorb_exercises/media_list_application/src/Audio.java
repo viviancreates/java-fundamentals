@@ -1,4 +1,4 @@
-public class Audio extends Media {
+/*public class Audio extends Media {
     private int duration;
     private String artist;
 
@@ -12,7 +12,7 @@ public class Audio extends Media {
         return duration;
     }
 
-    public getArtist() {
+    public String getArtist() {
         return artist;
     }
 
@@ -23,4 +23,9 @@ public class Audio extends Media {
     private void setArtist(String artist) {
         this.artist = artist;
     }
+
+    //add abstract methodds from media with override
+
+    //Audio: "Playing audio '[name]' using audio player software"
 }
+*/

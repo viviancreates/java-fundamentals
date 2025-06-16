@@ -29,13 +29,16 @@ public class Video extends Media {
 
     //add abstract methodds from media with override
 
+    //Video: "Playing video '[name]' using video player software"
     @Override
     public void play(){
+        System.out.println("Playing video" + name + "using video player software.");
 
     }
 
     @Override
     public String getDescription(){
+        return "Video: "+ name + "/nDuration: " + duration +"/nResolution: " + resolution;
 
     }
 }

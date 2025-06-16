@@ -15,7 +15,6 @@ public class TerminalUtils {
         //reminder to add validation to printmenu
     }
 
-
     //getMenuChoice();
 
     //getString(prompt);
@@ -26,7 +25,8 @@ public class TerminalUtils {
     //getInt(prompt);
     public int getIntInput(String prompt) {
         System.out.print(prompt);
-        return console.nextLine();
+        String input = console.nextLine();
+        return Integer.parseInt(input);
     }
 
     //displayMessage(message);

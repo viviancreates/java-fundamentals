@@ -1,4 +1,4 @@
-public class Image {
+/*public class Image {
     private String dimensions;
     private String fileFormat;
 
@@ -23,4 +23,10 @@ public class Image {
     private void setFileFormat(String fileFormat) {
         this.fileFormat = fileFormat;
     }
+
+    //add abstract methodds from media with override
+
+    //Image: "Displaying image '[name]' using image viewer software"
 }
+
+ */

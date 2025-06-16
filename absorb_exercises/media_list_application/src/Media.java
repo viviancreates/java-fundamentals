@@ -6,7 +6,7 @@ public abstract class Media {
         return name;
     }
 
-    private void String setName(String name){
+    private void setName(String name){
         this.name = name;
     }
 

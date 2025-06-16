@@ -1,4 +1,4 @@
-public class Book extends Media {
+/*public class Book extends Media {
     private String author;
     private int pageCount;
 
@@ -23,4 +23,8 @@ public class Book extends Media {
     private void setPageCount(int pageCount) {
         this.pageCount = pageCount;
     }
+
+    //add abstract methodds from media with override
+    //Book: "Opening book '[name]' using e-reader software"
 }
+*/
