@@ -6,6 +6,10 @@ public abstract class Media {
         return name;
     }
 
+    private void String setName(String name){
+        this.name = name;
+    }
+
     // Abstract methods - no implementation, must be overridden
     public abstract void play();
     public abstract String getDescription();

@@ -16,11 +16,11 @@ public class Image {
         return fileFormat;
     }
 
-    private void String setDimensions(String dimensions) {
+    private void setDimensions(String dimensions) {
         this.dimensions = dimensions;
     }
 
-    private void String setFileFormat(String fileFormat) {
+    private void setFileFormat(String fileFormat) {
         this.fileFormat = fileFormat;
     }
 }

@@ -19,11 +19,11 @@ public class Video extends Media {
     }
 
     //add coid to setters - a setter method is meant to change a field inside an object, not return anything
-    private void int setDuration(int duration) {
+    private void setDuration(int duration) {
         this.duration = duration;
     }
 
-    private void String setResolution(String resolution) {
+    private void setResolution(String resolution) {
         this.resolution = resolution;
     }
 
@@ -36,6 +36,6 @@ public class Video extends Media {
 
     @Override
     public String getDescription(){
-        
+
     }
 }

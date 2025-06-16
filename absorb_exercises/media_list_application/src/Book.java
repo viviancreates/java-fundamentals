@@ -16,11 +16,11 @@ public class Book extends Media {
         return pageCount;
     }
 
-    private void String setAuthor(String author) {
+    private void setAuthor(String author) {
         this.author = author;
     }
 
-    private void int setPageCount(int pageCount) {
+    private void setPageCount(int pageCount) {
         this.pageCount = pageCount;
     }
 }

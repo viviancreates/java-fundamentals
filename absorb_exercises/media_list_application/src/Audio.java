@@ -16,11 +16,11 @@ public class Audio extends Media {
         return artist;
     }
 
-    private void int setDuration(int duration) {
+    private void setDuration(int duration) {
         this.duration = duration;
     }
 
-    private void String setArtist(String artist) {
+    private void setArtist(String artist) {
         this.artist = artist;
     }
 }
