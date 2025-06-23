@@ -16,7 +16,7 @@ public class InMemoryWaitlist implements WaitlistRepository{
     }
 
     @Override
-    
+
     @Override
 
     @Override
