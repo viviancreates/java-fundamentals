@@ -12,9 +12,9 @@ public class ShoppingCartService {
     }
 
     //add item method with price
-    public void addItem(String name, double price) {
-        items.add(new Item(name, price));
-    }
+   // public void addItem(String name, double price) {
+     //   items.add(new Item(name, price));
+    //}
 
     //remove item method
     public Item removeItem(int index) {
@@ -27,13 +27,13 @@ public class ShoppingCartService {
         return new ArrayList<>(items);
     }
 
-    public double getTotal() {
-        doublt total = 0;
-        for (Item item : items) {
-            total += item.price;
-        }
-        return total;
-    }
+   // public double getTotal() {
+     //   double total = 0;
+       // for (Item item : items) {
+         //   total += item.price;
+        //}
+        //return total;
+    //}
 
 
 }
