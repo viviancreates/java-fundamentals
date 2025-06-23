@@ -5,15 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb2cdf82-4ef2-4413-a2a1-14acdb4c065b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../assessments/shopping_cart/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../assessments/shopping_cart/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../assessments/shopping_cart/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../assessments/shopping_cart/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../assessments/shopping_cart/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../assessments/shopping_cart/.mvn/jvm.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../assessments/shopping_cart/.mvn/maven.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../assessments/shopping_cart/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../assessments/shopping_cart/src/main/java/org/example/App.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Record" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
