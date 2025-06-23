@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb2cdf82-4ef2-4413-a2a1-14acdb4c065b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../absorb_exercises/wise_exercises/media_list_application/src/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../absorb_exercises/wise_exercises/media_list_application/src/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../assessments/shopping_cart_wip/src/main/java/org/example/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../assessments/shopping_cart_wip/src/main/java/org/example/model/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../assessments/shopping_cart_wip/src/main/java/org/example/service/ShoppingCartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../assessments/shopping_cart_wip/src/main/java/org/example/service/ShoppingCartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assessments/shopping_cart_wip/notes.MD" beforeDir="false" afterPath="$PROJECT_DIR$/../../assessments/shopping_cart_wip/notes.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assessments/shopping_cart_wip/src/test/java/org/example/ShoppingCartServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../assessments/shopping_cart_wip/src/test/java/org/example/ShoppingCartServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,16 +60,5 @@
       <updated>1750636527475</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/model/Party.java</url>
-          <line>8</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

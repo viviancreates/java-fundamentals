@@ -80,6 +80,10 @@ Where would the ... go?
 
 - keep models very clean -> no getters and setters (bc json)
   
+...
+ADD PEP TAKK FROM MON JUN23, befre class ends, 
+gives workdlow tips
+refactor tips
 
 -----
 
