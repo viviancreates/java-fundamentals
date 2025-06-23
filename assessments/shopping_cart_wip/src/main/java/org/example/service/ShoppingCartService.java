@@ -1,7 +1,7 @@
 package org.example.service;
-
-import model.Item;
+import org.example.model.Item;
 import java.util.ArrayList;
+
 
 public class ShoppingCartService {
     private ArrayList<Item> items;
