@@ -1,7 +1,6 @@
 # Thoughts and notes
-1. Thinking through the problem
 
-
+## Planning
 Main Menu
 1. Display Cart
 2. Remove an Item
@@ -50,8 +49,12 @@ Where would the ... go?
 - Interface
 - each feature is isolated into a separate method 
 
+---
 
-
+## Steps
+1. Utils 
+2. service and add some tests
+3. 
 
 
 
@@ -74,6 +77,8 @@ Where would the ... go?
 
   ![Swimlane 1](images/swimlane.png)
   ![Swimlane 2](images/swimlane2.png)
+
+- keep models very clean -> no getters and setters (bc json)
   
 
 -----
