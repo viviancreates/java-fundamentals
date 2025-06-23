@@ -5,36 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb2cdf82-4ef2-4413-a2a1-14acdb4c065b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/jvm.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/maven.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../assessments/shopping_cart/src/test/java/org/example/AppTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/.mvn/jvm.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/.mvn/maven.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/src/main/java/com/example/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/src/main/java/com/example/choice/ChoiceStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/src/main/java/com/example/choice/RandomChoiceStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/src/main/java/com/example/choice/TerminalChoiceStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/src/main/java/com/example/factory/PlayerFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/src/main/java/com/example/model/Choice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/src/main/java/com/example/model/GameResult.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/src/main/java/com/example/model/Outcome.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/src/main/java/com/example/model/Player.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/src/main/java/com/example/model/PlayerType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/src/main/java/com/example/service/GameService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/src/test/java/GameServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/src/test/java/com/example/choice/AlwaysPicksPaperStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/src/test/java/com/example/choice/AlwaysPicksRockStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice/rock-paper-scissors/src/test/java/com/example/choice/AlwaysPicksScissorsStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,17 +37,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.waitlist_example [test].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "settings.editor.selected.configurable": "editor.preferences.appearance"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.waitlist_example [test].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.appearance&quot;
   }
-}]]></component>
+}</component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="fb2cdf82-4ef2-4413-a2a1-14acdb4c065b" name="Changes" comment="" />
