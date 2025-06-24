@@ -9,11 +9,14 @@ Main Menu
 5. Exit
 
 What objects (classes) will be incolved
-- cart
-  - hold items
-  - empty cart
-  - check items
-  - 
+
+NO NEED -> this is the same as the service
+
+~~- cart~~  
+~~-   hold items~~  
+~~-   empty cart~~  
+~~-   check items~~
+
 - io
   - printing
   - input
@@ -54,7 +57,16 @@ Where would the ... go?
 ## Steps
 1. Utils 
 2. service and add some tests
-3. 
+3. went back and added item model, should have done this first bc I was not able to start tests without passing data
+- tests went fairly easy, at some point realized i kept repeating adding the service, so did a before each
+- also nextr time, add one method to the service, test it, one method, test, like I was doing w printing -> we can have one shopping cart that only adds, no need to add all methods at once.... go slow
+- do i even need shopping cart model... have not needed so far, the service is the model
+  - i think i was thinking it would hold items, idk..delete it -> cart and cart service are the same(look at notes above)
+- moving on..
+4. get the app running
+   - create the service
+   - add io
+   - add while loop
 
 
 
