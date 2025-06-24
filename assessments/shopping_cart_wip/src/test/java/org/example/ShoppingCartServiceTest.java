@@ -78,6 +78,27 @@ public class ShoppingCartServiceTest {
         assertEquals(20, secondItem.getPrice());
     }
 
+    /*
+    public double getTotal() {
+        double total = 0;
+        for (Item item : items) {
+            total += item.getPrice();
+        }
+        return total;
+    }
+    */
+
+    @Test
+    @DisplayName("Shopping cart returns total")
+    public void getTotalCostFromCart() {
+        scs.addItem("Shirt", 50.0);
+        scs.addItem("Headband", 20.0);
+
+        double actual = scs.getTotal();
+        double expected = 70.0;
+
+        assertEquals(expected, actual);
+    }
 
 
 }
