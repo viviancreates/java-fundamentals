@@ -47,8 +47,36 @@ public class App {
                     //add break here,
                     break;
 
-                case 2;
-                
+                case 2:
+                    int indexToRemove = io.getIntInput("Enter the item number you want to remove: ");
+
+                   try {
+                       //this is making a variable of type Item to store the result in removedItemn -> ITem is the class I defined
+                       // I am expecting the method removeItem from scs class to return an ITEM OBJECT
+                       //REMEMVER THIS in scs
+                       /*
+                       public Item removeItem(int index) {
+                           return items.remove(index);
+                       }
+                       */
+                        Item removedItem = scs.removeItem(indexToRemove);
+                        io.displayMessage("Item removed: " + removedItem.getName());
+                    } catch (IndexOutOfBoundsException exception) {
+                        io.displayMessage("The item number entered does not exist.");
+                    }
+                    break;
+
+
+                case 3:
+                    /*
+                      public void addItem(String name, double price) {
+                        items.add(new Item(name, price));
+                      }
+                     */
+                    String itemNameToAdd = io.getStringInput("Enter the item name you want to add: ");
+                    double priceToAdd = io.getIntInput("Enter the price of the item: ");
+
+
                 case 5:
                     io.displayMessage("You are exiting the shopping cart. Thank you.");
                     running = false;
