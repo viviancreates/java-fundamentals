@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b059f03f-c15f-493f-a3db-411037a3ecd1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../assessments/shopping_cart_wip/notes.MD" beforeDir="false" afterPath="$PROJECT_DIR$/../../assessments/shopping_cart_wip/notes.MD" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../assessments/shopping_cart_wip/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../assessments/shopping_cart_wip/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../assessments/shopping_cart_wip/src/main/java/org/example/model/ShoppingCart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assessments/shopping_cart_wip/src/main/java/org/example/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../assessments/shopping_cart_wip/src/main/java/org/example/model/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../notes/waitlist_example/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/waitlist_example/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

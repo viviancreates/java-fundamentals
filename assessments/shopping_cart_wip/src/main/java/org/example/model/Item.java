@@ -1,5 +1,6 @@
 package org.example.model;
 
+//THIS IS A POJO BTW... plain old java object, holds data
 public class Item {
     private String name;
     private double price;

@@ -1,5 +1,6 @@
 package org.example;
 import org.example.service.ShoppingCartService;
+import org.example.model.Item;
 import org.example.ui.TerminalUtils;
 
 public class App {
@@ -32,14 +33,28 @@ public class App {
 
                     } else {
                         io.displayMessage("Your cart contains the following items: ");
-                        for (int i = 0; i < scs.getItems().size; i++) {
+                        for (int i = 0; i < scs.getItems().size(); i++) {
                             Item item = scs.getItems().get(i);
-                            io.displayMessage(i)
+                            io.displayMessage(item.getName() + item.getPrice());
+
                         }
+
+                        //need this first break otherwise, java will keep executing the next cases, even if conditions do not match
+                        //this is called fall through
+                        //also do not want it here, want it after the case, not just inside else,
+                        //break;
                     }
+                    //add break here,
+                    break;
 
+                case 2;
+                
+                case 5:
+                    io.displayMessage("You are exiting the shopping cart. Thank you.");
+                    running = false;
+                    break;
+                    }
             }
-
 
 
 
@@ -47,4 +62,4 @@ public class App {
 
 
     }
-}
+

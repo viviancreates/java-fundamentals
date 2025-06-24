@@ -67,7 +67,7 @@ Where would the ... go?
    - create the service
    - add io
    - add while loop
-
+- when using cases, add the break after the entire case otherwise, it seems to end the program
 
 
 # Reminders
