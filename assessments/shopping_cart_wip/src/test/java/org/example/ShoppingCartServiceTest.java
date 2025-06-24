@@ -34,15 +34,18 @@ public class ShoppingCartServiceTest {
         assertEquals(2, sc.getItems().size());
     }
 
-    /*
+
     @Test
     public void itemAddedIsCorrect() {
         ShoppingCartService sc = new ShoppingCartService();
         sc.addItem("Shirt", 50.0);
+        sc.addItem("Headband", 20.0);
 
-        Item firstItem = sc.getItems()
+        Item secondItem = sc.getItems().get(1);
+        assertEquals("Headband", secondItem.getName());
+        assertEquals(20, secondItem.getPrice());
     }
 
-     */
+
 
 }
