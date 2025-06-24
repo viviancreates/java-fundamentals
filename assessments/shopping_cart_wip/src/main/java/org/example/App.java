@@ -33,9 +33,10 @@ public class App {
 
                     } else {
                         io.displayMessage("Your cart contains the following items: ");
+                        //FIX pull this put bc it is repeated ALOT
                         for (int i = 0; i < scs.getItems().size(); i++) {
                             Item item = scs.getItems().get(i);
-                            io.displayMessage(item.getName().toUpperCase() + " for $ " + item.getPrice());
+                            io.displayMessage((i + 1)+ ". " + item.getName() + " for $ " + item.getPrice());
 
                         }
 
@@ -48,6 +49,12 @@ public class App {
                     break;
 
                 case 2:
+
+                    for (int i = 0; i < scs.getItems().size(); i++) {
+                        Item item = scs.getItems().get(i);
+                        io.displayMessage((i + 1)+ ". " + item.getName() + " for $ " + item.getPrice());
+                    }
+
                     int indexToRemove = io.getIntInput("Enter the item number you want to remove: ");
 
                    try {
@@ -79,8 +86,32 @@ public class App {
                     io.displayMessage("A(n) " + itemNameToAdd.toLowerCase() + " was added to the cart for $" + priceToAdd);
                     break;
 
+                case 4:
+                    /*
+                    public double getTotal() {
+                    double total = 0;
+                    for (Item item : items) {
+                        total += item.getPrice();
+                    }
+                    return total;
+                }
+                     */
+                    io.displayMessage("Your final shopping cart has the items: ");
+                    for (int i = 0; i < scs.getItems().size(); i++) {
+                        Item item = scs.getItems().get(i);
+                        io.displayMessage((i + 1)+ ". " + item.getName() + " for $ " + item.getPrice());
+                    }
+                    String confirm = io.getStringInput("Are you sure you are ready to checkout? ");
+                    if (confirm.equalsIgnoreCase("yes")) {
+                        double total = scs.getTotal();
+                        io.displayMessage("Your total is: $" + String.format("%.2f", total));
+                    } else {
+                        io.displayMessage("You are returning to the Main Menu.");
+                    }
+                    break;
 
-                case 5:
+
+                    case 5:
                     io.displayMessage("You are exiting the shopping cart. Thank you.");
                     running = false;
                     break;
