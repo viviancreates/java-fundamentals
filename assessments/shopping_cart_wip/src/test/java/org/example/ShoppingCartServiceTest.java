@@ -100,5 +100,21 @@ public class ShoppingCartServiceTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    @DisplayName("Shopping cart can remove item")
+    public void removeItemFromCart() {
+        scs.addItem("Shirt", 50.0);
+        scs.addItem("Headband", 20.0);
+        scs.addItem("Socks", 10.0);
+        scs.addItem("Shoes", 100.0);
+
+
+
+        assertEquals(4, scs.getItems().size());
+
+        Item gone = scs.removeItem(1);
+        assertEquals("Headband", gone.getName());
+        assertEquals(3, scs.getItems().size());
+    }
 
 }
