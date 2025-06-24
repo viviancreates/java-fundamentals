@@ -30,7 +30,7 @@ public class ShoppingCartService {
     public double getTotal() {
         double total = 0;
         for (Item item : items) {
-            total += item.price;
+            total += item.getPrice();
         }
         return total;
     }
