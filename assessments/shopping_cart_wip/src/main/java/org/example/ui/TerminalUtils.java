@@ -27,6 +27,13 @@ public class TerminalUtils {
         return Integer.parseInt(input);
     }
 
+    //getDouble(prompt);
+    public double getDoubleInput(String prompt) {
+        System.out.println(prompt);
+        String input = console.nextLine();
+        return Double.parseDouble(input);
+    }
+
     //displayMessage(message);
     public void displayMessage(String message) {
         System.out.println(message);

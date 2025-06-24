@@ -35,7 +35,7 @@ public class App {
                         io.displayMessage("Your cart contains the following items: ");
                         for (int i = 0; i < scs.getItems().size(); i++) {
                             Item item = scs.getItems().get(i);
-                            io.displayMessage(item.getName() + item.getPrice());
+                            io.displayMessage(item.getName().toUpperCase() + " for $ " + item.getPrice());
 
                         }
 
@@ -59,7 +59,7 @@ public class App {
                            return items.remove(index);
                        }
                        */
-                        Item removedItem = scs.removeItem(indexToRemove);
+                        Item removedItem = scs.removeItem(indexToRemove - 1);
                         io.displayMessage("Item removed: " + removedItem.getName());
                     } catch (IndexOutOfBoundsException exception) {
                         io.displayMessage("The item number entered does not exist.");
@@ -74,7 +74,10 @@ public class App {
                       }
                      */
                     String itemNameToAdd = io.getStringInput("Enter the item name you want to add: ");
-                    double priceToAdd = io.getIntInput("Enter the price of the item: ");
+                    double priceToAdd = io.getDoubleInput("Enter the price of the item: ");
+                    scs.addItem(itemNameToAdd, priceToAdd);
+                    io.displayMessage("A(n) " + itemNameToAdd.toLowerCase() + " was added to the cart for $" + priceToAdd);
+                    break;
 
 
                 case 5:
