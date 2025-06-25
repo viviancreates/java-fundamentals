@@ -123,7 +123,9 @@ FACTORY
         scs.addItem(shirt);
 ```
 
-
+6. Add hash map to track quantities
+- refactored add to increment quantity, not replace... do the rest
+- refactor tests
 
 
 
