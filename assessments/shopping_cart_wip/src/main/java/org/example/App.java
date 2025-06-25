@@ -2,6 +2,7 @@ package org.example;
 import org.example.service.ShoppingCartService;
 import org.example.model.Item;
 import org.example.ui.TerminalUtils;
+import org.example.factory.ItemFactory;
 
 public class App {
     public static void main(String[] args) {
@@ -11,6 +12,8 @@ public class App {
         TerminalUtils io = new TerminalUtils();
         //add while loop -> make easier to exit loop, also easier to add condition if cart is empty
         boolean running = true;
+
+        ItemFactory itemFactory = new ItemFactory();
 
         //why am i adding the variable running why not just say while true
         while(running) {
@@ -82,7 +85,10 @@ public class App {
                      */
                     String itemNameToAdd = io.getStringInput("Enter the item name you want to add: ");
                     double priceToAdd = io.getDoubleInput("Enter the price of the item: ");
-                    scs.addItem(itemNameToAdd, priceToAdd);
+                    //i am refactoring to use the item factory
+                    //scs.addItem(itemNameToAdd, priceToAdd);
+                    Item newItem = itemFactory.createItem(itemNameToAdd, priceToAdd);
+                    scs.addItem(newItem);
                     io.displayMessage("A(n) " + itemNameToAdd.toLowerCase() + " was added to the cart for $" + priceToAdd);
                     break;
 

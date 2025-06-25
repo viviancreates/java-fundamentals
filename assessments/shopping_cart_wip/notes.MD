@@ -69,6 +69,66 @@ Where would the ... go?
    - add while loop
 - when using cases, add the break after the entire case otherwise, it seems to end the program
 
+5. add a factory to cfreate items - EXAMPLE
+```
+   package com.example.factory;
+
+import com.example.choice.*;
+import com.example.model.*;
+import java.util.Scanner;
+
+public class PlayerFactory {
+private Scanner scanner;
+
+    public PlayerFactory(Scanner scanner) {
+        this.scanner = scanner;
+    }
+
+    public Player create(PlayerType playerType) {
+        ChoiceStrategy strategy;
+
+        if (playerType == PlayerType.COMPUTER) {
+            strategy = new RandomChoiceStrategy();
+        } else {
+            strategy = new TerminalChoiceStrategy(scanner);
+        }
+
+        return new Player(strategy);
+    }
+
+}
+
+```
+//A factory will make things cleaner when creating an object...
+/*
+- example get rid of creating items all over the place, will be much easier to refactor
+
+so.. instead of new ITem(name, price)
+I can just put itemFactory.createItem(name, price) -> when we add the hashmap, it should be easier to refactor
+*/
+
+
+FACTORY
+- this is creating the object instead of leaving it in the service, which then would be creating and adding the object
+- the factory only cares about making more items
+- the shopping cart service is the project manager that moves the items around
+  - adds(ONLY ADD), remove, tally up total
+
+- only changes made will be on the service (change add method) and the main app...
+- make changes to tests
+```
+// REFACTOR - here the item will be created by the factory, them we just pass the item
+//scs.addItem("Shirt", 50.0);
+        Item shirt = itemFactory.createItem("Shirt", 50.0);
+        scs.addItem(shirt);
+```
+
+
+
+
+
+
+
 
 # Reminders
 - add try catch at end

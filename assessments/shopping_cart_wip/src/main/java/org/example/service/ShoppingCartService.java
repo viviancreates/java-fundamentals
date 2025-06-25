@@ -11,10 +11,16 @@ public class ShoppingCartService {
         items = new ArrayList<>();
     }
 
+    //REFACTOR TO USE ITEM FACTORY
     //add item method with price
-    public void addItem(String name, double price) {
-        items.add(new Item(name, price));
+    //public void addItem(String name, double price) {
+    //    items.add(new Item(name, price));
+    //}
+    public void addItem(Item item) {
+        //this is calling.add on the items list -> add this Item object to the ArrayList(Item) called items that lives inside cart
+        items.add(item);
     }
+
 
     //remove item method
     public Item removeItem(int index) {

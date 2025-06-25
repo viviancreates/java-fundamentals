@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.example.factory.ItemFactory;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -31,10 +32,16 @@ public class ShoppingCartServiceTest {
     */
 
     private ShoppingCartService scs;
+    private ItemFactory itemFactory;
 
     @BeforeEach
     void setUp() {
-        scs= new ShoppingCartService();
+        scs = new ShoppingCartService();
+    }
+
+    @BeforeEach
+    void setUp() {
+        itemFactory = new ItemFactory();
     }
 
 
@@ -55,7 +62,11 @@ public class ShoppingCartServiceTest {
         //THESE TWO LINES ARE WRONG BC ITS LOOKING AT ADDITEM FROM SC AND THAT TAKES IN THE FIELDS, DOES NOT MAGICALLY ADD the i
         //Item i = new Item("Shirt", 50.0 );
         //sc.addItem(i);
-        scs.addItem("Shirt", 50.0);
+
+        //REFACTOR - here the item will be created by the factory, them we just pass the item
+        //scs.addItem("Shirt", 50.0);
+        Item shirt = itemFactory.createItem("Shirt", 50.0);
+        scs.addItem(shirt);
 
         //this adds how many items
         assertEquals(1, scs.getItems().size());
