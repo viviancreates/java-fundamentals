@@ -129,10 +129,15 @@ FACTORY
 
 
 
-
+---
 # Reminders
 - add try catch at end
 - add validation?
+- finish item factory 
+  - working on tests, idk if app is running bc tests - i assume i will need to connect utils???
+- refactor hash map to add qty
+- refactor to add interface commands - review
+- refactor - some repition in main app
 
 
 # Questions
