@@ -72,13 +72,15 @@ public class ShoppingCartServiceTest {
         assertEquals(2, scs.getItems().size());
     }
 
-/*
+
     @Test
     @DisplayName("Shopping cart is adding correct items (returns the list)")
     public void itemAddedIsCorrect() {
        // ShoppingCartService scs = new ShoppingCartService();
-        scs.addItem("Shirt", 50.0);
-        scs.addItem("Headband", 20.0);
+        Item shirt = itemFactory.createItem("Shirt", 50.0);
+        Item headband = itemFactory.createItem("Headband", 20.0);
+        scs.addItem(shirt);
+        scs.addItem(headband);
 
         Item secondItem = scs.getItems().get(1);
         assertEquals("Headband", secondItem.getName());
@@ -93,12 +95,16 @@ public class ShoppingCartServiceTest {
         }
         return total;
     }
+ */
+
 
     @Test
     @DisplayName("Shopping cart returns total")
     public void getTotalCostFromCart() {
-        scs.addItem("Shirt", 50.0);
-        scs.addItem("Headband", 20.0);
+        Item shirt = itemFactory.createItem("Shirt", 50.0);
+        Item headband = itemFactory.createItem("Headband", 20.0);
+        scs.addItem(shirt);
+        scs.addItem(headband);
 
         double actual = scs.getTotal();
         double expected = 70.0;
@@ -106,13 +112,18 @@ public class ShoppingCartServiceTest {
         assertEquals(expected, actual);
     }
 
+
     @Test
     @DisplayName("Shopping cart can remove item")
     public void removeItemFromCart() {
-        scs.addItem("Shirt", 50.0);
-        scs.addItem("Headband", 20.0);
-        scs.addItem("Socks", 10.0);
-        scs.addItem("Shoes", 100.0);
+        Item shirt = itemFactory.createItem("Shirt", 50.0);
+        Item headband = itemFactory.createItem("Headband", 20.0);
+        Item socks = itemFactory.createItem("Socks", 10.0);
+        Item shoes = itemFactory.createItem("Shoes", 100.0);
+        scs.addItem(shirt);
+        scs.addItem(headband);
+        scs.addItem(socks);
+        scs.addItem(shoes);
 
 
 
@@ -123,6 +134,6 @@ public class ShoppingCartServiceTest {
         assertEquals(3, scs.getItems().size());
     }
 
- */
+
 
 }
