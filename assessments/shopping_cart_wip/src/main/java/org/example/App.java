@@ -15,6 +15,8 @@ public class App {
 
         ItemFactory itemFactory = new ItemFactory();
 
+        Inventory inventory = new Inventory(ItemFactory); //load items
+
 
         //why am i adding the variable running why not just say while true
         while(running) {

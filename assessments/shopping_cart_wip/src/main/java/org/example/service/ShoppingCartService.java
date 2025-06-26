@@ -40,7 +40,6 @@ public class ShoppingCartService {
 
     }
 
-
     //remove item method
     public Item removeItem(int index) {
         return items.remove(index);

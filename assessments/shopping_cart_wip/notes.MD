@@ -126,8 +126,25 @@ FACTORY
 6. Add hash map to track quantities
 - refactored add to increment quantity, not replace... do the rest
 - refactor tests
+  - when refactoring tests, cane across issue, do not want to creat duplicate shirt objects
+    - so thoughts on this, allow the user to create a shirt object (rather than many different objects in memory)
+    - I created 2 different Item objects
+      - why? bc ***shirt does not equal shirt*** even though they look the same (name = "shirt", price = 10.00)
+      - i am not reusing a sinlg object, i am instantiating the same object blue print twice
+      - they live at different memory locations, so I am buying 2 different shirt objects, both objects are at the array list
+      - NOT 1 shirt object with quantity 2
+....so..
 
-
+7. Add inventory or collections class 
+  - as i think about this, I will probably add my interface here
+    - bc i want user to be able to add items - or is that inheritance...
+    ```
+      design the items class
+      extend into different types of items,
+      print the items
+      then next thing would be to design collection class, add items, hold items, make it displayable
+    ```
+    
 
 
 
