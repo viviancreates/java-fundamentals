@@ -52,6 +52,10 @@ public class ShoppingCartService {
         return new ArrayList<>(items);
     }
 
+    public HashMap<String, Integer> getItemQuantity() {
+        return itemQuantity;
+    }
+
     public double getTotal() {
         double total = 0;
         for (Item item : items) {

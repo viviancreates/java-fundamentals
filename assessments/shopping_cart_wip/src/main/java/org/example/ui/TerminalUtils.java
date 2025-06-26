@@ -9,8 +9,8 @@ public class TerminalUtils {
     public void displayMenu() {
        System.out.println("Main Menu");
        System.out.println("1. Display Cart");
-       System.out.println("2. Remove an Item");
-       System.out.println("3. Add an Item");
+       System.out.println("2. Add an Item");
+       System.out.println("3. Remove an Item");
        System.out.println("4. Checkout");
        System.out.println("5. Exit");
     }

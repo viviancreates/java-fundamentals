@@ -15,6 +15,7 @@ public class App {
 
         ItemFactory itemFactory = new ItemFactory();
 
+
         //why am i adding the variable running why not just say while true
         while(running) {
             io.displayMenu();
@@ -39,7 +40,8 @@ public class App {
                         //FIX pull this put bc it is repeated ALOT
                         for (int i = 0; i < scs.getItems().size(); i++) {
                             Item item = scs.getItems().get(i);
-                            io.displayMessage((i + 1)+ ". " + item.getName() + " for $ " + item.getPrice());
+                            int quantity = scs.getItemQuantity().get(item.getName());
+                            io.displayMessage((i + 1)+ ". " + "(" + quantity + ") " + item.getName() + " for $ " + item.getPrice());
 
                         }
 
@@ -52,6 +54,27 @@ public class App {
                     break;
 
                 case 2:
+                    /*
+                      public void addItem(String name, double price) {
+                        items.add(new Item(name, price));
+                      }
+                     */
+                    String itemNameToAdd = io.getStringInput("Enter the item name you want to add: ");
+                    double priceToAdd = io.getDoubleInput("Enter the price of the item: ");
+                    int quantityToAdd = io.getIntInput("Enter the quantity of the item you want to add: ");
+                    //i am refactoring to use the item factory
+                    //scs.addItem(itemNameToAdd, priceToAdd);
+                    //wrap this in a for loop
+                    //Item newItem = itemFactory.createItem(itemNameToAdd, priceToAdd);
+                    //scs.addItem(newItem);
+                    for (int i = 0; i < quantityToAdd; i++) {
+                        Item newItem = itemFactory.createItem(itemNameToAdd, priceToAdd);
+                        scs.addItem(newItem);
+                    }
+                    io.displayMessage("A(n) " + itemNameToAdd.toLowerCase() + " was added to the cart for $" + priceToAdd);
+                    break;
+
+                case 3:
 
                     for (int i = 0; i < scs.getItems().size(); i++) {
                         Item item = scs.getItems().get(i);
@@ -60,10 +83,10 @@ public class App {
 
                     int indexToRemove = io.getIntInput("Enter the item number you want to remove: ");
 
-                   try {
-                       //this is making a variable of type Item to store the result in removedItemn -> ITem is the class I defined
-                       // I am expecting the method removeItem from scs class to return an ITEM OBJECT
-                       //REMEMVER THIS in scs
+                    try {
+                        //this is making a variable of type Item to store the result in removedItemn -> ITem is the class I defined
+                        // I am expecting the method removeItem from scs class to return an ITEM OBJECT
+                        //REMEMVER THIS in scs
                        /*
                        public Item removeItem(int index) {
                            return items.remove(index);
@@ -74,22 +97,6 @@ public class App {
                     } catch (IndexOutOfBoundsException exception) {
                         io.displayMessage("The item number entered does not exist.");
                     }
-                    break;
-
-
-                case 3:
-                    /*
-                      public void addItem(String name, double price) {
-                        items.add(new Item(name, price));
-                      }
-                     */
-                    String itemNameToAdd = io.getStringInput("Enter the item name you want to add: ");
-                    double priceToAdd = io.getDoubleInput("Enter the price of the item: ");
-                    //i am refactoring to use the item factory
-                    //scs.addItem(itemNameToAdd, priceToAdd);
-                    Item newItem = itemFactory.createItem(itemNameToAdd, priceToAdd);
-                    scs.addItem(newItem);
-                    io.displayMessage("A(n) " + itemNameToAdd.toLowerCase() + " was added to the cart for $" + priceToAdd);
                     break;
 
                 case 4:
@@ -107,7 +114,7 @@ public class App {
                         Item item = scs.getItems().get(i);
                         io.displayMessage((i + 1)+ ". " + item.getName() + " for $ " + item.getPrice());
                     }
-                    String confirm = io.getStringInput("Are you sure you are ready to checkout? ");
+                    String confirm = io.getStringInput("Are you sure you are ready to checkout? (yes/no) ");
                     if (confirm.equalsIgnoreCase("yes")) {
                         double total = scs.getTotal();
                         io.displayMessage("Your total is: $" + String.format("%.2f", total));
