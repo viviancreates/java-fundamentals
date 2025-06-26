@@ -18,20 +18,20 @@ The application uses:
 
 ## To Do
 **Priority**
-- Finish refactor for maps
-  - how to add items in one single line, right now if I add 2 shirts  and 1 shoe
-    ```
-    (1)shoe for $ 2.99
-    (2)shirt for $ 5.99
-    (2)shirt for $ 5.99
-    AND
-    Your final shopping cart has the items:
-    1. shoe for $ 2.99
-    2. shirt for $ 5.99
-    3. shirt for $ 5.99
-    ```
-    
 - Commands
 
 **Maybe**
 - Refactor app --> some repeating happening
+
+- Finish refactor for maps
+    - how to add items in one single line, right now if I add 2 shirts  and 1 shoe
+      ```
+      (1)shoe for $ 2.99
+      (2)shirt for $ 5.99
+      (2)shirt for $ 5.99
+      AND
+      Your final shopping cart has the items:
+      1. shoe for $ 2.99
+      2. shirt for $ 5.99
+      3. shirt for $ 5.99
+      ```
