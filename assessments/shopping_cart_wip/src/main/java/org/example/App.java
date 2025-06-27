@@ -20,31 +20,20 @@ public class App {
         Inventory inventory = new Inventory(itemFactory); //load items
 
         AddItemCommand addItemCommand = new AddItemCommand(scs, inventory, io);
-
+        DisplayCartCommand displayCartCommand = new DisplayCartCommand(scs, inventory, io);
         while(running) {
             io.displayMenu();
             int choice = io.getIntInput("Enter choice: ");
 
             switch (choice) {
                 case 1:
-                    if (scs.getItems().isEmpty()){
-                        io.displayMessage("Your cart is empty");
 
-                    } else {
-                        io.displayMessage("Your cart contains the following items: ");
-                        //FIX pull this put bc it is repeated ALOT
-                        for (int i = 0; i < scs.getItems().size(); i++) {
-                            Item item = scs.getItems().get(i);
-                            int quantity = scs.getItemQuantity().get(item.getName());
-                            io.displayMessage((i + 1)+ ". " + "(" + quantity + ") " + item.getName() + " for $ " + item.getPrice());
-
-                        }
-
+                    displayCartCommand.execute();
                         //need this first break otherwise, java will keep executing the next cases, even if conditions do not match
                         //this is called fall through
                         //also do not want it here, want it after the case, not just inside else,
                         //break;
-                    }
+
                     //add break here,
                     break;
 
