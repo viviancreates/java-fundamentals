@@ -66,6 +66,22 @@ public class App {
                     //double priceToAdd = io.getDoubleInput("Enter the price of the item: ");
                     //int quantityToAdd = io.getIntInput("Enter the quantity of the item you want to add: ");
                     inventory.displayInventory();
+                    String inventoryChoice = io.getStringInput("Enter the name of the item to add to cart: ");
+
+                    if (inventory.hasItem(inventoryChoice)) {
+                        Item selectedItem = inventory.getItem(inventoryChoice);
+                        int quantity = io.getIntInput("Enter the quantity of the item you want to add: ");
+
+                        for (int i = 0; i < quantity; i++) {
+                        //for (int i = 0; i < quantityToAdd; i++) {
+                            //Item newItem = itemFactory.createItem(itemNameToAdd, priceToAdd);
+                            //scs.addItem(newItem);
+                            scs.addItem(selectedItem);
+                        }
+                        io.displayMessage(selectedItem.getName() + "added to the cart.");
+                    } else {
+                        io.displayMessage("Item is not available.");
+                    }
 
 
 
