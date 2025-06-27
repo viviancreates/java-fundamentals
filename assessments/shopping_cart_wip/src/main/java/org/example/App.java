@@ -4,6 +4,7 @@ import org.example.model.Item;
 import org.example.ui.TerminalUtils;
 import org.example.factory.ItemFactory;
 import org.example.inventory.Inventory;
+import org.example.command.AddItemCommand;
 
 public class App {
     public static void main(String[] args) {
@@ -18,7 +19,7 @@ public class App {
 
         Inventory inventory = new Inventory(itemFactory); //load items
 
-
+        AddItemCommand addItemCommand = new AddItemCommand(scs, inventory, io);
 
         while(running) {
             io.displayMenu();
@@ -56,23 +57,27 @@ public class App {
                     //String itemNameToAdd = io.getStringInput("Enter the item name you want to add: ");
                     //double priceToAdd = io.getDoubleInput("Enter the price of the item: ");
                     //int quantityToAdd = io.getIntInput("Enter the quantity of the item you want to add: ");
-                    inventory.displayInventory();
-                    String inventoryChoice = io.getStringInput("Enter the name of the item to add to cart: ");
 
-                    if (inventory.hasItem(inventoryChoice)) {
-                        Item selectedItem = inventory.getItem(inventoryChoice);
-                        int quantity = io.getIntInput("Enter the quantity of the item you want to add: ");
-
-                        for (int i = 0; i < quantity; i++) {
-                        //for (int i = 0; i < quantityToAdd; i++) {
-                            //Item newItem = itemFactory.createItem(itemNameToAdd, priceToAdd);
-                            //scs.addItem(newItem);
-                            scs.addItem(selectedItem);
-                        }
-                        io.displayMessage(selectedItem.getName() + " added to the cart.");
-                    } else {
-                        io.displayMessage("Item is not available.");
-                    }
+                    //--------- MOVED EVERYTHING OT ADD COMMAND and reolace
+                    addItemCommand.execute();
+                    break;
+//                    inventory.displayInventory();
+//                    String inventoryChoice = io.getStringInput("Enter the name of the item to add to cart: ");
+//
+//                    if (inventory.hasItem(inventoryChoice)) {
+//                        Item selectedItem = inventory.getItem(inventoryChoice);
+//                        int quantity = io.getIntInput("Enter the quantity of the item you want to add: ");
+//
+//                        for (int i = 0; i < quantity; i++) {
+//                        //for (int i = 0; i < quantityToAdd; i++) {
+//                            //Item newItem = itemFactory.createItem(itemNameToAdd, priceToAdd);
+//                            //scs.addItem(newItem);
+//                            scs.addItem(selectedItem);
+//                        }
+//                        io.displayMessage(selectedItem.getName() + " added to the cart.");
+//                    } else {
+//                        io.displayMessage("Item is not available.");
+//                    }
 
 
 
@@ -89,7 +94,7 @@ public class App {
                         //scs.addItem(newItem);
                     //}
                     //io.displayMessage("A(n) " + itemNameToAdd.toLowerCase() + " was added to the cart for $" + priceToAdd);
-                    break;
+//                  break;
 
                 case 3:
 
