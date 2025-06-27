@@ -182,6 +182,9 @@ i went from orignially, making copies of the object,
 but still adding 2 different shirt objects each time the user added somethingm, 
 now im making copies of the object by adding the same object twice,
 next i want to just add the object X 2 using a hashmap
+-> the app works, taking a break from hashmap, i will need to hashmap service to get wuantity later
+
+10. command pattern for actions
 
 ---
 # Reminders

@@ -24,15 +24,6 @@ public class App {
             io.displayMenu();
             int choice = io.getIntInput("Enter choice: ");
 
-            /*
-            REMINDER
-            System.out.println("1. Display Cart");
-            System.out.println("2. Remove an Item");
-            System.out.println("3. Add an Item");
-            System.out.println("4. Checkout");
-             System.out.println("5. Exit");
-             */
-
             switch (choice) {
                 case 1:
                     if (scs.getItems().isEmpty()){
@@ -78,7 +69,7 @@ public class App {
                             //scs.addItem(newItem);
                             scs.addItem(selectedItem);
                         }
-                        io.displayMessage(selectedItem.getName() + "added to the cart.");
+                        io.displayMessage(selectedItem.getName() + " added to the cart.");
                     } else {
                         io.displayMessage("Item is not available.");
                     }
