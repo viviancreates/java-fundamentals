@@ -173,7 +173,15 @@ It is not wired into any app logic, so even though the items are created and pre
    
 
   - delete an item
+....
+  - when i add the shirt, its still adding two copies of the same object, but keeping track of quantities
+    - its adding to the list (shirt, shirt ) , instead of (shirt -> 2) using a hashmap
+    - to keep track of quantities more cleanly, i would need to add a hashmap tio the service?
 
+i went from orignially, making copies of the object,
+but still adding 2 different shirt objects each time the user added somethingm, 
+now im making copies of the object by adding the same object twice,
+next i want to just add the object X 2 using a hashmap
 
 ---
 # Reminders
