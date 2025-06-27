@@ -40,9 +40,15 @@ public class Inventory {
         return items.containsKey(key.toLowerCase());
     }
 
-    //return all the keys (names) in the inventory
-    public Set<String> getItemKeys() {
-        return items.keySet();
-    }
 
+//for (Integer key : monthMap.keySet()) {
+  //      System.out.println("Month #" + key + " is " + monthMap.get(key))
+    //}
+// return all the keys (names) in the inventory
+    public void displayInventory() {
+        for (String key : items.keySet()) {
+            Item item = items.get(key);
+            System.out.println("Item: " + item.getName() + " | Price: $" + item.getPrice());
+        }
+    }
 }

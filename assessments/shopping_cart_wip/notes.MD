@@ -145,7 +145,34 @@ FACTORY
       then next thing would be to design collection class, add items, hold items, make it displayable
     ```
     
+8. OK PLAN
+- add another hashmap into app, to be able to store the item objects and call them when the user inputs the name 
+- add this logic to app
+- then refactor bc methods are getting long
+- then move methods to executes..
+  - this is where i can add a customize the item, as originally was in the instructions
+  
+let me explain what is currently happening 
+CURRENTLY, I created the Inventory class...
+The inventory class is being used to store available items using the hashmap
+- this allows all product info, name price, be in one place and managed so like the service for the items kinda??
+- so it:
+  - holds items in a hashmap
+  - preloads the items when the app starts
+  - give access to the methods like adItem, hasitem, get item, display inventory
+It is not wired into any app logic, so even though the items are created and preloaded
+  - the user does not see it, its not in th ui
 
+9. BAck to coding -> finish implementing the hashmap into app
+   - add an item
+     - ask the user what item they want in the cart
+     - check if the inventory has the item
+       - if no, "no item in inventory"
+       - if yes, ask how many 
+         - loop for however many item quantity
+   
+
+  - delete an item
 
 
 ---

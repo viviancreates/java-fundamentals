@@ -3,6 +3,7 @@ import org.example.service.ShoppingCartService;
 import org.example.model.Item;
 import org.example.ui.TerminalUtils;
 import org.example.factory.ItemFactory;
+import org.example.inventory.Inventory;
 
 public class App {
     public static void main(String[] args) {
@@ -15,10 +16,10 @@ public class App {
 
         ItemFactory itemFactory = new ItemFactory();
 
-        Inventory inventory = new Inventory(ItemFactory); //load items
+        Inventory inventory = new Inventory(itemFactory); //load items
 
 
-        //why am i adding the variable running why not just say while true
+
         while(running) {
             io.displayMenu();
             int choice = io.getIntInput("Enter choice: ");
@@ -61,19 +62,26 @@ public class App {
                         items.add(new Item(name, price));
                       }
                      */
-                    String itemNameToAdd = io.getStringInput("Enter the item name you want to add: ");
-                    double priceToAdd = io.getDoubleInput("Enter the price of the item: ");
-                    int quantityToAdd = io.getIntInput("Enter the quantity of the item you want to add: ");
+                    //String itemNameToAdd = io.getStringInput("Enter the item name you want to add: ");
+                    //double priceToAdd = io.getDoubleInput("Enter the price of the item: ");
+                    //int quantityToAdd = io.getIntInput("Enter the quantity of the item you want to add: ");
+                    inventory.displayInventory();
+
+
+
+
+
+
                     //i am refactoring to use the item factory
                     //scs.addItem(itemNameToAdd, priceToAdd);
                     //wrap this in a for loop
                     //Item newItem = itemFactory.createItem(itemNameToAdd, priceToAdd);
                     //scs.addItem(newItem);
-                    for (int i = 0; i < quantityToAdd; i++) {
-                        Item newItem = itemFactory.createItem(itemNameToAdd, priceToAdd);
-                        scs.addItem(newItem);
-                    }
-                    io.displayMessage("A(n) " + itemNameToAdd.toLowerCase() + " was added to the cart for $" + priceToAdd);
+                    //for (int i = 0; i < quantityToAdd; i++) {
+                      //  Item newItem = itemFactory.createItem(itemNameToAdd, priceToAdd);
+                        //scs.addItem(newItem);
+                    //}
+                    //io.displayMessage("A(n) " + itemNameToAdd.toLowerCase() + " was added to the cart for $" + priceToAdd);
                     break;
 
                 case 3:
