@@ -7,6 +7,7 @@ import org.example.inventory.Inventory;
 import org.example.command.AddItemCommand;
 import org.example.command.DisplayCartCommand;
 import org.example.command.RemoveItemCommand;
+import org.example.command.CheckoutCommand;
 
 public class App {
     public static void main(String[] args) {
@@ -24,7 +25,7 @@ public class App {
         AddItemCommand addItemCommand = new AddItemCommand(scs, inventory, io);
         DisplayCartCommand displayCartCommand = new DisplayCartCommand(scs, inventory, io);
         RemoveItemCommand removeItemCommand = new RemoveItemCommand(scs, inventory, io);
-
+        CheckoutCommand checkoutCommand = new CheckoutCommand(scs, inventory, io);
 
         while(running) {
             io.displayMenu();
@@ -105,24 +106,12 @@ public class App {
                     return total;
                 }
                      */
-                    io.displayMessage("Your final shopping cart has the items: ");
-                    for (int i = 0; i < scs.getItems().size(); i++) {
-                        Item item = scs.getItems().get(i);
-                        io.displayMessage((i + 1)+ ". " + item.getName() + " for $ " + item.getPrice());
-                    }
-                    String confirm = io.getStringInput("Are you sure you are ready to checkout? (yes/no) ");
-                    if (confirm.equalsIgnoreCase("yes")) {
-                        double total = scs.getTotal();
-                        io.displayMessage("Your total is: $" + String.format("%.2f", total));
-                    } else {
-                        io.displayMessage("You are returning to the Main Menu.");
-                    }
+                    checkoutCommand.execute();
                     break;
 
-                    case 5:
+                case 5:
                     io.displayMessage("You are exiting the shopping cart. Thank you.");
                     running = false;
-                    break;
 
                 case 6:
                     io.displayMessage("Try Again. Please select a choice from the Menu.");
