@@ -30,11 +30,18 @@ public class ShoppingCartService {
             Item item = items.get(i);
             if(item.getName().equalsIgnoreCase(name)) {
                 items.remove(i);
-                itemQuantity.remove(name);
+                //itemQuantity.remove(name);
+                //return item;
+                int currentQuantity = itemQuantity.get(name);
+                if (currentQuantity <= 1) {
+                    itemQuantity.remove(name);
+                } else {
+                    itemQuantity.put(name, currentQuantity - 1);
+                }
                 return item;
             }
         }
-    throw new IndexOutOfBoundsException("Item not found.");
+        throw new IndexOutOfBoundsException("Item not found.");
     }
 
     public ArrayList<Item> getItems() {

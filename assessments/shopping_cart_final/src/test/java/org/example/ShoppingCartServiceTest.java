@@ -129,7 +129,7 @@ public class ShoppingCartServiceTest {
 
         assertEquals(4, scs.getItems().size());
 
-        Item gone = scs.removeItem(1);
+        Item gone = scs.removeItem("Headband");
         assertEquals("Headband", gone.getName());
         assertEquals(3, scs.getItems().size());
     }
