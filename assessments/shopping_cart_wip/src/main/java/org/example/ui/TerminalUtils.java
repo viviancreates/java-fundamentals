@@ -22,9 +22,15 @@ public class TerminalUtils {
     }
     //getInt(prompt);
     public int getIntInput(String prompt) {
+        while (true) {
         System.out.print(prompt);
         String input = console.nextLine();
-        return Integer.parseInt(input);
+        try {
+            return Integer.parseInt(input);
+        } catch (NumberFormatException exception) {
+            System.out.println("Enter a valid number.");
+        }
+        }
     }
 
     //getDouble(prompt);

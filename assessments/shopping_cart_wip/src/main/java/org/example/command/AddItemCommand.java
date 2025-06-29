@@ -33,7 +33,7 @@ public class AddItemCommand implements Command {
                 //scs.addItem(newItem);
                 scs.addItem(selectedItem);
             }
-            io.displayMessage(quantity + selectedItem.getName() + " added to the cart.");
+            io.displayMessage(selectedItem.getName() + " added to the cart.");
         } else {
             io.displayMessage("Item is not available.");
 

@@ -119,11 +119,14 @@ public class App {
                     }
                     break;
 
-
                     case 5:
                     io.displayMessage("You are exiting the shopping cart. Thank you.");
                     running = false;
                     break;
+
+                case 6:
+                    io.displayMessage("Try Again. Please select a choice from the Menu.");
+                            break;
                     }
             }
 

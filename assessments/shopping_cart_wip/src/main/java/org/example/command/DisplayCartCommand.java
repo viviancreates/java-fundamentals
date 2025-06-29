@@ -28,7 +28,7 @@ public class DisplayCartCommand implements Command{
             for (int i = 0; i < scs.getItems().size(); i++) {
                 Item item = scs.getItems().get(i);
                 int quantity = scs.getItemQuantity().get(item.getName());
-                io.displayMessage((i + 1) + ". " + "(" + quantity + ") " + item.getName() + " for $ " + item.getPrice());
+                io.displayMessage((i + 1) + ". " + item.getName() + " for $ " + item.getPrice());
 
             }
         }
