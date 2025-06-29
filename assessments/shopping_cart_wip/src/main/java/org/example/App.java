@@ -5,6 +5,7 @@ import org.example.ui.TerminalUtils;
 import org.example.factory.ItemFactory;
 import org.example.inventory.Inventory;
 import org.example.command.AddItemCommand;
+import org.example.command.DisplayCartCommand;
 
 public class App {
     public static void main(String[] args) {

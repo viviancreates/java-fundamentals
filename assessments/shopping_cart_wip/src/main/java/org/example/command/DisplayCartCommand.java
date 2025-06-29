@@ -20,7 +20,7 @@ public class DisplayCartCommand implements Command{
 
     @Override
     public void execute() {
-        if (scs.getItems().isEmpty()){
+        if (scs.getItems().isEmpty()) {
             io.displayMessage("Your cart is empty");
 
         } else {
@@ -33,5 +33,5 @@ public class DisplayCartCommand implements Command{
 
             }
         }
-
+    }
 }
