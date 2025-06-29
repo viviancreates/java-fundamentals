@@ -3,7 +3,6 @@ package org.example.command;
 import org.example.inventory.Inventory;
 import org.example.model.Item;
 
-import org.example.model.Item;
 import org.example.service.ShoppingCartService;
 import org.example.ui.TerminalUtils;
 

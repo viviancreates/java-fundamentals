@@ -6,6 +6,7 @@ import org.example.factory.ItemFactory;
 import org.example.inventory.Inventory;
 import org.example.command.AddItemCommand;
 import org.example.command.DisplayCartCommand;
+import org.example.command.RemoveItemCommand;
 
 public class App {
     public static void main(String[] args) {
@@ -22,6 +23,9 @@ public class App {
 
         AddItemCommand addItemCommand = new AddItemCommand(scs, inventory, io);
         DisplayCartCommand displayCartCommand = new DisplayCartCommand(scs, inventory, io);
+        RemoveItemCommand removeItemCommand = new RemoveItemCommand(scs, inventory, io);
+
+
         while(running) {
             io.displayMenu();
             int choice = io.getIntInput("Enter choice: ");
@@ -88,27 +92,7 @@ public class App {
 
                 case 3:
 
-                    for (int i = 0; i < scs.getItems().size(); i++) {
-                        Item item = scs.getItems().get(i);
-                        io.displayMessage((i + 1)+ ". " + item.getName() + " for $ " + item.getPrice());
-                    }
-
-                    int indexToRemove = io.getIntInput("Enter the item number you want to remove: ");
-
-                    try {
-                        //this is making a variable of type Item to store the result in removedItemn -> ITem is the class I defined
-                        // I am expecting the method removeItem from scs class to return an ITEM OBJECT
-                        //REMEMVER THIS in scs
-                       /*
-                       public Item removeItem(int index) {
-                           return items.remove(index);
-                       }
-                       */
-                        Item removedItem = scs.removeItem(indexToRemove - 1);
-                        io.displayMessage("Item removed: " + removedItem.getName());
-                    } catch (IndexOutOfBoundsException exception) {
-                        io.displayMessage("The item number entered does not exist.");
-                    }
+                    removeItemCommand.execute();
                     break;
 
                 case 4:

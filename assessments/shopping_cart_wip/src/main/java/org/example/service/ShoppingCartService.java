@@ -41,8 +41,16 @@ public class ShoppingCartService {
     }
 
     //remove item method
-    public Item removeItem(int index) {
-        return items.remove(index);
+    public Item removeItem(String name) {
+        for (int i = 0; i < items.size(); i++) {
+            Item item = items.get(i);
+            if(item.getName().equalsIgnoreCase(name)) {
+                items.remove(i);
+                itemQuantity.remove(name);
+                return item;
+            }
+        }
+    throw new IndexOutOfBoundsException("Item not found.");
     }
 
     //return items in the shopping cart
