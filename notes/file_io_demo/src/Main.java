@@ -9,23 +9,32 @@ public class Main {
         //IF there is a file type, give it a name
         //path can be absolute or relative -> relative is relative to where you are, start where the app is running
         // absolute start at root of where the folder is
-        File file = new File("data/example.txt");
-//
+        File file = new File("data/input.txt");
+
+        //DEMO 0
+        //check for existence
 //        System.out.println(file.exists());
 //        System.out.println(file.isFile());
 //        System.out.println(file.isDirectory());
+        //bytes
+        //how many string characters in a byte -> usually 1 unless emoji or characters(between 1-4 depending on characters)
 //        System.out.println(file.length());
-//
+
+        //DEMO 1
 //        File file2 = new File("data/poem.txt");
+        //when reading and writing to files, put the work in a try catch
+        //now we use methods that will throw exceptions -> so we need to start using
 //        try {
+//            //THIS CREATED A NEW FILE called poem.txt
 //            boolean created = file2.createNewFile();
-//            System.out.println(file2.getAbsolutePath());
-//            scanner.nextLine();
-//            boolean deleted = file2.delete();
+//            System.out.println(file2.getAbsolutePath()); //if you want to know the absolute path of the file, this how you get it
+//            scanner.nextLine(); //this pauses
+//            boolean deleted = file2.delete(); //deletes the file
 //        } catch (IOException e) {
 //            System.out.println("Couldn't create file!");
 //        }
 
+        //DEMO 2
 //        try {
 //            FileWriter writer = new FileWriter("data/output.txt");
 //            writer.write("Hello, World!\n");
