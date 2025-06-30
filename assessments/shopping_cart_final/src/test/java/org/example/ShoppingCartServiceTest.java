@@ -75,7 +75,7 @@ public class ShoppingCartServiceTest {
 
     @Test
     @DisplayName("Shopping cart is adding correct items (returns the list)")
-    public void itemAddedIsCorrect() {
+    public void itemAddedIsCorrectNameAndPrice() {
        // ShoppingCartService scs = new ShoppingCartService();
         Item shirt = itemFactory.createItem("Shirt", 50.0);
         Item headband = itemFactory.createItem("Headband", 20.0);

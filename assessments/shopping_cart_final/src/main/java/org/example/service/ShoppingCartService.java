@@ -13,7 +13,7 @@ public class ShoppingCartService {
         itemQuantity = new HashMap<>();
     }
 
-
+//add the cartitem in here bc it has quantity -> the array list is now list of cart items (which has quantity)
     public void addItem(Item item) {
         items.add(item);
         String name = item.getName();
