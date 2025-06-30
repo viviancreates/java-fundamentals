@@ -1,9 +1,15 @@
+import java.io.File;
+
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-//        System.out.println("Working directory: " + System.getProperty("user.dir"));
-//        File file = new File("data/input.txt");
+        //defailt working directory is the folder called FileIODemo
+        System.out.println("Working directory: " + System.getProperty("user.dir"));
+        //IF there is a file type, give it a name
+        //path can be absolute or relative -> relative is relative to where you are, start where the app is running
+        // absolute start at root of where the folder is
+        File file = new File("data/example.txt");
 //
 //        System.out.println(file.exists());
 //        System.out.println(file.isFile());
@@ -70,15 +76,15 @@ public class Main {
 //        }
 
         // Java's long winded way of doing 'with'
-        try (BufferedReader reader = new BufferedReader(new FileReader("data/output.txt"))) {
-            String line;
-
-            while ((line = reader.readLine()) != null) {
-                System.out.println(line);
-            }
-        } catch (IOException e) {
-            System.out.println(e);
-        }
+//        try (BufferedReader reader = new BufferedReader(new FileReader("data/output.txt"))) {
+//            String line;
+//
+//            while ((line = reader.readLine()) != null) {
+//                System.out.println(line);
+//            }
+//        } catch (IOException e) {
+//            System.out.println(e);
+//        }
 
         /*
         0-9
