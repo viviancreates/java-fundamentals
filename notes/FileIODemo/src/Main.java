@@ -1,12 +1,6 @@
-package org.example;
-
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    Scanner scanner = new Scanner(System.in);
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
 //        System.out.println("Working directory: " + System.getProperty("user.dir"));
 //        File file = new File("data/input.txt");
@@ -75,16 +69,16 @@ public class App
 //            System.out.println(e);
 //        }
 
-    // Java's long winded way of doing 'with'
+        // Java's long winded way of doing 'with'
         try (BufferedReader reader = new BufferedReader(new FileReader("data/output.txt"))) {
-    String line;
+            String line;
 
-    while ((line = reader.readLine()) != null) {
-        System.out.println(line);
-    }
-} catch (IOException e) {
-    System.out.println(e);
-}
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            System.out.println(e);
+        }
 
         /*
         0-9
@@ -101,4 +95,5 @@ public class App
         00 00 01 90 00 00 01 2C 08 02 00 00 00 A0 9A 8E
         27 00 00 00 09 70 48 59 73 00 00 0B 13 00 00 0B
          */
+    }
 }
