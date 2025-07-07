@@ -1,0 +1,4 @@
+FlightNumber,DateTime,Destination,AircraftType
+AA101,2024-12-15 08:30,New York,Boeing 737
+DL205,2024-12-15 10:45,Los Angeles,Airbus A320
+UA350,2024-12-15 14:20,Chicago,Boeing 777

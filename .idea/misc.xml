@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/notes/waitlist-2/pom.xml" />
+        <option value="$PROJECT_DIR$/notes/spring-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/notes/adventure-game/pom.xml" />
+        <option value="$PROJECT_DIR$/notes/waitlist_example/pom.xml" />
+        <option value="$PROJECT_DIR$/notes/spring_props_demo/pom.xml" />
+        <option value="$PROJECT_DIR$/notes/rock-paper-scissors/pom.xml" />
+        <option value="$PROJECT_DIR$/assessments/shopping_cart_wip/pom.xml" />
+        <option value="$PROJECT_DIR$/assessments/shopping_cart_final/pom.xml" />
+        <option value="$PROJECT_DIR$/mls_exercises/code_kata/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_24" default="true" project-jdk-name="openjdk-24" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
