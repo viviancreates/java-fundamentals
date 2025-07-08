@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5a05988e-e726-494c-8661-c5b47b1d338f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/view/AirportTerminalApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/model/Aircraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/domain/model/Aircraft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/model/CommercialAircraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/domain/model/CommercialAircraft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/model/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/domain/model/Flight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/model/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/domain/model/Passenger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/model/PrivateJet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/domain/model/PrivateJet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/airport/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/airport/AirportTerminalAppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/domain/model/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/domain/model/Flight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/repository/SampleFlightRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/repository/SampleFlightRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/airport/AirportTerminalAppTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +27,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2za6BGpHMULaB3EjHFPUFDw0P2s" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -41,19 +38,57 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.airport_terminal_wip [test].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/airport" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="airport_terminal_wip [test]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="test" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Maven.airport_terminal_wip [test]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

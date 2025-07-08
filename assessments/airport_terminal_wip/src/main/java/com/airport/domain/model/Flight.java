@@ -10,7 +10,7 @@ public class Flight {
     private Aircraft aircraft;
     private String departureLocation;
 
-    public Flight(String flightNumber, LocalDate departureDate, BigDecimal ticketPrice, Aircraft aircraft, departureLocation) {
+    public Flight(String flightNumber, LocalDate departureDate, BigDecimal ticketPrice, Aircraft aircraft, String departureLocation) {
         this.flightNumber = flightNumber;
         this.departureDate = departureDate;
         this.ticketPrice = ticketPrice;

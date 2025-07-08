@@ -1,14 +1,13 @@
 package com.airport.repository;
 
 import com.airport.domain.model.Flight;
-import com.airport.model.CommercialAircraft;
-import com.airport.model.PrivateJet;
+import com.airport.domain.model.CommercialAircraft;
+import com.airport.domain.model.PrivateJet;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
-@Repository
 public class SampleFlightRepository implements FlightRepository {
 
     @Override
@@ -31,13 +30,13 @@ public class SampleFlightRepository implements FlightRepository {
 
                 new Flight("SW112", LocalDate.of(2025, 12, 15),
                         new BigDecimal("3000.00"),
-                        new PrivateJet(""),
+                        new PrivateJet("PJName111", 5, 1000, true, 1000),
                         "Denver"),
 
                 new Flight("JB401", LocalDate.of(2025, 12, 15),
                         new BigDecimal("2000.00"),
-                        new PrivateJet(),
-                        "Miami"),
+                        new PrivateJet("Pjpj11", 10, 2000, true, 1500),
+                        "Miami")
         );
     }
 }
