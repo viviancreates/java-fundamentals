@@ -10,12 +10,15 @@ public class InMemoryWaitlist implements WaitlistRepository {
         parties = new ArrayList<>();
     }
 
+    //when we load, this is where we can do some sample data
     @Override
     public void load() {
 //        parties.add(new Party("Wise", 3));
 //        parties.add(new Party("Smith", 5));
     }
 
+    //if your save is in memory, you are not saving anything to the system
+    // will just return, not going to save anything -> bc we want the data to go away
     @Override
     public void save() {
         return;
