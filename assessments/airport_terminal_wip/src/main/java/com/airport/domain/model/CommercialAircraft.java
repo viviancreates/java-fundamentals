@@ -1,4 +1,4 @@
-package com.airport.model;
+package com.airport.domain.model;
 
 public class CommercialAircraft extends Aircraft {
     private String airlineName;

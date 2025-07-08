@@ -1,10 +1,10 @@
-package com.airport;
+package com.airport.view;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class AirportTerminalApp
 {
     public static void main( String[] args )
     {

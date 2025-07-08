@@ -1,4 +1,4 @@
-package com.airport.model;
+package com.airport.domain.model;
 
 public class Passenger {
     private String name;

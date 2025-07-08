@@ -1,4 +1,4 @@
-package com.airport.model;
+package com.airport.domain.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -8,12 +8,22 @@ public class Flight {
     private LocalDate departureDate;
     private BigDecimal ticketPrice;
     private Aircraft aircraft;
+    private String departureLocation;
 
-    public Flight(String flightNumber, LocalDate departureDate, BigDecimal ticketPrice, Aircraft aircraft) {
+    public Flight(String flightNumber, LocalDate departureDate, BigDecimal ticketPrice, Aircraft aircraft, departureLocation) {
         this.flightNumber = flightNumber;
         this.departureDate = departureDate;
         this.ticketPrice = ticketPrice;
         this.aircraft = aircraft;
+        this.departureLocation = departureLocation;
+    }
+
+    public String getDepartureLocation() {
+        return departureLocation;
+    }
+
+    public void setDepartureLocation(String departureLocation) {
+        this.departureLocation = departureLocation;
     }
 
     public String getFlightNumber() {

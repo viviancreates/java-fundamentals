@@ -1,0 +1,44 @@
+package com.airport.repository;
+
+import com.airport.domain.model.Flight;
+import com.airport.model.CommercialAircraft;
+import com.airport.model.PrivateJet;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.List;
+
+@Repository
+public class SampleFlightRepository implements FlightRepository {
+
+    @Override
+    public List<Flight> loadFlights() {
+        return List.of(
+                new Flight("AA101", LocalDate.of(2025, 12, 15),
+                        new BigDecimal("200.00"),
+                        new CommercialAircraft("Boeing 737", 200, 1000, "American"),
+                        "New York"),
+
+                new Flight("DL205", LocalDate.of(2025, 12, 15),
+                        new BigDecimal("400.00"),
+                        new CommercialAircraft("Airbus A320", 300, 2000, "Delta"),
+                        "Los Angeles"),
+
+                new Flight("UA350", LocalDate.of(2025, 12, 15),
+                        new BigDecimal("300.00"),
+                        new CommercialAircraft("Boeing 777", 300, 3000, "United"),
+                        "Chicago"),
+
+                new Flight("SW112", LocalDate.of(2025, 12, 15),
+                        new BigDecimal("3000.00"),
+                        new PrivateJet(""),
+                        "Denver"),
+
+                new Flight("JB401", LocalDate.of(2025, 12, 15),
+                        new BigDecimal("2000.00"),
+                        new PrivateJet(),
+                        "Miami"),
+        );
+    }
+}
+//String model, int capacity, double fuelCapacity, boolean hasLuxuryService, int maxSpeed

@@ -1,4 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5a05988e-e726-494c-8661-c5b47b1d338f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/view/AirportTerminalApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/model/Aircraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/domain/model/Aircraft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/model/CommercialAircraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/domain/model/CommercialAircraft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/model/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/domain/model/Flight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/model/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/domain/model/Passenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/model/PrivateJet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/domain/model/PrivateJet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/airport/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/airport/AirportTerminalAppTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
   <component name="ProjectId" id="2za6BGpHMULaB3EjHFPUFDw0P2s" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/airport" />
+    </key>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5a05988e-e726-494c-8661-c5b47b1d338f" name="Changes" comment="" />
+      <created>1751956699470</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1751956699470</updated>
+    </task>
+    <servers />
+  </component>
 </project>
