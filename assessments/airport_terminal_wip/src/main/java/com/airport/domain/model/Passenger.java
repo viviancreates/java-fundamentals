@@ -24,4 +24,8 @@ public class Passenger {
     public void setPassportNumber(String passportNumber) {
         this.passportNumber = passportNumber;
     }
+
+    public boolean isEmpty() {
+        return "None".equalsIgnoreCase(name) || "None".equalsIgnoreCase(passportNumber);
+    }
 }

@@ -32,8 +32,13 @@ The application uses:
 
 ## Notes
 - Edit setters
-- 
-
+- **Ternary**
+  - The ternary operator is a mini if else statement in a single line
+  ```
+  condition ? valueIfTrue : valueIfFalse
+  ```
+- if the condition is true, use valueiftrue
+- if the condition is false, use valueiffalse
 
 
 ## Learnings
@@ -63,3 +68,6 @@ The application uses:
   - This keeps data structures simple
   - Keep it simple and wrap related pieces of data together if they always belong together
     - ...easier to test, avoids confusing multiple maps(shopping cart assessment -> had to update both maps)
+
+## Questions
+- Is it better to put the validation in the model or csvrepo - is the passenger existing -> none
