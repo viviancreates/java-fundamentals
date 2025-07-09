@@ -31,8 +31,7 @@ public class TerminalIO {
         System.out.println("=== AIRPORT TERMINAL MENU ===");
         System.out.println("1. Create Reservation");
         System.out.println("2. View All Reservations");
-        System.out.println("3. Remove Reservations");
-        System.out.println("4. Quit");
+        System.out.println("3. Quit");
         System.out.println();
 
         return getIntegerInputWithDefault("Please select an option (1-4): ", -1);
@@ -60,4 +59,47 @@ public class TerminalIO {
     public void displayMessage(String message) {
         System.out.println(message);
     }
+
+    public BigDecimal getBigDecimalInput(String prompt) {
+        System.out.print(prompt);
+        String input = console.nextLine().trim();
+
+        if (input.isEmpty()) {
+            displayError("Input cannot be empty. Please try again.");
+            return getBigDecimalInput(prompt);
+        }
+
+        try {
+            BigDecimal value = new BigDecimal(input);
+            if (value.compareTo(BigDecimal.ZERO) <= 0) {
+                displayError("Please enter a positive price.");
+                return getBigDecimalInput(prompt);
+            }
+            return value;
+        } catch (NumberFormatException e) {
+            displayError("Please enter a valid price (e.g., 19.99).");
+            return getBigDecimalInput(prompt);
+        }
+    }
+
+    private int getIntegerInputWithDefault(String prompt, int defaultValue) {
+        System.out.print(prompt);
+        String input = console.nextLine().trim();
+
+        if (input.isEmpty()) {
+            return defaultValue;
+        }
+
+        try {
+            return Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            displayError("Please enter a valid number.");
+            return getIntegerInputWithDefault(prompt, defaultValue);
+        }
+    }
+
+    public void displayError(String message) {
+        System.out.println("✗ ERROR: " + message);
+    }
+
 }
