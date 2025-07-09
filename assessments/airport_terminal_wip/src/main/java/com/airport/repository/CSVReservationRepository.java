@@ -32,9 +32,20 @@ public class CSVReservationRepository {
             String line;
 
             while ((line = reader.readLine()) != null) {
-                System.out.println(line);
+                if (line.trim().isEmpty()) {
+                    continue;
             }
 
+
+//flightNumber,departureDate,ticketPrice,passengerName,passportNumber,aircraftModel,aircraftType
+                //map only holds the flightnumber -> list of passengers
+                //NOT STORING THE ENTIRE OBJECT INSIDE MAP YET
+                String[] parts = line.split(",");
+                if (parts.length == 7) {
+                    String flightNumber = parts[0].trim();
+                    LocalDate departuredate
+                    String title = parts[1].trim();
+                    String author = parts[2].trim();
             /*
              while ((line = reader.readLine()) != null) {
                 if (line.trim().isEmpty()) {
@@ -86,3 +97,6 @@ public class CSVReservationRepository {
 
 
 }
+
+//flightNumber,departureDate,ticketPrice,passengerName,passportNumber,aircraftModel,aircraftType
+//AA101,2024-05-10,299.99,Alice Smith,P12345,Boeing 737,Commercial
