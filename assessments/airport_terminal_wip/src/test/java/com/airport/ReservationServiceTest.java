@@ -63,6 +63,4 @@ public class ReservationServiceTest {
         assertEquals(expectedSize, actualSize);
     }
 
-
-
 }
