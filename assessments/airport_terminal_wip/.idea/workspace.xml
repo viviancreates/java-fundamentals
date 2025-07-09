@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a05988e-e726-494c-8661-c5b47b1d338f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../notes/library_manager/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../notes/library_manager/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../notes/library_manager/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../notes/library_manager/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../notes/library_manager/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../notes/library_manager/.mvn/jvm.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../notes/library_manager/.mvn/maven.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../notes/library_manager/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../notes/library_manager/src/main/java/com/example/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../notes/library_manager/src/main/java/com/example/model/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../notes/library_manager/src/main/java/com/example/model/BookShelfItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../notes/library_manager/src/main/java/com/example/service/ShelfService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../notes/library_manager/src/test/java/com/example/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../notes/library_manager/src/test/java/com/example/ShelfServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/airport/ReservationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/airport/ReservationServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../notes/library_manager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/library_manager/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

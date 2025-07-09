@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1adf9d6a-0f12-411d-b361-2401d11f2c32" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/jvm.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/maven.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/model/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/model/BookShelfItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/service/ShelfService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/ShelfServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../assessments/airport_terminal_wip/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../assessments/airport_terminal_wip/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../assessments/airport_terminal_wip/src/test/java/com/airport/ReservationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../assessments/airport_terminal_wip/src/test/java/com/airport/ReservationServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
