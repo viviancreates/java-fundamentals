@@ -31,7 +31,8 @@ The application uses:
 
 
 ## Notes
-
+- Edit setters
+- 
 
 
 
@@ -39,6 +40,26 @@ The application uses:
 
 - Use `HashMap` to map flights to passengers
 - Check for `null` when working with maps (vs. checking empty)
-- Remember for testing -> validate all options, if there is a positive, there must be a negative etc
+- Remember for testing -> validate all options, if there is a positive(happy outcome), there must be a negative (invalid outcome)etc
+  - Especially for validations
+- Different data relationships affect structure
 
+- Bookstore Pattern
+  - Each CSV row represents one book and its inventory information 
+  - Uses a Book class plus an InventoryItem class
+  - A single map (Map<String, InventoryItem>) is enough because it wraps the Book plus its data
 
+- Airport Terminal
+  - Each CSV row represents one reservation: flight details plus passenger
+  - Instead of managing two separate maps (Flight and List<Passenger>), it is clearer to use a Reservation class that holds both
+  - A single List<Reservation> matches one line per reservation -> this keeps the Flight and Passenger classes simple and reusable
+
+- Shopping Cart Insight
+  - Code review remark - two separate HashMaps made the design more complicated
+  - A better pattern would have been to create a Cart model and wraps Item plus quantity in one object
+    - ...then, one list or map is enough
+
+- If each row in CSV naturally maps to one logical thing, then model that thing with its own class
+  - This keeps data structures simple
+  - Keep it simple and wrap related pieces of data together if they always belong together
+    - ...easier to test, avoids confusing multiple maps(shopping cart assessment -> had to update both maps)

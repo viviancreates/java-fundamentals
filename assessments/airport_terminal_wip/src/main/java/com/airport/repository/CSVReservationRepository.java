@@ -38,14 +38,15 @@ public class CSVReservationRepository {
 
 
 //flightNumber,departureDate,ticketPrice,passengerName,passportNumber,aircraftModel,aircraftType
-                //map only holds the flightnumber -> list of passengers
-                //NOT STORING THE ENTIRE OBJECT INSIDE MAP YET
                 String[] parts = line.split(",");
                 if (parts.length == 7) {
                     String flightNumber = parts[0].trim();
-                    LocalDate departuredate
-                    String title = parts[1].trim();
-                    String author = parts[2].trim();
+                    LocalDate departuredate = LocalDate.parseInt(parts[1].trim());
+                    BigDecimal ticketPrice = new BigDecimal(parts[2].trim());
+                    String passengerName = parts[3].trim();
+                    String passportNumnber = parts[4].trim();
+                    String AircraftModel = parts[5].trim();
+                    String aircraftType = parts[6].trim();
             /*
              while ((line = reader.readLine()) != null) {
                 if (line.trim().isEmpty()) {
