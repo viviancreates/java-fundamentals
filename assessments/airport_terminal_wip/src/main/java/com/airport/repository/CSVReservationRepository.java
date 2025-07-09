@@ -12,8 +12,20 @@ import java.io.BufferedReader;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ArrayList;
+import java.io.*;
+import java.math.BigDecimal;
+import java.math.LocalDate;
+import java.util.*;
+
 
 import com.airport.domain.model.Passenger;
+import com.airport.domain.model.Flight;
+import com.airport.domain.model.Reservation;
+import com.airport.domain.model.Aircraft;
+import com.airport.domain.model.CommercialAircraft;
+import com.airport.domain.model.PrivateJet;
+
+
 
 public class CSVReservationRepository {
 
@@ -39,7 +51,7 @@ public class CSVReservationRepository {
 
 //flightNumber,departureDate,ticketPrice,passengerName,passportNumber,aircraftModel,aircraftType
                 String[] parts = line.split(",");
-                if (parts.length == 7) {
+                if (parts.length == 8) {
                     String flightNumber = parts[0].trim();
                     LocalDate departuredate = LocalDate.parseInt(parts[1].trim());
                     BigDecimal ticketPrice = new BigDecimal(parts[2].trim());
@@ -47,6 +59,10 @@ public class CSVReservationRepository {
                     String passportNumnber = parts[4].trim();
                     String AircraftModel = parts[5].trim();
                     String aircraftType = parts[6].trim();
+                    String de = parts[6].trim();
+
+                    //Build aircraft like build book
+                    Flight flight = new Flight(flightNumber,departureDate,ticketPrice, aircraft, departureLocation)
             /*
              while ((line = reader.readLine()) != null) {
                 if (line.trim().isEmpty()) {
