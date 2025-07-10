@@ -7,6 +7,10 @@ import com.airport.domain.model.Aircraft;
 import com.airport.domain.model.CommercialAircraft;
 import com.airport.domain.model.PrivateJet;
 
+import com.airport.domain.command.Command;
+import com.airport.domain.command.CreateReservationCommand;
+import com.airport.domain.command.ViewAllReservationsCommand;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 /**
@@ -15,8 +19,16 @@ import java.time.LocalDate;
  */
 public class AirportTerminalApp {
     public static void main( String[] args ) {
-        TerminalUtils io = new TerminalIO();
+        TerminalIO io = new TerminalIO();
+        CSVReservationRepository repo = new CSVReservationRepository();
+
+        //initialize -> loads the reservations from the file
+        repo.init();
+        Command createReservationCommand = new CreateReservationCommand(repo, io);
+        Command viewAllReservationsCommand = new ViewAllReservationsCommand(repo, io);
+
         boolean running = true;
+
 
         io.displayWelcome();
 
@@ -28,15 +40,15 @@ public class AirportTerminalApp {
 
         while(running) {
             io.displayMenu();
-            int choice = io.getIntInput("Enter choice: ");
+            int choice = io.displayMenuAndGetChoice();
 
             switch (choice) {
                 case 1:
-                    displayCartCommand.execute();
+                    createReservationCommand.execute();
                     break;
 
                 case 2:
-                    addItemCommand.execute();
+                    viewAllReservationsCommand.execute();
                     break;
 
                 case 3:
@@ -44,17 +56,14 @@ public class AirportTerminalApp {
                     break;
 
                 case 4:
-                    checkoutCommand.execute();
-                    break;
-
-                case 5:
-                    io.displayMessage("You are exiting the shopping cart. Thank you.");
+                    io.displayMessage("You are exiting Airport Terminal. Thank you.");
                     running = false;
 
-                case 6:
-                    io.displayMessage("Try Again. Please select a choice from the Menu.");
+                case 5:
+                    io.displayError("Try Again. Please select a choice from the Menu.");
                     break;
             }
         }
+        io.displayGoodbye();
     }
 }
