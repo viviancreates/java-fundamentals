@@ -1,19 +1,92 @@
 package com.airport.domain.reservation;
 
 import com.airport.domain.model.Passenger;
+import com.airport.repository.CSVReservationRepository;
+import com.airport.domain.model.Reservation;
+
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.List;
 
 
 public class ReservationService {
+
+    private final CSVReservationRepository repository;
+
+    public ReservationService(CSVReservationRepository repository) {
+        this.repository = repository;
+        this.repository.init();
+    }
+
+    public void addReservation(Reservation reservation) {
+        repository.addReservation(reservation);
+    }
+
+    public ArrayList<Reservation> getAllReservations() {
+        return repository.getAllReservations();
+    }
+
+
+}
+
+
+
+
+
+
+/*
+    //need to change this map -> otherwise will not save to reserfations csv -> use repo
+    //1. REMOVE THIS MAPO
+    //private Map<String, ArrayList<Passenger>> reservations = new HashMap<>();
+
+    //ReservationService will use the data inside the CSVReservationRepository
+    //so ther service tells it what to do
+    //the repo is moving around the data?
+
+    private final CSVReservationRepository repository;
+
+    public ReservationService(CSVReservationRepository) {
+        this.repository = repository;
+        this.repository.init();
+    }
+
+    public void addPassengerToFlight(String flightNumber, Passenger passenger) {
+        ArrayList<Passenger> passengersOnFlight = reservations.get(flightNumber);
+
+        if (passengersOnFlight == null) {
+            passengersOnFlight = new ArrayList<>();
+            reservations.put(flightNumber, passengersOnFlight);
+        }
+
+        passengersOnFlight.add(passenger);
+    }
+
+    public ArrayList<Passenger> getPassengersOnFlight(String flightNumber) {
+        ArrayList<Passenger> passengersOnFlight = reservations.get(flightNumber);
+
+        if (passengersOnFlight == null) {
+            return new ArrayList<>();
+        }
+        return passengersOnFlight;
+    }
+}
+
+ */
+
+
+    /*
     //Key: Flight number (String)
     //Value: List of passengers (ArrayList<Passenger>)
     private Map<String, ArrayList<Passenger>> reservations = new HashMap<>();
     //reservations is the hashmap
     //it is defined once the ReservationService object is created
     //Stays in memory as long as the app is running
+
+    private final CSVReservationRepository repository;
+
+    public ReservationService(CSVReservationRepository) {
+        this.repository = repository;
+        this.repository.init();
+    }
 
     //method to add passender to flight
     // pass in available flights from repo and a passenger
@@ -58,4 +131,4 @@ public class ReservationService {
         return passengersOnFlight;
     }
 
-}
+     */

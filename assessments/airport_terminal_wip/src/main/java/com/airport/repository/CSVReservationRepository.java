@@ -35,6 +35,28 @@ public class CSVReservationRepository {
         loadFromFile();
     }
 
+    //add addRes and getAllRes methods here -> talk to reservation service
+    public void addReservation(Reservation reservation) {
+        String flightNumber = reservation.getFlight().getFlightNumber();
+        ArrayList<Reservation> reservationList = reservations.get(flightNumber);
+
+        if (reservationList == null) {
+            reservationList = new ArrayList<>();
+            reservations.put(flightNumber, reservationList);
+        }
+
+        reservationList.add(reservation);
+        saveToFile();
+    }
+
+    public ArrayList<Reservation> getAllReservations() {
+        ArrayList<Reservation> all = new ArrayList<>();
+        for (ArrayList<Reservation> list : reservations.values()) {
+            all.addAll(list);
+        }
+        return all;
+    }
+
     private void loadFromFile() {
         File file = new File(filename);
         if (!file.exists()) {

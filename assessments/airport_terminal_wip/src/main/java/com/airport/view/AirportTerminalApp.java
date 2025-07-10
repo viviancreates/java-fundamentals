@@ -1,18 +1,10 @@
 package com.airport.view;
 import com.airport.repository.CSVReservationRepository;
-import com.airport.domain.model.Flight;
-import com.airport.domain.model.Passenger;
-import com.airport.domain.model.Reservation;
-import com.airport.domain.model.Aircraft;
-import com.airport.domain.model.CommercialAircraft;
-import com.airport.domain.model.PrivateJet;
 
 import com.airport.domain.command.Command;
-import com.airport.domain.command.CreateReservationCommand;
-import com.airport.domain.command.ViewAllReservationsCommand;
+import com.airport.domain.command.AddReservationCommand;
+import com.airport.domain.command.GetAllReservationsCommand;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
 /**
  * Hello world!
  *
@@ -24,8 +16,8 @@ public class AirportTerminalApp {
 
         //initialize -> loads the reservations from the file
         repo.init();
-        Command createReservationCommand = new CreateReservationCommand(repo, io);
-        Command viewAllReservationsCommand = new ViewAllReservationsCommand(repo, io);
+        Command addReservationCommand = new AddReservationCommand(repo, io);
+        Command getAllReservationsCommand = new GetAllReservationsCommand(repo, io);
 
         boolean running = true;
 
@@ -44,15 +36,11 @@ public class AirportTerminalApp {
 
             switch (choice) {
                 case 1:
-                    createReservationCommand.execute();
+                    addReservationCommand.execute();
                     break;
 
                 case 2:
-                    viewAllReservationsCommand.execute();
-                    break;
-
-                case 3:
-                    removeItemCommand.execute();
+                    getAllReservationsCommand.execute();
                     break;
 
                 case 4:

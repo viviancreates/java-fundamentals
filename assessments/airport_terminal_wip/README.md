@@ -23,6 +23,7 @@ The application uses:
 ##To Do
 
 - [x] Domain models
+  - [] Refactor - do not want to use default values
 - [x] Repository
 - [x] ReservationService 
 - [ ] Unit tests
@@ -42,6 +43,18 @@ The application uses:
 
 
 ## Learnings
+
+- Changes in service, due to repo -> the repo tells data what to do
+  - FILE HANDLING CODE -> reads and writes csv
+- the service holds business logic and coordinates domain operations
+  - BUSINESS RULES -> a passenger needs a passport number and a name
+    - can validate passenger data befor saving
+    - can check if a seat is even abilable
+
+**Repository** where the data lives
+**Service** where the logic lives
+**View** where user flow lives
+---
 
 - Use `HashMap` to map flights to passengers
 - Check for `null` when working with maps (vs. checking empty)
