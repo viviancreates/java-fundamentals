@@ -28,7 +28,7 @@ public class AddReservationCommand implements Command {
 
         //input
         String flightNumber = io.getStringInput("Enter Flight Number: ");
-        String dateInput = io.getStringInput("Enter Departure Date: ");
+        String dateInput = io.getStringInput("Enter Departure Date (YYYY-MM-DD): ");
         LocalDate departureDate = LocalDate.parse(dateInput);
         BigDecimal ticketPrice = io.getBigDecimalInput("Enter Ticket Price: ");
         String departureLocation = io.getStringInput("Enter Departure Location: ");

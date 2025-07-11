@@ -20,27 +20,44 @@ The application uses:
 - Save reservations to a CSV file
 - Load reservations from a CSV file
 
-##To Do
+## To Do
 
 - [x] Domain models
   - [] Refactor - do not want to use default values
 - [x] Repository
 - [x] ReservationService 
 - [ ] Unit tests
-- [ ] CSV files
-- [ ] bonus
+- [x] CSV files
+- [ ] Bonus
 
+- [ ] Aircraft type and model the same...
+- [ ] Give flights to choose from, should not enter aircraft type and model... think about flow
 
 ## Notes
 - Edit setters
 - **Ternary**
   - The ternary operator is a mini if else statement in a single line
-  ```
+```
   condition ? valueIfTrue : valueIfFalse
-  ```
+ ```
 - if the condition is true, use valueiftrue
 - if the condition is false, use valueiffalse
 
+```
+// EXAMPLE 
+if (x > y) {
+   print("bigger");
+} else {
+   print("smaller);
+}
+
+// same as
+
+x > y ? print("bigger") : print("smaller");
+
+//? is ternary, it's one line if else shortcut
+
+```
 
 ## Learnings
 
