@@ -1,6 +1,6 @@
 package com.airport.domain.model;
 
-public class Aircraft {
+public abstract class Aircraft {
     private String model;
     private int capacity;
     private double fuelCapacity;
@@ -22,5 +22,7 @@ public class Aircraft {
     public double getFuelCapacity() {
         return fuelCapacity;
     }
+
+    public abstract String getType();
 
 }

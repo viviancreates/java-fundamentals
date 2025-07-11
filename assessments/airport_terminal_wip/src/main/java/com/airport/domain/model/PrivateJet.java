@@ -25,4 +25,9 @@ public class PrivateJet extends Aircraft {
     public void setMaxSpeed(int maxSpeed) {
         this.maxSpeed = maxSpeed;
     }
+
+    @Override
+    public String getType() {
+        return "PrivateJet";
+    }
 }

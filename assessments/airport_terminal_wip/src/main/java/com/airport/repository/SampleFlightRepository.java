@@ -7,12 +7,14 @@ import com.airport.domain.model.PrivateJet;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Arrays;
+
 
 public class SampleFlightRepository implements FlightRepository {
 
     @Override
     public List<Flight> loadFlights() {
-        return List.of(
+        return Arrays.asList(
                 new Flight("AA101", LocalDate.of(2025, 12, 15),
                         new BigDecimal("200.00"),
                         new CommercialAircraft("Boeing 737", 200, 1000, "American"),

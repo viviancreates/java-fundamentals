@@ -7,10 +7,11 @@
     <list default="true" id="5a05988e-e726-494c-8661-c5b47b1d338f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/domain/command/AddReservationCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/domain/command/AddReservationCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/domain/command/GetAllReservationsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/domain/command/GetAllReservationsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/repository/CSVReservationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/repository/CSVReservationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/domain/model/Aircraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/domain/model/Aircraft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/domain/model/CommercialAircraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/domain/model/CommercialAircraft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/domain/model/PrivateJet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/domain/model/PrivateJet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/repository/SampleFlightRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/repository/SampleFlightRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/view/AirportTerminalApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/view/AirportTerminalApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/view/TerminalIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/view/TerminalIO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

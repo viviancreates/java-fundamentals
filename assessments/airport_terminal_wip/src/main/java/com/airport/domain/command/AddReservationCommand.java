@@ -31,6 +31,7 @@ public class AddReservationCommand implements Command {
         String dateInput = io.getStringInput("Enter Departure Date: ");
         LocalDate departureDate = LocalDate.parse(dateInput);
         BigDecimal ticketPrice = io.getBigDecimalInput("Enter Ticket Price: ");
+        String departureLocation = io.getStringInput("Enter Departure Location: ");
         String passengerName = io.getStringInput("Enter Passenger Name: ");
         String passportNumber = io.getStringInput("Enter Passport Number: ");
         String aircraftType = io.getStringInput("Enter Aircraft Type (Commercial or PrivateJet): ");
@@ -44,23 +45,19 @@ public class AddReservationCommand implements Command {
             String airline = "Delta";
 
             aircraft = new CommercialAircraft(aircraftModel, capacity, fuelCapacity, airline);
-        }
-
-        if (aircraftType.equalsIgnoreCase("PrivateJet")) {
+        } else if (aircraftType.equalsIgnoreCase("PrivateJet")) {
             int capacity = 1;
             int fuelCapacity = 1;
             boolean hasLuxuryService = true;
             int maxSpeed = 1;
 
             aircraft = new PrivateJet(aircraftModel, capacity, fuelCapacity, hasLuxuryService, maxSpeed);
-        }
-
-        if (aircraft == null) {
+        } else {
             io.displayError("Invalid aircraft type entered.");
             return;
         }
 
-        Flight flight = new Flight(flightNumber, departureDate, ticketPrice, aircraft);
+        Flight flight = new Flight(flightNumber, departureDate, ticketPrice, aircraft, departureLocation);
         Passenger passenger = new Passenger(passengerName, passportNumber);
         Reservation reservation = new Reservation(flight, passenger);
 

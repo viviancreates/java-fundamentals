@@ -4,17 +4,21 @@ import com.airport.repository.CSVReservationRepository;
 import com.airport.domain.command.Command;
 import com.airport.domain.command.AddReservationCommand;
 import com.airport.domain.command.GetAllReservationsCommand;
+import com.airport.domain.reservation.ReservationService;
 
 
 public class AirportTerminalApp {
     public static void main( String[] args ) {
         TerminalIO io = new TerminalIO();
         CSVReservationRepository repo = new CSVReservationRepository();
+        ReservationService reservationService = new ReservationService(repo);
 
         //initialize -> loads the reservations from the file
         repo.init();
-        Command addReservationCommand = new AddReservationCommand(repo, io);
-        Command getAllReservationsCommand = new GetAllReservationsCommand(repo, io);
+        //Command addReservationCommand = new AddReservationCommand(repo, io);
+        //Command getAllReservationsCommand = new GetAllReservationsCommand(repo, io);
+        Command addReservationCommand = new AddReservationCommand(reservationService, io);
+        Command getAllReservationsCommand = new GetAllReservationsCommand(reservationService, io);
 
         boolean running = true;
 
