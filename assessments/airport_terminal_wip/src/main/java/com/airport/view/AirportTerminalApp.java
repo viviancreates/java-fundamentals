@@ -5,10 +5,7 @@ import com.airport.domain.command.Command;
 import com.airport.domain.command.AddReservationCommand;
 import com.airport.domain.command.GetAllReservationsCommand;
 
-/**
- * Hello world!
- *
- */
+
 public class AirportTerminalApp {
     public static void main( String[] args ) {
         TerminalIO io = new TerminalIO();
@@ -31,7 +28,6 @@ public class AirportTerminalApp {
          */
 
         while(running) {
-            io.displayMenu();
             int choice = io.displayMenuAndGetChoice();
 
             switch (choice) {
@@ -43,11 +39,12 @@ public class AirportTerminalApp {
                     getAllReservationsCommand.execute();
                     break;
 
-                case 4:
+                case 3:
                     io.displayMessage("You are exiting Airport Terminal. Thank you.");
                     running = false;
+                    break;
 
-                case 5:
+                case 4:
                     io.displayError("Try Again. Please select a choice from the Menu.");
                     break;
             }

@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a05988e-e726-494c-8661-c5b47b1d338f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/airport/domain/command/AddReservationCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/domain/command/CreateReservationCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/domain/command/ViewAllReservationsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/domain/command/GetAllReservationsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/domain/reservation/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/domain/reservation/ReservationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/domain/command/AddReservationCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/domain/command/AddReservationCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/domain/command/GetAllReservationsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/domain/command/GetAllReservationsCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/repository/CSVReservationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/repository/CSVReservationRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/view/AirportTerminalApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/view/AirportTerminalApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/view/TerminalIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/view/TerminalIO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,16 +39,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.airport_terminal_wip [test].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AirportTerminalApp.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.airport_terminal_wip [test].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />

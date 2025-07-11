@@ -5,6 +5,9 @@ import java.util.List;
 
 import java.util.Scanner;
 
+import java.math.BigDecimal;
+
+
 public class TerminalIO {
     private final Scanner console;
 

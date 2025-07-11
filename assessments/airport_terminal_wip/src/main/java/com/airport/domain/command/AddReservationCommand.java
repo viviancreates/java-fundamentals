@@ -1,10 +1,16 @@
 package com.airport.domain.command;
-package com.airport.view;
 
+import com.airport.domain.reservation.ReservationService;
 import com.airport.view.TerminalIO;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import com.airport.domain.model.Reservation;
+import com.airport.domain.model.Aircraft;
+import com.airport.domain.model.CommercialAircraft;
+import com.airport.domain.model.PrivateJet;
+import com.airport.domain.model.Flight;
+import com.airport.domain.model.Passenger;
 
 public class AddReservationCommand implements Command {
 
@@ -62,5 +68,4 @@ public class AddReservationCommand implements Command {
         reservationService.addReservation(reservation);
         io.displayMessage("Reservation created and saved!");
     }
-}
 }

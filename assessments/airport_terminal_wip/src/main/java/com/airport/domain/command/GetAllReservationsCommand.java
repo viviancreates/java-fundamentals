@@ -1,5 +1,11 @@
 package com.airport.domain.command;
 
+import com.airport.domain.reservation.ReservationService;
+import com.airport.view.TerminalIO;
+import com.airport.domain.model.Reservation;
+
+import java.util.ArrayList;
+
 public class GetAllReservationsCommand implements Command {
     private final ReservationService reservationService;
     private final TerminalIO io;
