@@ -1,0 +1,23 @@
+package com.airport.domain.model;
+
+public class Passenger {
+    private String name;
+    private String passportNumber;
+
+    public Passenger(String name, String passportNumber) {
+        this.name = name;
+        this.passportNumber = passportNumber;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPassportNumber() {
+        return passportNumber;
+    }
+
+    public boolean isEmpty() {
+        return "None".equalsIgnoreCase(name) || "None".equalsIgnoreCase(passportNumber);
+    }
+}

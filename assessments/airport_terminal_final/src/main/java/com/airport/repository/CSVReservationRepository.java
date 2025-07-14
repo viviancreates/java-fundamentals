@@ -7,8 +7,6 @@ import java.io.PrintWriter;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
 import java.io.BufferedReader;
-
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ArrayList;
@@ -16,16 +14,12 @@ import java.io.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.*;
-
-
 import com.airport.domain.model.Passenger;
 import com.airport.domain.model.Flight;
 import com.airport.domain.model.Reservation;
 import com.airport.domain.model.Aircraft;
 import com.airport.domain.model.CommercialAircraft;
 import com.airport.domain.model.PrivateJet;
-
-
 
 public class CSVReservationRepository {
     private final Map<String, ArrayList<Reservation>> reservations = new HashMap<>();
@@ -35,7 +29,6 @@ public class CSVReservationRepository {
         loadFromFile();
     }
 
-    //add addRes and getAllRes methods here -> talk to reservation service
     public void addReservation(Reservation reservation) {
         if (reservation == null) {
             throw new IllegalArgumentException("Reservation cannot be null");
@@ -52,16 +45,6 @@ public class CSVReservationRepository {
         reservationList.add(reservation);
 
         saveToFile();
-//        String flightNumber = reservation.getFlight().getFlightNumber();
-//        ArrayList<Reservation> reservationList = reservations.get(flightNumber);
-//
-//        if (reservationList == null) {
-//            reservationList = new ArrayList<>();
-//            reservations.put(flightNumber, reservationList);
-//        }
-//
-//        reservationList.add(reservation);
-//        saveToFile();
     }
 
     public ArrayList<Reservation> getAllReservations() {
@@ -80,7 +63,6 @@ public class CSVReservationRepository {
 
         reservations.clear();
 
-        //load the reservation - try with resources
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -98,7 +80,6 @@ public class CSVReservationRepository {
                     String aircraftModel = parts[5].trim();
                     String aircraftType = parts[6].trim();
 
-                    //needd the aircraft in order to build the flight
                     Aircraft aircraft = null;
                     if ("Commercial".equalsIgnoreCase(aircraftType)) {
                         int capacity = 1;
@@ -129,48 +110,33 @@ public class CSVReservationRepository {
                     System.out.println("Skipping invalid line: " + line);
                 }
             }
-
         } catch (IOException e) {
             throw new RuntimeException("Error parsing number from file: " + filename, e);
         }
     }
 
-
     private void saveToFile() {
-        //add a reservation and save - try with resources
         try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
             for (ArrayList<Reservation> list : reservations.values()) {
                 for (Reservation reservation : list) {
-                    //pull out flight and passenger objects from reservation
                     Flight flight = reservation.getFlight();
                     Passenger passenger = reservation.getPassenger();
                     Aircraft aircraft = flight.getAircraft();
 
-                    //write to the csv
                     writer.printf("%s,%s,%.2f,%s,%s,%s,%s%n",
-                            //flightnumber
                             flight.getFlightNumber(),
-                            //departuredate
                             flight.getDepartureDate(),
-                            //ticketprice
                             flight.getTicketPrice(),
-                            //passengerName or None -> if the passenger is null or passenger is empty is true, write none, otherwise get name
                             (passenger == null || passenger.isEmpty()) ? "None" : passenger.getName(),
-                            //passportNumber or None
                             (passenger == null || passenger.isEmpty()) ? "None" : passenger.getPassportNumber(),
-                            //aircraftModel
                             aircraft.getModel(),
-                            //aircraftTye
                             aircraft.getType()
                     );
-
                 }
             }
-
         } catch (IOException e) {
             throw new RuntimeException("Error writing to file: " + filename, e);
         }
-
     }
 }
 
