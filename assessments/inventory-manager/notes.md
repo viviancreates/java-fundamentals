@@ -16,6 +16,8 @@
 - [ ] Unit Tests
 - [ ] File handling works (problems in airport)
 
+- [ ] Abstract class
+
 # Learning
 
 

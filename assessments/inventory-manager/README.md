@@ -8,7 +8,19 @@ The application uses:
 - `ProductRepository` (interface)
 - JUnit Testing -> test service logic
 - CSV file handling
--
+```
+    List<Product> getAll();
+
+    List<Product> getInStock();
+
+    void add(Product product);
+
+    void update(Product product);
+
+    void delete(String productId);
+
+    Product getById(String productId);
+```
 
 ## Features (Methods)
 - Add a product to Inventory
