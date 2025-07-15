@@ -23,6 +23,14 @@ public class CsvProductRepository implements ProductRepository {
         loadFromFile();
     }
 
+    private void saveToFile() {
+
+    }
+
+    private void loadFromFile() {
+
+    }
+
     @Override
     public List<Product> getAll() {
         return new ArrayList<>(products.values());
@@ -35,5 +43,27 @@ public class CsvProductRepository implements ProductRepository {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public void add(Product product) {
+        if (product == null) {
+            throw new IllegalArgumentException("Item cannot be null");
+        }
+        //no need for getProductName.getId like below
+        //inventory.put(item.getBook().isbn(), item);
+        //because it is a wrapper
+        inventory.put(product.getProductId(), product);
+        saveToFile();
+    }
+
+    @Override
+    public void update(Product product) {
+        if (product == null) {
+            throw new IllegalArgumentException("Item cannot be null");
+        }
+        String id = product.getProductId;
+        if (!inventory.containsKey(id)) {
+            throw new IllegalArgumentException()
+        }
+    }
 
 }
