@@ -31,4 +31,9 @@ public class PhysicalGame extends Product {
         return super.toString() + String.format(" - Platform: %s - Store Location: %s - Condition: %s",
                         platform, storeLocation, condition);
     }
+
+    @Override
+    public String getProductType() {
+        return "PhysicalGame";
+    }
 }

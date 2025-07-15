@@ -24,7 +24,24 @@ public class CsvProductRepository implements ProductRepository {
     }
 
     private void saveToFile() {
+        File file = new File(filename);
+        if(!file.exists()) {
+            return; //again if file does not exist, start with an empty products
+        }
 
+        try(BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = reader.readLine()) != mull) {
+                if (line.trim().isEmpty()) {
+                    continue;
+                }
+
+                String[] parts = line.split(",");
+                if (parts.length == ) {
+
+                }
+            }
+        }
     }
 
     private void loadFromFile() {
@@ -51,7 +68,8 @@ public class CsvProductRepository implements ProductRepository {
         //no need for getProductName.getId like below
         //inventory.put(item.getBook().isbn(), item);
         //because it is a wrapper
-        inventory.put(product.getProductId(), product);
+        //put it inthe hashmap
+        products.put(product.getProductId(), product);
         saveToFile();
     }
 
@@ -61,9 +79,29 @@ public class CsvProductRepository implements ProductRepository {
             throw new IllegalArgumentException("Item cannot be null");
         }
         String id = product.getProductId;
-        if (!inventory.containsKey(id)) {
-            throw new IllegalArgumentException()
+
+        //if the map does not contain the key id -> if true
+        if (!products.containsKey(id)) {
+            throw new IllegalArgumentException("Product ID" + id + "can not be found.")
         }
+    }
+
+    @Override
+    public void delete(String id) {
+        if (id == null || id.trim().isEmpty()) {
+            throw new IllegalArgumentException("The ID cannot be null or empty");
+
+        }
+        products.remove(id);
+        saveToFile();
+    }
+
+    @Override
+    punlic Products getByProductId(String id) {
+        if (id == null || id.trim().isEmpty()) {
+            throw new IllegalArgumentException("The ID cannot be null or empty");
+        }
+        return products.get(id);
     }
 
 }

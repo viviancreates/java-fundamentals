@@ -52,4 +52,9 @@ public class Product {
         return String.format( "ID: %s - Name: %s - Qty: %d - Price: $%s",
                 productId, productName, quantity, price);
     }
+
+    @Override
+    public String getProductType() {
+        return "BaseProduct";
+    }
 }

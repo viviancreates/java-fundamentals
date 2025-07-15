@@ -31,4 +31,9 @@ public class PhysicalMerch extends Product {
         return super.toString() + String.format(" - MerchType: %s - Size: %s - Weight: %.2f oz",
                 merchType, size, weightInOz);
     }
+
+    @Override
+    public String getProductType() {
+        return "PhysicalMerch";
+    }
 }

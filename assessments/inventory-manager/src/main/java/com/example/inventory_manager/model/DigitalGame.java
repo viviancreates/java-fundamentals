@@ -25,4 +25,9 @@ public class DigitalGame extends Product {
         return super.toString() + String.format(" - Platform: %s - DownloadKey: %s",
                         platform, downloadKey);
     }
+
+    @Override
+    public String getProductType() {
+        return "DigitalGame";
+    }
 }
