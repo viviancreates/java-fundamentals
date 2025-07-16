@@ -7,9 +7,10 @@
     <list default="true" id="5a05988e-e726-494c-8661-c5b47b1d338f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/reservations.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/reservations.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/repository/SampleFlightRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/airport/ReservationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/airport/ReservationServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/airport/view/AirportTerminalApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/airport/view/AirportTerminalApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../airport_terminal_wip/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../airport_terminal_wip/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../inventory-manager/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/../inventory-manager/notes.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +44,7 @@
     "Application.AirportTerminalApp.executor": "Run",
     "JUnit.ReservationServiceTest.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.airport_terminal_final [clean].executor": "Run",
     "Maven.airport_terminal_wip [test].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -116,6 +118,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/airport/domain/model/Reservation.java</url>
           <line>16</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/airport/domain/model/Passenger.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

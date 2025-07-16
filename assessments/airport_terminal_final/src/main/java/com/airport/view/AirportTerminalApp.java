@@ -39,7 +39,7 @@ public class AirportTerminalApp {
                     running = false;
                     break;
 
-                case 4:
+                default:
                     io.displayError("Try Again. Please select a choice from the Menu.");
                     break;
             }

@@ -21,6 +21,15 @@
   - try to use an enum for game condition
   - maybe add more product types with dates, ints, etc
 # Learning
+How service stays flexible
+Dependency Injection:
+
+ProductService service = new ProductService(new CsvProductRepository());
+vs
+
+ProductService service = new ProductService(new InMemoryProductRepository());
+
+- Same service, different repo — so your tests stay fast and your production logic stays persistent.
 
 
 

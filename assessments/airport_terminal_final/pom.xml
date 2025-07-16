@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.airport</groupId>
-  <artifactId>airport_terminal_wip</artifactId>
+  <artifactId>airport_terminal_final</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>airport_terminal_wip</name>
+  <name>airport_terminal_final</name>
   <url>http://maven.apache.org</url>
 
   <properties>
