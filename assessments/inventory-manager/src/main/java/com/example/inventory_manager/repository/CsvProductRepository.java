@@ -36,15 +36,16 @@ public class CsvProductRepository implements ProductRepository {
     }
 
     private void saveToFile() {
-       try (PrintWriter writer = new PrintWriter(new Filewriter(filename))) {
+       try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
            for (Product product : products.values()) {
                String type = product.getProductType();
 
+               //can probably take out base product
                if (type.equals("PhysicalGame")) {
                    PhysicalGame physicalGame = (PhysicalGame) product;
                    writer.printf("%s,$s,%d,%.2f,%s,%s,%s,%s%n",
-                           physicalGame.getProductName(),
                            physicalGame.getProductId(),
+                           physicalGame.getProductName(),
                            physicalGame.getQuantity(),
                            physicalGame.getPrice(),
                            type,
@@ -55,8 +56,9 @@ public class CsvProductRepository implements ProductRepository {
                } else if (type.equas("DigitalGame")) {
                    DigitalGame digitalGame = (DigitalGame) product;
                    writer.printf("%s,%s,%d,%.2f,%s,%s,%s%n",
-                           digitalGame.getProductName(),
                            digitalGame.getProductId(),
+                           digitalGame.getProductName(),
+
                            digitalGame.getQuantity(),
                            digitalGame.getPrice(),
                            type,
@@ -67,8 +69,9 @@ public class CsvProductRepository implements ProductRepository {
                } else if (type.equals("Merch")) {
                    Merch merch = (Merch) product;
                    writer.printf("%s,%s,%d,%.2f,%s,%s,%s,%.2f%n",
-                           merch.getProductName(),
                            merch.getProductId(),
+                           merch.getProductName(),
+
                            merch.getQuantity(),
                            merch.getPrice(),
                            type,
@@ -78,9 +81,10 @@ public class CsvProductRepository implements ProductRepository {
                    );
                } else if (type.equals("GamePerk")) {
                    GamePerk gamePerk = (GamePerk) product;
-                   writer.printf("%s,%s,%d,%.2f,%s,%s,%s,%.2f%n",
-                           gamePerk.getProductName(),
+                   writer.printf("%s,%s,%d,%.2f,%s,%s,%s,%b,%s%n",
                            gamePerk.getProductId(),
+                           gamePerk.getProductName(),
+
                            gamePerk.getQuantity(),
                            gamePerk.getPrice(),
                            type,
@@ -91,27 +95,84 @@ public class CsvProductRepository implements ProductRepository {
                    );
                }
            }
+       } catch (IOException e) {
+           throw new RuntimeException("Error writing to file: " + filename, e);
        }
     }
 
     private void loadFromFile() {
+        //1. check if the file exists
         File file = new File(filename);
         if(!file.exists()) {
             return; //again if file does not exist, start with an empty products
         }
 
+        products.clear();
+
+        //open the file with buffered reader
         try(BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
-            while ((line = reader.readLine()) != mull) {
+            while ((line = reader.readLine()) != null) {
                 if (line.trim().isEmpty()) {
                     continue;
                 }
 
                 String[] parts = line.split(",");
-                if (parts.length == ) {
 
+                //type tells me what subclass to build
+                String type = parts[4].trim();
+                String productId = null;
+                Product product = null;
+
+                if (type.equals("PhysicalGame")) {
+                    String productName = parts[0].trim();
+                    productId = parts[1].trim();
+                    int quantity = Integer.parseInt(parts[2].trim());
+                    BigDecimal price = new BigDecimal(parts[3].trim());
+                    String platform = parts[5].trim();
+                    String storeLocation = parts[6].trim();
+                    String condition = parts[7].trim();
+
+                    product = new PhysicalGame(productId, productName, quantity, price, platform, storeLocation, condition);
+                } else if (type.equals("DigitalGame")) {
+                    String productName = parts[0].trim();
+                    productId = parts[1].trim();
+                    int quantity = Integer.parseInt(parts[2].trim());
+                    BigDecimal price = new BigDecimal(parts[3].trim());
+                    String platform = parts[5].trim();
+                    String downloadKey = parts[6].trim();
+
+                    product = new DigitalGame(productId, productName, quantity, price, platform, downloadKey);
+                } else if (type.equals("Merch")) {
+                    String productName = parts[0].trim();
+                    productId = parts[1].trim();
+                    int quantity = Integer.parseInt(parts[2].trim());
+                    BigDecimal price = new BigDecimal(parts[3].trim());
+                    String merchType = parts[5].trim();
+                    String size = parts[6].trim();
+                    double weightInOz = Double.parseDouble(parts[7].trim());
+
+                    product = new Merch(productId, productName, quantity, price, merchType, size, weightInOz);
+                } else if (type.equals("GamePerk")) {
+                    String productName = parts[0].trim();
+                    productId = parts[1].trim();
+                    int quantity = Integer.parseInt(parts[2].trim());
+                    BigDecimal price = new BigDecimal(parts[3].trim());
+                    String perkName = parts[5].trim();
+                    LocalDate expirationDate = LocalDate.parse(parts[6].trim());
+                    boolean isTradeable = Boolean.parseBoolean(parts[7].trim());
+                    String perkDownloadCode = parts[8].trim();
+
+                    product = new GamePerk(productId, productName, quantity, price, perkName, expirationDate, isTradeable, perkDownloadCode);
+                }
+                if (product != null) {
+                    products.put(productId, product);
                 }
             }
+        } catch (IOException e) {
+            throw new RuntimeException("Error reading from file: " + filename, e);
+        } catch (NumberFormatException e) {
+            throw new RuntimeException("Error parsing number from file: " + filename, e);
         }
     }
 
