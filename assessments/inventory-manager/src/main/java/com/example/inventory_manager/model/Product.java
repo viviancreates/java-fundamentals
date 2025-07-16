@@ -2,7 +2,7 @@ package com.example.inventory_manager.model;
 
 import java.math.BigDecimal;
 
-public class Product {
+public abstract class Product {
     private String productId;
     private String productName;
     private int quantity;
@@ -53,8 +53,6 @@ public class Product {
                 productId, productName, quantity, price);
     }
 
-    @Override
-    public String getProductType() {
-        return "BaseProduct";
+    public abstract String getProductType() {
     }
 }

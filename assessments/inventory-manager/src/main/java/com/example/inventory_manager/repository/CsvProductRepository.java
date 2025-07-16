@@ -1,16 +1,28 @@
 package com.example.inventory_manager.repository;
 
-import com.example.inventory_manager.model.Product;
-import com.example.inventory_manager.model.PhysicalGame;
-import com.example.inventory_manager.model.DigitalGame;
-import com.example.inventory_manager.model.PhysicalMerch;
-import jakarta.annotation.PostConstruct;
-import org.springframework.beans.factory.annotation.Value;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.FileReader;
+import java.io.FileNotFoundException;
+import java.io.BufferedReader;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.ArrayList;
 import java.io.*;
 import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
+
+import com.example.inventory_manager.model.Product;
+import com.example.inventory_manager.model.PhysicalGame;
+import com.example.inventory_manager.model.DigitalGame;
+import com.example.inventory_manager.model.Merch;
+import com.example.inventory_manager.model.GamePerk;
+import jakarta.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Value;
 
 public class CsvProductRepository implements ProductRepository {
 
@@ -24,6 +36,65 @@ public class CsvProductRepository implements ProductRepository {
     }
 
     private void saveToFile() {
+       try (PrintWriter writer = new PrintWriter(new Filewriter(filename))) {
+           for (Product product : products.values()) {
+               String type = product.getProductType();
+
+               if (type.equals("PhysicalGame")) {
+                   PhysicalGame physicalGame = (PhysicalGame) product;
+                   writer.printf("%s,$s,%d,%.2f,%s,%s,%s,%s%n",
+                           physicalGame.getProductName(),
+                           physicalGame.getProductId(),
+                           physicalGame.getQuantity(),
+                           physicalGame.getPrice(),
+                           type,
+                           physicalGame.getPlatform(),
+                           physicalGame.getStoreLocation(),
+                           physicaGame.getCondition()
+                   );
+               } else if (type.equas("DigitalGame")) {
+                   DigitalGame digitalGame = (DigitalGame) product;
+                   writer.printf("%s,%s,%d,%.2f,%s,%s,%s%n",
+                           digitalGame.getProductName(),
+                           digitalGame.getProductId(),
+                           digitalGame.getQuantity(),
+                           digitalGame.getPrice(),
+                           type,
+                           digitalGame.getPlatform(),
+                           digitalGame.getDowloadKey()
+                   );
+
+               } else if (type.equals("Merch")) {
+                   Merch merch = (Merch) product;
+                   writer.printf("%s,%s,%d,%.2f,%s,%s,%s,%.2f%n",
+                           merch.getProductName(),
+                           merch.getProductId(),
+                           merch.getQuantity(),
+                           merch.getPrice(),
+                           type,
+                           merch.getMerchType(),
+                           merch.getSize(),
+                           merch.getWeightInOz()
+                   );
+               } else if (type.equals("GamePerk")) {
+                   GamePerk gamePerk = (GamePerk) product;
+                   writer.printf("%s,%s,%d,%.2f,%s,%s,%s,%.2f%n",
+                           gamePerk.getProductName(),
+                           gamePerk.getProductId(),
+                           gamePerk.getQuantity(),
+                           gamePerk.getPrice(),
+                           type,
+                           gamePerk.getPerkName(),
+                           gamePerk.getExpirationDate(),
+                           gamePerk.isTradeable(),
+                           gamePerk.getPerkDownload()
+                   );
+               }
+           }
+       }
+    }
+
+    private void loadFromFile() {
         File file = new File(filename);
         if(!file.exists()) {
             return; //again if file does not exist, start with an empty products
@@ -42,10 +113,6 @@ public class CsvProductRepository implements ProductRepository {
                 }
             }
         }
-    }
-
-    private void loadFromFile() {
-
     }
 
     @Override

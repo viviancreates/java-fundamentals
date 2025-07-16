@@ -17,7 +17,9 @@
 - [ ] File handling works (problems in airport)
 
 - [ ] Abstract class
-
+- [ ]Refactor 
+  - try to use an enum for game condition
+  - maybe add more product types with dates, ints, etc
 # Learning
 
 
