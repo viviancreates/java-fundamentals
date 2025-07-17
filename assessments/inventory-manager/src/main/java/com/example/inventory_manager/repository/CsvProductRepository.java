@@ -43,17 +43,7 @@ public class CsvProductRepository implements ProductRepository {
 
                //can probably take out base product
                if (type.equals("PhysicalGame")) {
-                   PhysicalGame physicalGame = (PhysicalGame) product;
-                   writer.printf("%s,$s,%d,%.2f,%s,%s,%s,%s%n",
-                           physicalGame.getProductId(),
-                           physicalGame.getProductName(),
-                           physicalGame.getQuantity(),
-                           physicalGame.getPrice(),
-                           type,
-                           physicalGame.getPlatform(),
-                           physicalGame.getStoreLocation(),
-                           physicalGame.getCondition()
-                   );
+                   savePhysicalGame((PhysicalGame) product, writer, type);
                } else if (type.equals("DigitalGame")) {
                    DigitalGame digitalGame = (DigitalGame) product;
                    writer.printf("%s,%s,%d,%.2f,%s,%s,%s%n",
@@ -99,6 +89,20 @@ public class CsvProductRepository implements ProductRepository {
        } catch (IOException e) {
            throw new RuntimeException("Error writing to file: " + filename, e);
        }
+    }
+
+    private static void savePhysicalGame(PhysicalGame product, PrintWriter writer, String type) {
+        PhysicalGame physicalGame = product;
+        writer.printf("%s,%s,%d,%.2f,%s,%s,%s,%s%n",
+                physicalGame.getProductId(),
+                physicalGame.getProductName(),
+                physicalGame.getQuantity(),
+                physicalGame.getPrice(),
+                type,
+                physicalGame.getPlatform(),
+                physicalGame.getStoreLocation(),
+                physicalGame.getCondition()
+        );
     }
 
     private void loadFromFile() {

@@ -17,9 +17,7 @@ public class AddOrUpdateProductCommand implements Command {
 
     @Override
     public void execute() {
-        productIO.displayMessage("===========================");
-        productIO.displayMessage("   Add or Update Product   ");
-        productIO.displayMessage("===========================");
+        printHeader();
 
 
         String productId = productIO.getStringInput("Enter product ID: ");
@@ -40,10 +38,7 @@ public class AddOrUpdateProductCommand implements Command {
         try {
             switch (typeChoice) {
                 case 1:
-                    String platform = productIO.getStringInput("Enter platform: ");
-                    String storeLocation = productIO.getStringInput("Enter store location: ");
-                    String condition = productIO.getStringInput("Enter condition: ");
-                    newProduct = new PhysicalGame(productId, productName, quantity, price, platform, storeLocation, condition);
+                    newProduct = createBaseProduct(productId, productName, quantity, price);
                     break;
 
                 case 2:
@@ -83,6 +78,21 @@ public class AddOrUpdateProductCommand implements Command {
         } catch (Exception e) {
             productIO.displayError("Failed to add or update product: " + e.getMessage());
         }
+    }
+
+    private Product createBaseProduct(String productId, String productName, int quantity, BigDecimal price) {
+        Product newProduct;
+        String platform = productIO.getStringInput("Enter platform: ");
+        String storeLocation = productIO.getStringInput("Enter store location: ");
+        String condition = productIO.getStringInput("Enter condition: ");
+        newProduct = new PhysicalGame(productId, productName, quantity, price, platform, storeLocation, condition);
+        return newProduct;
+    }
+
+    private void printHeader() {
+        productIO.displayMessage("===========================");
+        productIO.displayMessage("   Add or Update Product   ");
+        productIO.displayMessage("===========================");
     }
 }
     /*

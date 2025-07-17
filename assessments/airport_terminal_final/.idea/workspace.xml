@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5a05988e-e726-494c-8661-c5b47b1d338f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../inventory-manager/src/main/java/com/example/inventory_manager/InventoryManagerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../inventory-manager/src/main/java/com/example/inventory_manager/InventoryManagerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../inventory-manager/src/main/java/com/example/inventory_manager/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../inventory-manager/src/main/java/com/example/inventory_manager/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../inventory-manager/src/main/java/com/example/inventory_manager/view/ProductView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../inventory-manager/src/main/java/com/example/inventory_manager/view/ProductView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../inventory-manager/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../inventory-manager/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../inventory-manager/data/inventory.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../inventory-manager/data/inventory.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../inventory-manager/src/main/java/com/example/inventory_manager/command/AddOrUpdateProductCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../inventory-manager/src/main/java/com/example/inventory_manager/command/AddOrUpdateProductCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../inventory-manager/src/main/java/com/example/inventory_manager/model/GamePerk.java" beforeDir="false" afterPath="$PROJECT_DIR$/../inventory-manager/src/main/java/com/example/inventory_manager/model/GamePerk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../inventory-manager/src/main/java/com/example/inventory_manager/repository/CsvProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../inventory-manager/src/main/java/com/example/inventory_manager/repository/CsvProductRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
