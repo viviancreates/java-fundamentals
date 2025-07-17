@@ -210,7 +210,7 @@ public class CsvProductRepository implements ProductRepository {
 
         //if the map does not contain the key id -> if true
         if (!products.containsKey(id)) {
-            throw new IllegalArgumentException("Product ID" + id + "can not be found.")
+            throw new IllegalArgumentException("Product ID" + id + "can not be found.");
         }
     }
 
@@ -225,7 +225,7 @@ public class CsvProductRepository implements ProductRepository {
     }
 
     @Override
-    punlic Products getByProductId(String id) {
+    public Products getByProductId(String id) {
         if (id == null || id.trim().isEmpty()) {
             throw new IllegalArgumentException("The ID cannot be null or empty");
         }

@@ -1,6 +1,9 @@
 package com.example.inventory_manager.view;
 
-import com.example.inventory_manager.model*
+import com.example.inventory_manager.model.DigitalGame;
+import com.example.inventory_manager.model.GamePerk;
+import com.example.inventory_manager.model.PhysicalGame;
+import com.example.inventory_manager.model.Merch;
 import org.springframework.stereotype.Component;
 
 import java.util.Scanner;

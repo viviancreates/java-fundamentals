@@ -9,7 +9,7 @@ public class GamePerk extends Product{
     private boolean isTradeable;
     private String perkDownloadCode;
 
-    public GamePerk)String productId, String productName, int Quantity, BigDecimal price, String perkName, LocalDate expirationDate, boolean isTradeable, String perkCode) {
+    public GamePerk(String productId, String productName, int quantity, BigDecimal price, String perkName, LocalDate expirationDate, boolean isTradeable, String perkCode) {
     super(productId, productName, quantity, price);
     this.perkName = perkName;
     this.expirationDate = expirationDate;
