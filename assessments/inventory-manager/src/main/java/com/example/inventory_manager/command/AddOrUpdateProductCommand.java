@@ -3,7 +3,7 @@ package com.example.inventory_manager.command;
 import com.example.inventory_manager.model.*;
 import com.example.inventory_manager.service.ProductService;
 import com.example.inventory_manager.view.ProductIO;
-
+import java.time.LocalDate;
 import java.math.BigDecimal;
 
 public class AddOrUpdateProductCommand implements Command {
@@ -47,25 +47,24 @@ public class AddOrUpdateProductCommand implements Command {
                     break;
 
                 case 2:
-                    String platform = productIO.getStringInput("Enter platform: ");
+                    String platform1 = productIO.getStringInput("Enter platform: ");
                     String downloadKey = productIO.getStringInput("Enter download key: ");
-                    newProduct = new DigitalGame(productId, productName, quantity, price, platform, downloadKey);
+                    newProduct = new DigitalGame(productId, productName, quantity, price, platform1, downloadKey);
                     break;
 
                 case 3:
                     String merchType = productIO.getStringInput("Enter merch type: ");
                     String size = productIO.getStringInput("Enter size: ");
-                    BigDecimal weight = productIO.getBigDecimalInput("Enter weight (oz): ");
+                    double weight = productIO.getDoubleInput("Enter weight (oz): ");
                     newProduct = new Merch(productId, productName, quantity, price, merchType, size, weight);
                     break;
 
                 case 4:
                     String perkName = productIO.getStringInput("Enter perk name: ");
-                    String expirationDate = productIO.getStringInput("Enter expiration date (YYYY-MM-DD): ");
-                    //boolean isTradeable = productIO.getStringInput("Is the perk transferable? (yes/no): ");
-
-                    String download = productIO.getStringInput("Enter perk download key: ");
-                    newProduct = new GamePerk(productId, productName, quantity, price, perkName, expirationDate, download);
+                    LocalDate expirationDate = productIO.getDateInput("Enter expiration date (YYYY-MM-DD): ");
+                    boolean isTradeable = productIO.getBooleanInput("Is the perk transferable? (yes/no): ");
+                    String perkDownloadCode = productIO.getStringInput("Enter perk download key: ");
+                    newProduct = new GamePerk(productId, productName, quantity, price, perkName, expirationDate, isTradeable, perkDownloadCode);
                     break;
 
                 default:

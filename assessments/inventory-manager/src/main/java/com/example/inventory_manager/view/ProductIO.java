@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 import java.util.Scanner;
 import java.util.List;
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.format.*;
 
 @Component
 public class ProductIO {
@@ -82,6 +84,42 @@ public class ProductIO {
         } catch (NumberFormatException e) {
             displayError("Please enter a valid price (e.g., 19.99).");
             return getBigDecimalInput(prompt);
+        }
+    }
+
+    public LocalDate getDateInput(String prompt) {
+        while (true) {
+            String input = getStringInput(prompt);
+            try {
+                return LocalDate.parse(input);
+            } catch (DateTimeParseException e) {
+                displayError("Please enter a valid date in the format YYYY-MM-DD.");
+            }
+        }
+    }
+
+    public boolean getBooleanInput(String prompt) {
+        while (true) {
+            String input = getStringInput(prompt + " (yes/no): ").trim().toLowerCase();
+            if (input.equals("yes")) {
+                return true;
+            } else if (input.equals("no")) {
+                return false;
+            } else {
+                displayError("Please enter 'yes' or 'no'.");
+            }
+        }
+    }
+
+    public double getDoubleInput(String prompt) {
+        while (true) {
+            System.out.print(prompt);
+            String input = console.nextLine();
+            try {
+                return Double.parseDouble(input);
+            } catch (NumberFormatException exception) {
+                System.out.println("Enter a valid number.");
+            }
         }
     }
 

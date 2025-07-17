@@ -21,7 +21,7 @@ public class ProductService {
         }
 
         String id = product.getProductId();
-        Product existingProduct = productRepository.getByProductId(id);
+        Product existingProduct = productRepository.getById(id);
 
         if (existingProduct != null) {
             // updat -> overwrite quantity & price
@@ -39,7 +39,7 @@ public class ProductService {
     }
 
     public Product getProduct(String id) {
-        return productRepository.getByProductId(id);
+        return productRepository.getById(id);
     }
 
     public List<Product> getAllProducts() {
