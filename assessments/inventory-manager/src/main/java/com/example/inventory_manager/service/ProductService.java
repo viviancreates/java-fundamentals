@@ -5,12 +5,15 @@ import com.example.inventory_manager.repository.ProductRepository;
 import com.example.inventory_manager.model.Product;
 
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public class ProductService {
     // depends on the interface
     private final ProductRepository productRepository;
 
+    @Autowired
     public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
