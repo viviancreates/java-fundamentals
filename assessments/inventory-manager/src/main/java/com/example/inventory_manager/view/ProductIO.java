@@ -1,8 +1,13 @@
 package com.example.inventory_manager.view;
 
+import com.example.inventory_manager.model*
+import org.springframework.stereotype.Component;
+
 import java.util.Scanner;
+import java.util.List;
 import java.math.BigDecimal;
 
+@Component
 public class ProductIO {
     private final Scanner console;
 
@@ -27,11 +32,13 @@ public class ProductIO {
     public int displayMenuAndGetChoice() {
         System.out.println();
         System.out.println("=== INVENTORY MANAGEMENT MENU ===");
-        System.out.println("1. Create Reservation");
-        System.out.println("2. View All Reservations");
-        System.out.println("3. Quit");
+        System.out.println("1. Add/update inventory item");
+        System.out.println("2. Remove inventory item");
+        System.out.println("3. View inventory item");
+        System.out.println("4. View all inventory items");
+        System.out.println("5. Quit");
         System.out.println();
-        return getIntegerInputWithDefault("Please select an option (1-4): ", -1);
+        return getIntegerInputWithDefault("Please select an option (1-5): ", -1);
     }
 
     public String getStringInput(String prompt) {
