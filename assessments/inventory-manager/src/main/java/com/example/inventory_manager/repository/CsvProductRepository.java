@@ -15,6 +15,7 @@ import java.io.*;
 import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.time.LocalDate;
 
 import com.example.inventory_manager.model.Product;
 import com.example.inventory_manager.model.PhysicalGame;
@@ -51,9 +52,9 @@ public class CsvProductRepository implements ProductRepository {
                            type,
                            physicalGame.getPlatform(),
                            physicalGame.getStoreLocation(),
-                           physicaGame.getCondition()
+                           physicalGame.getCondition()
                    );
-               } else if (type.equas("DigitalGame")) {
+               } else if (type.equals("DigitalGame")) {
                    DigitalGame digitalGame = (DigitalGame) product;
                    writer.printf("%s,%s,%d,%.2f,%s,%s,%s%n",
                            digitalGame.getProductId(),
@@ -63,7 +64,7 @@ public class CsvProductRepository implements ProductRepository {
                            digitalGame.getPrice(),
                            type,
                            digitalGame.getPlatform(),
-                           digitalGame.getDowloadKey()
+                           digitalGame.getDownloadKey()
                    );
 
                } else if (type.equals("Merch")) {
@@ -91,7 +92,7 @@ public class CsvProductRepository implements ProductRepository {
                            gamePerk.getPerkName(),
                            gamePerk.getExpirationDate(),
                            gamePerk.isTradeable(),
-                           gamePerk.getPerkDownload()
+                           gamePerk.getPerkDownloadCode()
                    );
                }
            }
@@ -184,7 +185,7 @@ public class CsvProductRepository implements ProductRepository {
     @Override
     public List<Product> getInStock() {
         return products.values().stream()
-                .filter(product -> item.getQuantity() > 0)
+                .filter(product -> product.getQuantity() > 0)
                 .collect(Collectors.toList());
     }
 
@@ -206,7 +207,7 @@ public class CsvProductRepository implements ProductRepository {
         if (product == null) {
             throw new IllegalArgumentException("Item cannot be null");
         }
-        String id = product.getProductId;
+        String id = product.getProductId();
 
         //if the map does not contain the key id -> if true
         if (!products.containsKey(id)) {
@@ -225,7 +226,7 @@ public class CsvProductRepository implements ProductRepository {
     }
 
     @Override
-    public Products getByProductId(String id) {
+    public Product getById(String id) {
         if (id == null || id.trim().isEmpty()) {
             throw new IllegalArgumentException("The ID cannot be null or empty");
         }

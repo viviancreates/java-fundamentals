@@ -53,6 +53,6 @@ public abstract class Product {
                 productId, productName, quantity, price);
     }
 
-    public abstract String getProductType() {
-    }
+    public abstract String getProductType();
+
 }

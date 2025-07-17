@@ -65,7 +65,7 @@ public class AddOrUpdateProductCommand implements Command {
                     //boolean isTradeable = productIO.getStringInput("Is the perk transferable? (yes/no): ");
 
                     String download = productIO.getStringInput("Enter perk download key: ");
-                    newProduct = new GamePerk(productId, productName, quantity, price, perkName, expirationDate, isTradeable, download);
+                    newProduct = new GamePerk(productId, productName, quantity, price, perkName, expirationDate, download);
                     break;
 
                 default:
@@ -73,10 +73,10 @@ public class AddOrUpdateProductCommand implements Command {
                     break;
             }
 
-            Product existing = productService.getProduct(id);
+            Product existingProduct = productService.getProduct(productId);
             productService.addOrUpdateProduct(newProduct);
 
-            if (existing != null) {
+            if (existingProduct != null) {
                 productIO.displayMessage("Product updated successfully");
             } else {
                 productIO.displayMessage("Product added successfully");

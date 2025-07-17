@@ -1,7 +1,14 @@
 package com.example.inventory_manager.service;
 
+import com.example.inventory_manager.repository.CsvProductRepository;
+import com.example.inventory_manager.repository.ProductRepository;
+import com.example.inventory_manager.model.Product;
+
+import java.util.List;
+
+
 public class ProductService {
-    // depends on the interface 
+    // depends on the interface
     private final ProductRepository productRepository;
 
     public ProductService(ProductRepository productRepository) {
@@ -16,7 +23,7 @@ public class ProductService {
         String id = product.getProductId();
         Product existingProduct = productRepository.getByProductId(id);
 
-        if (existing != null) {
+        if (existingProduct != null) {
             // updat -> overwrite quantity & price
             existingProduct.setQuantity(product.getQuantity());
             existingProduct.setPrice(product.getPrice());

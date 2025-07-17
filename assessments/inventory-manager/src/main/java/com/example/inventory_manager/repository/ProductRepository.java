@@ -1,5 +1,6 @@
 package com.example.inventory_manager.repository;
 
+import com.example.inventory_manager.model.Product;
 import java.util.List;
 
 public interface ProductRepository {

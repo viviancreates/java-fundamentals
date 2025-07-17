@@ -44,7 +44,7 @@ public class GamePerk extends Product{
     @Override
     public String toString() {
         return super.toString() + String.format(" - Perk: %s - Expires: %s - Tradable: %b - Perk Code: %s",
-                perkName, expirationDate, isTradable, perkCode
+                perkName, expirationDate, isTradeable, perkDownloadCode
         );
     }
 }
