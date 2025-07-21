@@ -5,6 +5,7 @@ import com.example.inventory_manager.service.ProductService;
 import com.example.inventory_manager.view.ProductIO;
 import java.time.LocalDate;
 import java.math.BigDecimal;
+import java.util.List;
 
 public class GetAllProductsCommand implements Command {
     private final ProductService productService;

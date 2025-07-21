@@ -25,11 +25,6 @@ public class ProductView {
         this.productIO = productIO;
     }
 
-    Command addOrUpdateProductCommand = new AddOrUpdateProductCommand(productService, productIO);
-    Command getAllProductsCommand = new GetAllProductsCommand(productService, productIO);
-    Command removeProductCommand = new RemoveProductCommand(productService, productIO);
-    Command getProductByIdCommand = new GetProductByIdCommand(productService, productIO);
-
     public void run() {
         productIO.displayWelcome();
         boolean running = true;
@@ -56,7 +51,7 @@ public class ProductView {
                 case 4:
                     getAllProductsCommand.execute();
                     break;
-                case 2:
+                case 5:
                     running = false;
                     break;
                 default:

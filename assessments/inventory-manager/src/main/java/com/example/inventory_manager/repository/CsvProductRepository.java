@@ -38,71 +38,62 @@ public class CsvProductRepository implements ProductRepository {
 
     private void saveToFile() {
        try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
+           writer.println("ProductID,ProductName,Quantity,Price,Type,Platform,StoreLocation,Condition,DownloadKey,MerchType,Size,WeightInOz,PerkName,ExpirationDate,IsTradeable,PerkDownloadCode");
            for (Product product : products.values()) {
                String type = product.getProductType();
 
-               //can probably take out base product
+               String productId = product.getProductId();
+               String productName = product.getProductName();
+               int quantity = product.getQuantity();
+               BigDecimal price = product.getPrice();
+
+               String platform = "";
+               String storeLocation = "";
+               String condition = "";
+               String downloadKey = "";
+               String merchType = "";
+               String size = "";
+               String weightInOz = "";
+               String perkName = "";
+               String expirationDate = "";
+               String isTradeable = "";
+               String perkDownloadCode = "";
+
+               //took out base product
                if (type.equals("PhysicalGame")) {
-                   savePhysicalGame((PhysicalGame) product, writer, type);
+                   PhysicalGame physicalGame = (PhysicalGame) product;
+                   platform = physicalGame.getPlatform();
+                   storeLocation = physicalGame.getStoreLocation();
+                   condition = physicalGame.getCondition();
                } else if (type.equals("DigitalGame")) {
                    DigitalGame digitalGame = (DigitalGame) product;
-                   writer.printf("%s,%s,%d,%.2f,%s,%s,%s%n",
-                           digitalGame.getProductId(),
-                           digitalGame.getProductName(),
-
-                           digitalGame.getQuantity(),
-                           digitalGame.getPrice(),
-                           type,
-                           digitalGame.getPlatform(),
-                           digitalGame.getDownloadKey()
-                   );
-
+                   platform = digitalGame.getPlatform();
+                   downloadKey = digitalGame.getDownloadKey();
                } else if (type.equals("Merch")) {
                    Merch merch = (Merch) product;
-                   writer.printf("%s,%s,%d,%.2f,%s,%s,%s,%.2f%n",
-                           merch.getProductId(),
-                           merch.getProductName(),
-
-                           merch.getQuantity(),
-                           merch.getPrice(),
-                           type,
-                           merch.getMerchType(),
-                           merch.getSize(),
-                           merch.getWeightInOz()
-                   );
+                   merchType = merch.getMerchType();
+                   size = merch.getSize();
+                   weightInOz = merch.getWeightInOz();
                } else if (type.equals("GamePerk")) {
                    GamePerk gamePerk = (GamePerk) product;
-                   writer.printf("%s,%s,%d,%.2f,%s,%s,%s,%b,%s%n",
-                           gamePerk.getProductId(),
-                           gamePerk.getProductName(),
-
-                           gamePerk.getQuantity(),
-                           gamePerk.getPrice(),
-                           type,
-                           gamePerk.getPerkName(),
-                           gamePerk.getExpirationDate(),
-                           gamePerk.isTradeable(),
-                           gamePerk.getPerkDownloadCode()
-                   );
+                   perkName = gamePerk.getPerkName();
+                   expirationDate = gamePerk.getExpirationDate().toString();
+                   isTradeable = Boolean.toString(gamePerk.isTradeable());
+                   perkDownloadCode = gamePerk.getPerkDownloadCode();
                }
+
+               // Print everything in one unified row
+               writer.printf("%s,%s,%d,%.2f,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s%n",
+                       productId, productName, quantity, price, type,
+                       platform, storeLocation, condition,
+                       downloadKey, merchType, size, weightInOz,
+                       perkName, expirationDate, isTradeable, perkDownloadCode
+               );
+
            }
        } catch (IOException e) {
            throw new RuntimeException("Error writing to file: " + filename, e);
        }
-    }
-
-    private static void savePhysicalGame(PhysicalGame product, PrintWriter writer, String type) {
-        PhysicalGame physicalGame = product;
-        writer.printf("%s,%s,%d,%.2f,%s,%s,%s,%s%n",
-                physicalGame.getProductId(),
-                physicalGame.getProductName(),
-                physicalGame.getQuantity(),
-                physicalGame.getPrice(),
-                type,
-                physicalGame.getPlatform(),
-                physicalGame.getStoreLocation(),
-                physicalGame.getCondition()
-        );
     }
 
     private void loadFromFile() {
