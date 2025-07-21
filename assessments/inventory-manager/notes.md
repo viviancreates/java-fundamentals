@@ -61,6 +61,8 @@ What I’m Changing It To -> I'm switching to a unified CSV format where every r
 - [ ] Check platform assignment in DigitalGame.
 - [ ] Verify Merch type handling logic.
 
+---
+Eric's note to add validation to one layer -> pick and stick with it
 
 ---
 # Questions

@@ -15,8 +15,8 @@ public class InMemoryProductsRepository implements ProductRepository {
     }
 
     private void initializeSampleData() {
-        addPhysicalGame("PG001", "The Last of Us", 5, "59.99", "PlayStation", "Aisle 3", "New");
-        addPhysicalGame("PG002", "Halo", 3, "50.00", "Xbox", "Aisle 1", "Used");
+        addPhysicalGame("PG001", "The Last of Us", 5, "59.99", "PlayStation", "Austin", "New");
+        addPhysicalGame("PG002", "Halo", 3, "50.00", "Xbox", "Chicago", "Used");
 
         addDigitalGame("DG001", "Stardew Valley", 10, "14.99", "PC", "16851651651");
         addDigitalGame("DG002", "Game2", 7, "24.99", "Switch", "516516564");

@@ -21,6 +21,11 @@ public class RemoveProductCommand implements Command {
 
         String productId = productIO.getStringInput("Enter the product ID to remove: ");
 
+        if (productId.isEmpty()) {
+            productIO.displayError("No valid prouct ID entered.");
+            return;
+        }
+
         try {
         productService.removeProduct(productId);
         productIO.displayMessage("Product removed.");

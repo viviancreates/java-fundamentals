@@ -19,6 +19,11 @@ public class GetProductByIdCommand implements Command {
         printHeader();
 
         String productId = productIO.getStringInput("Enter the product ID to search: ");
+        if (productId.isEmpty()) {
+            productIO.displayError("Product ID cannot be empty.");
+            return;
+        }
+
         Product product = productService.getProduct(productId);
 
         if (product != null) {
