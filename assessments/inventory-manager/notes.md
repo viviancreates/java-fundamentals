@@ -66,3 +66,10 @@ Eric's note to add validation to one layer -> pick and stick with it
 
 ---
 # Questions
+
+
+---
+WHATS LEFT 
+- [ ] Use extract method to clean up
+- [ ] Testing :/
+- [ ] Database set up
