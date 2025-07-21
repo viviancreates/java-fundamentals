@@ -38,28 +38,19 @@ public class AddOrUpdateProductCommand implements Command {
         try {
             switch (typeChoice) {
                 case 1:
-                    newProduct = createBaseProduct(productId, productName, quantity, price);
+                    newProduct = createPhysicalGameProduct(productId, productName, quantity, price);
                     break;
 
                 case 2:
-                    String platform1 = productIO.getStringInput("Enter platform: ");
-                    String downloadKey = productIO.getStringInput("Enter download key: ");
-                    newProduct = new DigitalGame(productId, productName, quantity, price, platform1, downloadKey);
+                    newProduct = createDigitalGameProduct(productId, productName, quantity, price);
                     break;
 
                 case 3:
-                    String merchType = productIO.getStringInput("Enter merch type: ");
-                    String size = productIO.getStringInput("Enter size: ");
-                    double weight = productIO.getDoubleInput("Enter weight (oz): ");
-                    newProduct = new Merch(productId, productName, quantity, price, merchType, size, weight);
+                    newProduct = createMerchProduct(productId, productName, quantity, price);
                     break;
 
                 case 4:
-                    String perkName = productIO.getStringInput("Enter perk name: ");
-                    LocalDate expirationDate = productIO.getDateInput("Enter expiration date (YYYY-MM-DD): ");
-                    boolean isTradeable = productIO.getBooleanInput("Is the perk transferable? (yes/no): ");
-                    String perkDownloadCode = productIO.getStringInput("Enter perk download key: ");
-                    newProduct = new GamePerk(productId, productName, quantity, price, perkName, expirationDate, isTradeable, perkDownloadCode);
+                    newProduct = createGamePerk(productId, productName, quantity, price);
                     break;
 
                 default:
@@ -80,7 +71,34 @@ public class AddOrUpdateProductCommand implements Command {
         }
     }
 
-    private Product createBaseProduct(String productId, String productName, int quantity, BigDecimal price) {
+    private Product createGamePerk(String productId, String productName, int quantity, BigDecimal price) {
+        Product newProduct;
+        String perkName = productIO.getStringInput("Enter perk name: ");
+        LocalDate expirationDate = productIO.getDateInput("Enter expiration date (YYYY-MM-DD): ");
+        boolean isTradeable = productIO.getBooleanInput("Is the perk transferable? (yes/no): ");
+        String perkDownloadCode = productIO.getStringInput("Enter perk download key: ");
+        newProduct = new GamePerk(productId, productName, quantity, price, perkName, expirationDate, isTradeable, perkDownloadCode);
+        return newProduct;
+    }
+
+    private Product createMerchProduct(String productId, String productName, int quantity, BigDecimal price) {
+        Product newProduct;
+        String merchType = productIO.getStringInput("Enter merch type: ");
+        String size = productIO.getStringInput("Enter size: ");
+        double weight = productIO.getDoubleInput("Enter weight (oz): ");
+        newProduct = new Merch(productId, productName, quantity, price, merchType, size, weight);
+        return newProduct;
+    }
+
+    private Product createDigitalGameProduct(String productId, String productName, int quantity, BigDecimal price) {
+        Product newProduct;
+        String platform1 = productIO.getStringInput("Enter platform: ");
+        String downloadKey = productIO.getStringInput("Enter download key: ");
+        newProduct = new DigitalGame(productId, productName, quantity, price, platform1, downloadKey);
+        return newProduct;
+    }
+
+    private Product createPhysicalGameProduct(String productId, String productName, int quantity, BigDecimal price) {
         Product newProduct;
         String platform = productIO.getStringInput("Enter platform: ");
         String storeLocation = productIO.getStringInput("Enter store location: ");
@@ -95,47 +113,3 @@ public class AddOrUpdateProductCommand implements Command {
         productIO.displayMessage("===========================");
     }
 }
-    /*
-     inventoryIO.displaySectionHeader("Add/Update Inventory Item");
-
-        String isbn = inventoryIO.getStringInput("Enter ISBN: ");
-        if (isbn == null) return; // User cancelled
-
-        String title = inventoryIO.getStringInput("Enter book title: ");
-        if (title == null) return; // User cancelled
-
-        String author = inventoryIO.getStringInput("Enter author: ");
-        if (author == null) return; // User cancelled
-
-        String genre = inventoryIO.getStringInput("Enter genre: ");
-        if (genre == null) return; // User cancelled
-
-        Integer quantity = inventoryIO.getIntegerInput("Enter quantity: ");
-        if (quantity == null) return; // User cancelled
-
-        BigDecimal price = inventoryIO.getBigDecimalInput("Enter price: $");
-        if (price == null) return; // User cancelled
-
-        try {
-            // Create a new Book record
-            Book book = new Book(isbn, title, author, genre);
-
-            // Create a new InventoryItem
-            InventoryItem item = new InventoryItem(book, quantity, price);
-
-            // Check if item already exists, this will tell us if this is an add or update
-            InventoryItem existingItem = inventoryService.getItem(isbn);
-
-            inventoryService.updateOrAddItem(item);
-
-            if (existingItem != null) {
-                inventoryIO.displaySuccess("Item updated successfully!");
-            } else {
-                inventoryIO.displaySuccess("Item added successfully!");
-            }
-        } catch (Exception e) {
-            inventoryIO.displayError("Failed to add/update item: " + e.getMessage());
-        }
-    }
-     */
-

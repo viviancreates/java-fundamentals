@@ -25,19 +25,19 @@ public class ProductView {
         this.productIO = productIO;
     }
 
-//    Command addOrUpdateProductCommand = new AddOrUpdateProductCommand(productService, productIO);
-//    Command getAllProductsCommand = new GetAllProductsCommand(productService, productIO);
-//    Command removeProductCommand = new RemoveProductCommand(productService, productIO);
-//    Command getProductByIdCommand = new GetProductByIdCommand(productService, productIO);
+    Command addOrUpdateProductCommand = new AddOrUpdateProductCommand(productService, productIO);
+    Command getAllProductsCommand = new GetAllProductsCommand(productService, productIO);
+    Command removeProductCommand = new RemoveProductCommand(productService, productIO);
+    Command getProductByIdCommand = new GetProductByIdCommand(productService, productIO);
 
     public void run() {
         productIO.displayWelcome();
         boolean running = true;
 
         Command addOrUpdateProductCommand = new AddOrUpdateProductCommand(productService, productIO);
-//        Command getAllProductsCommand = new GetAllProductsCommand(productService, productIO);
-//        Command removeProductCommand = new RemoveProductCommand(productService, productIO);
-//        Command getProductByIdCommand = new GetProductByIdCommand(productService, productIO);
+        Command getAllProductsCommand = new GetAllProductsCommand(productService, productIO);
+        Command removeProductCommand = new RemoveProductCommand(productService, productIO);
+        Command getProductByIdCommand = new GetProductByIdCommand(productService, productIO);
 
         while (running) {
             int choice = productIO.displayMenuAndGetChoice();
@@ -47,15 +47,15 @@ public class ProductView {
                     addOrUpdateProductCommand.execute();
 
                     break;
-//                case 2:
-//                    removeProductCommand.execute();
-//                    break;
-//                case 3:
-//                    getProductByIdCommand.execute();
-//                    break;
-//                case 4:
-//                    getAllProductsCommand.execute();
-//                    break;
+                case 2:
+                    removeProductCommand.execute();
+                    break;
+                case 3:
+                    getProductByIdCommand.execute();
+                    break;
+                case 4:
+                    getAllProductsCommand.execute();
+                    break;
                 case 2:
                     running = false;
                     break;
