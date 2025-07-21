@@ -69,11 +69,11 @@ public class CsvProductRepository implements ProductRepository {
                    DigitalGame digitalGame = (DigitalGame) product;
                    platform = digitalGame.getPlatform();
                    downloadKey = digitalGame.getDownloadKey();
-               } else if (type.equals("Merch")) {
+               } else if (type.equals("PhysicalMerch")) {
                    Merch merch = (Merch) product;
                    merchType = merch.getMerchType();
                    size = merch.getSize();
-                   weightInOz = merch.getWeightInOz();
+                   weightInOz = String.format("%.2f", merch.getWeightInOz());
                } else if (type.equals("GamePerk")) {
                    GamePerk gamePerk = (GamePerk) product;
                    perkName = gamePerk.getPerkName();
@@ -108,21 +108,27 @@ public class CsvProductRepository implements ProductRepository {
         //open the file with buffered reader
         try(BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
+            boolean isFirstLine = true;
+
             while ((line = reader.readLine()) != null) {
-                if (line.trim().isEmpty()) {
+                if (line.trim().isEmpty())
+                    continue;
+
+                if (isFirstLine) {
+                    isFirstLine = false; // Skip header
                     continue;
                 }
 
-                String[] parts = line.split(",");
+                String[] parts = line.split(",", -1); // keep empty fields as empty strings
+                //String[] parts = line.split(",");
 
                 //type tells me what subclass to build
                 String type = parts[4].trim();
-                String productId = null;
                 Product product = null;
 
                 if (type.equals("PhysicalGame")) {
-                    String productName = parts[0].trim();
-                    productId = parts[1].trim();
+                    String productId = parts[0].trim();
+                    String productName = parts[1].trim();
                     int quantity = Integer.parseInt(parts[2].trim());
                     BigDecimal price = new BigDecimal(parts[3].trim());
                     String platform = parts[5].trim();
@@ -131,38 +137,40 @@ public class CsvProductRepository implements ProductRepository {
 
                     product = new PhysicalGame(productId, productName, quantity, price, platform, storeLocation, condition);
                 } else if (type.equals("DigitalGame")) {
-                    String productName = parts[0].trim();
-                    productId = parts[1].trim();
+                    String productId = parts[0].trim();
+                    String productName = parts[1].trim();
                     int quantity = Integer.parseInt(parts[2].trim());
                     BigDecimal price = new BigDecimal(parts[3].trim());
                     String platform = parts[5].trim();
-                    String downloadKey = parts[6].trim();
+                    String downloadKey = parts[8].trim();
 
                     product = new DigitalGame(productId, productName, quantity, price, platform, downloadKey);
-                } else if (type.equals("Merch")) {
-                    String productName = parts[0].trim();
-                    productId = parts[1].trim();
+                } else if (type.equals("PhysicalMerch")) {
+                    String productId = parts[0].trim();
+                    String productName = parts[1].trim();
+
                     int quantity = Integer.parseInt(parts[2].trim());
                     BigDecimal price = new BigDecimal(parts[3].trim());
-                    String merchType = parts[5].trim();
-                    String size = parts[6].trim();
-                    double weightInOz = Double.parseDouble(parts[7].trim());
+                    String merchType = parts[9].trim();
+                    String size = parts[10].trim();
+                    double weightInOz = Double.parseDouble(parts[11].trim());
 
                     product = new Merch(productId, productName, quantity, price, merchType, size, weightInOz);
                 } else if (type.equals("GamePerk")) {
-                    String productName = parts[0].trim();
-                    productId = parts[1].trim();
+                    String productId = parts[0].trim();
+                    String productName = parts[1].trim();
+
                     int quantity = Integer.parseInt(parts[2].trim());
                     BigDecimal price = new BigDecimal(parts[3].trim());
-                    String perkName = parts[5].trim();
-                    LocalDate expirationDate = LocalDate.parse(parts[6].trim());
-                    boolean isTradeable = Boolean.parseBoolean(parts[7].trim());
-                    String perkDownloadCode = parts[8].trim();
+                    String perkName = parts[12].trim();
+                    LocalDate expirationDate = LocalDate.parse(parts[13].trim());
+                    boolean isTradeable = Boolean.parseBoolean(parts[14].trim());
+                    String perkDownloadCode = parts[15].trim();
 
                     product = new GamePerk(productId, productName, quantity, price, perkName, expirationDate, isTradeable, perkDownloadCode);
                 }
                 if (product != null) {
-                    products.put(productId, product);
+                    products.put(product.getProductId(), product);
                 }
             }
         } catch (IOException e) {
