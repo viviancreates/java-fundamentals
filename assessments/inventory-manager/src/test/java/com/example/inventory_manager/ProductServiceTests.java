@@ -1,8 +1,12 @@
 package com.example.inventory_manager;
 
-import com.example.inventory_manger.model.*;
+import com.example.inventory_manager.model.DigitalGame;
+import com.example.inventory_manager.model.PhysicalGame;
+import com.example.inventory_manager.model.GamePerk;
+import com.example.inventory_manager.model.Merch;
+import com.example.inventory_manager.model.Product;
 import com.example.inventory_manager.repository.*;
-import com.example.inventory_manager.service.*;
+import com.example.inventory_manager.service.ProductService;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -34,7 +38,47 @@ public class ProductServiceTests {
 
     @Test
     @DisplayName("Add a product to the inventory")
+    void addProductToInventorySuccessfully() {
+        PhysicalGame newGame = new PhysicalGame( "0101", "Test Game", 2, new BigDecimal("10.00"), "Computer", "Austin", "Used");
+        //add product to the inventory
+        productService.addOrUpdateProduct(newGame);
+        Product actual = productService.getProduct("0101");
 
+        // Assert base fields
+        assertEquals("0101", actual.getProductId());
+        assertEquals("Test Game", actual.getProductName());
+        assertEquals(2, actual.getQuantity());
+        assertEquals(new BigDecimal("10.00"), actual.getPrice());
+
+        // Use getProductType() instead of instanceof
+        assertEquals("PhysicalGame", actual.getProductType());
+
+        // Safe to cast now
+        PhysicalGame actualGame = (PhysicalGame) actual;
+
+        // Assert subclass fields
+        assertEquals("Computer", actualGame.getPlatform());
+        assertEquals("Austin", actualGame.getStoreLocation());
+        assertEquals("Used", actualGame.getCondition());
+
+        /*
+        String expectedId = "0101";
+        String expectedName = "Test Game";
+        int expectedQuantity = 2;
+        BigDecimal expectedPrice = new BigDecimal("10.00");
+        String expectedPlatform = "Computer";
+        String expectedStoreLocation = "Austin";
+        String expectedCondition = "Used";
+
+        Product actualProductAddedToInventory = productService.getProduct("0101");
+
+        assertEquals(expectedId, actualProductAddedToInventory.getProductId());
+
+         */
+
+    }
+
+    /*
     @Test
     @DisplayName("Delete a product from inventory")
 
@@ -55,4 +99,6 @@ public class ProductServiceTests {
 
     @Test
     @DisplayName("Search for product by ID and return failure)
+
+     */
 }
