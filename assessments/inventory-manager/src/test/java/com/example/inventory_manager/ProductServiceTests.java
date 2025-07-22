@@ -27,20 +27,32 @@ public class ProductServiceTests {
 
     @BeforeEach
     void setUp() {
-        // Create fresh instances for each test
-        inventoryRepository = new InMemoryInventoryRepository();
-        cartService = new CartService(inventoryRepository);
 
-        // Create test books
-        book1 = new Book("978-0132350884", "Clean Code", "Robert Martin", "Technology");
-        book2 = new Book("978-0321125217", "Domain-Driven Design", "Eric Evans", "Technology");
-
-        // Create test inventory items
-        inventoryItem1 = new InventoryItem(book1, 10, new BigDecimal("29.99"));
-        inventoryItem2 = new InventoryItem(book2, 5, new BigDecimal("45.50"));
-
-        // Add items to inventory
-        inventoryRepository.add(inventoryItem1);
-        inventoryRepository.add(inventoryItem2);
+        productRepository = new InMemoryProductsRepository();
+        productService = new ProductService(productRepository);
     }
+
+    @Test
+    @DisplayName("Add a product to the inventory")
+
+    @Test
+    @DisplayName("Delete a product from inventory")
+
+    @Test
+    @DisplayName("Add multiple products into inventory")
+
+    @Test
+    @DisplayName("Find product in the inventory by ID")
+
+    @Test
+    @DisplayName("Show all products in stock")
+
+    @Test
+    @DisplayName("Add a product by ID and returns failure")
+
+    @Test
+    @DisplayName("Add a product to inventory using empty ID and returns failure")
+
+    @Test
+    @DisplayName("Search for product by ID and return failure)
 }
