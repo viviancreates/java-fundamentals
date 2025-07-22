@@ -30,8 +30,8 @@ public class CsvProductRepositoryTests {
             throw new RuntimeException("Could not reset test CSV file", e);
         }
 
-        CSVProductRepository productRepository= new CSVProductRepository();
-        ps = new ProductService(productRepository);
+        productRepository = new CsvProductRepository();
+        productService = new ProductService(productRepository);
     }
 
     @AfterEach
@@ -51,10 +51,15 @@ public class CsvProductRepositoryTests {
         List<Product> products = productService.getAllProducts();
         assertTrue(products.isEmpty());
     }
-    /*
-    @Test
-    @DisplayName("Add a product from CSV")
 
+    @Test
+    @DisplayName("Add a product to the CSV")
+    public void addProductToCsvSuccessfully {
+
+        
+    }
+
+    /*
     @Test
     @DisplayName("Delete a product from CSV")
 
