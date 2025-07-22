@@ -1,5 +1,8 @@
 package com.example.inventory_manager;
 
+import com.example.inventory_manger.model.*;
+import com.example.inventory_manager.repository.*;
+import com.example.inventory_manager.service.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -13,14 +16,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ProductServiceTests {
-    private InventoryRepository inventoryRepository;
-    private CartService cartService;
+    private ProductRepository productRepository;
+    private ProductService productService;
 
     // Test data
-    private Book book1;
-    private Book book2;
-    private InventoryItem inventoryItem1;
-    private InventoryItem inventoryItem2;
+    private PhysicalGame physicalGame;
+    private DigitalGame digitalGame;
+    private Merch merch;
+    private GamePerk gamePerk;
 
     @BeforeEach
     void setUp() {
