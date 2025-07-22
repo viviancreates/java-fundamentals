@@ -59,7 +59,6 @@ public class CsvProductRepository implements ProductRepository {
                String isTradeable = "";
                String perkDownloadCode = "";
 
-               //took out base product
                if (type.equals("PhysicalGame")) {
                    PhysicalGame physicalGame = (PhysicalGame) product;
                    platform = physicalGame.getPlatform();
@@ -120,54 +119,18 @@ public class CsvProductRepository implements ProductRepository {
                 }
 
                 String[] parts = line.split(",", -1); // keep empty fields as empty strings
-                //String[] parts = line.split(",");
-
-                //type tells me what subclass to build
                 String type = parts[4].trim();
                 Product product = null;
+                loadBaseProductFields base = getLoadBaseProductFields(parts);
 
                 if (type.equals("PhysicalGame")) {
-                    String productId = parts[0].trim();
-                    String productName = parts[1].trim();
-                    int quantity = Integer.parseInt(parts[2].trim());
-                    BigDecimal price = new BigDecimal(parts[3].trim());
-                    String platform = parts[5].trim();
-                    String storeLocation = parts[6].trim();
-                    String condition = parts[7].trim();
-
-                    product = new PhysicalGame(productId, productName, quantity, price, platform, storeLocation, condition);
+                    product = loadPhysicalGame(parts, base);
                 } else if (type.equals("DigitalGame")) {
-                    String productId = parts[0].trim();
-                    String productName = parts[1].trim();
-                    int quantity = Integer.parseInt(parts[2].trim());
-                    BigDecimal price = new BigDecimal(parts[3].trim());
-                    String platform = parts[5].trim();
-                    String downloadKey = parts[8].trim();
-
-                    product = new DigitalGame(productId, productName, quantity, price, platform, downloadKey);
+                    product = loadDigitalGame(parts, base);
                 } else if (type.equals("PhysicalMerch")) {
-                    String productId = parts[0].trim();
-                    String productName = parts[1].trim();
-
-                    int quantity = Integer.parseInt(parts[2].trim());
-                    BigDecimal price = new BigDecimal(parts[3].trim());
-                    String merchType = parts[9].trim();
-                    String size = parts[10].trim();
-                    double weightInOz = Double.parseDouble(parts[11].trim());
-
-                    product = new Merch(productId, productName, quantity, price, merchType, size, weightInOz);
+                    product = loadPhysicalMerch(parts, base);
                 } else if (type.equals("GamePerk")) {
-                    String productId = parts[0].trim();
-                    String productName = parts[1].trim();
-
-                    int quantity = Integer.parseInt(parts[2].trim());
-                    BigDecimal price = new BigDecimal(parts[3].trim());
-                    String perkName = parts[12].trim();
-                    LocalDate expirationDate = LocalDate.parse(parts[13].trim());
-                    boolean isTradeable = Boolean.parseBoolean(parts[14].trim());
-                    String perkDownloadCode = parts[15].trim();
-
-                    product = new GamePerk(productId, productName, quantity, price, perkName, expirationDate, isTradeable, perkDownloadCode);
+                    product = loadGamePerk(parts, base);
                 }
                 if (product != null) {
                     products.put(product.getProductId(), product);
@@ -178,6 +141,45 @@ public class CsvProductRepository implements ProductRepository {
         } catch (NumberFormatException e) {
             throw new RuntimeException("Error parsing number from file: " + filename, e);
         }
+    }
+
+    private static Product loadGamePerk(String[] parts, loadBaseProductFields base) {
+        String perkName = parts[12].trim();
+        LocalDate expirationDate = LocalDate.parse(parts[13].trim());
+        boolean isTradeable = Boolean.parseBoolean(parts[14].trim());
+        String perkDownloadCode = parts[15].trim();
+        return new GamePerk(base.productId(), base.productName(), base.quantity(), base.price(), perkName, expirationDate, isTradeable, perkDownloadCode);
+    }
+
+    private static Product loadPhysicalMerch(String[] parts, loadBaseProductFields base) {
+        String merchType = parts[9].trim();
+        String size = parts[10].trim();
+        double weightInOz = Double.parseDouble(parts[11].trim());
+        return new Merch(base.productId(), base.productName(), base.quantity(), base.price(), merchType, size, weightInOz);
+    }
+
+    private static Product loadDigitalGame(String[] parts, loadBaseProductFields base) {
+        String platform = parts[5].trim();
+        String downloadKey = parts[8].trim();
+        return new DigitalGame(base.productId(), base.productName(), base.quantity(), base.price(), platform, downloadKey);
+    }
+
+    private static Product loadPhysicalGame(String[] parts, loadBaseProductFields base) {
+        String platform = parts[5].trim();
+        String storeLocation = parts[6].trim();
+        String condition = parts[7].trim();
+        return new PhysicalGame(base.productId(), base.productName(), base.quantity(), base.price(), platform, storeLocation, condition);
+    }
+
+    private static loadBaseProductFields getLoadBaseProductFields(String[] parts) {
+        String productId = parts[0].trim();
+        String productName = parts[1].trim();
+        int quantity = Integer.parseInt(parts[2].trim());
+        BigDecimal price = new BigDecimal(parts[3].trim());
+        return new loadBaseProductFields(productId, productName, quantity, price);
+    }
+
+    private record loadBaseProductFields(String productId, String productName, int quantity, BigDecimal price) {
     }
 
     @Override
