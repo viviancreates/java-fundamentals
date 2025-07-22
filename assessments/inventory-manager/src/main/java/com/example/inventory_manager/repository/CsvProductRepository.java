@@ -40,55 +40,7 @@ public class CsvProductRepository implements ProductRepository {
        try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
            writer.println("ProductID,ProductName,Quantity,Price,Type,Platform,StoreLocation,Condition,DownloadKey,MerchType,Size,WeightInOz,PerkName,ExpirationDate,IsTradeable,PerkDownloadCode");
            for (Product product : products.values()) {
-               String type = product.getProductType();
-
-               String productId = product.getProductId();
-               String productName = product.getProductName();
-               int quantity = product.getQuantity();
-               BigDecimal price = product.getPrice();
-
-               String platform = "";
-               String storeLocation = "";
-               String condition = "";
-               String downloadKey = "";
-               String merchType = "";
-               String size = "";
-               String weightInOz = "";
-               String perkName = "";
-               String expirationDate = "";
-               String isTradeable = "";
-               String perkDownloadCode = "";
-
-               if (type.equals("PhysicalGame")) {
-                   PhysicalGame physicalGame = (PhysicalGame) product;
-                   platform = physicalGame.getPlatform();
-                   storeLocation = physicalGame.getStoreLocation();
-                   condition = physicalGame.getCondition();
-               } else if (type.equals("DigitalGame")) {
-                   DigitalGame digitalGame = (DigitalGame) product;
-                   platform = digitalGame.getPlatform();
-                   downloadKey = digitalGame.getDownloadKey();
-               } else if (type.equals("PhysicalMerch")) {
-                   Merch merch = (Merch) product;
-                   merchType = merch.getMerchType();
-                   size = merch.getSize();
-                   weightInOz = String.format("%.2f", merch.getWeightInOz());
-               } else if (type.equals("GamePerk")) {
-                   GamePerk gamePerk = (GamePerk) product;
-                   perkName = gamePerk.getPerkName();
-                   expirationDate = gamePerk.getExpirationDate().toString();
-                   isTradeable = Boolean.toString(gamePerk.isTradeable());
-                   perkDownloadCode = gamePerk.getPerkDownloadCode();
-               }
-
-               // Print everything in one unified row
-               writer.printf("%s,%s,%d,%.2f,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s%n",
-                       productId, productName, quantity, price, type,
-                       platform, storeLocation, condition,
-                       downloadKey, merchType, size, weightInOz,
-                       perkName, expirationDate, isTradeable, perkDownloadCode
-               );
-
+               saveProductFieldsToFile(product, writer);
            }
        } catch (IOException e) {
            throw new RuntimeException("Error writing to file: " + filename, e);
@@ -141,6 +93,54 @@ public class CsvProductRepository implements ProductRepository {
         } catch (NumberFormatException e) {
             throw new RuntimeException("Error parsing number from file: " + filename, e);
         }
+    }
+
+    private static void saveProductFieldsToFile(Product product, PrintWriter writer) {
+        String type = product.getProductType();
+
+        String productId = product.getProductId();
+        String productName = product.getProductName();
+        int quantity = product.getQuantity();
+        BigDecimal price = product.getPrice();
+
+        String platform = "";
+        String storeLocation = "";
+        String condition = "";
+        String downloadKey = "";
+        String merchType = "";
+        String size = "";
+        String weightInOz = "";
+        String perkName = "";
+        String expirationDate = "";
+        String isTradeable = "";
+        String perkDownloadCode = "";
+
+        if (type.equals("PhysicalGame")) {
+            PhysicalGame physicalGame = (PhysicalGame) product;
+            platform = physicalGame.getPlatform();
+            storeLocation = physicalGame.getStoreLocation();
+            condition = physicalGame.getCondition();
+        } else if (type.equals("DigitalGame")) {
+            DigitalGame digitalGame = (DigitalGame) product;
+            platform = digitalGame.getPlatform();
+            downloadKey = digitalGame.getDownloadKey();
+        } else if (type.equals("PhysicalMerch")) {
+            Merch merch = (Merch) product;
+            merchType = merch.getMerchType();
+            size = merch.getSize();
+            weightInOz = String.format("%.2f", merch.getWeightInOz());
+        } else if (type.equals("GamePerk")) {
+            GamePerk gamePerk = (GamePerk) product;
+            perkName = gamePerk.getPerkName();
+            expirationDate = gamePerk.getExpirationDate().toString();
+            isTradeable = Boolean.toString(gamePerk.isTradeable());
+            perkDownloadCode = gamePerk.getPerkDownloadCode();
+        }
+
+        // Print everything in one unified row
+        writer.printf("%s,%s,%d,%.2f,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s%n",
+                productId, productName, quantity, price, type, platform, storeLocation, condition, downloadKey, merchType, size, weightInOz, perkName, expirationDate, isTradeable, perkDownloadCode
+        );
     }
 
     private static Product loadGamePerk(String[] parts, loadBaseProductFields base) {
