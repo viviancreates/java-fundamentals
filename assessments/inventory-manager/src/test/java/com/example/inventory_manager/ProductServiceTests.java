@@ -128,15 +128,7 @@ public class ProductServiceTests {
 
         assertEquals("The ID cannot be null or empty", exception.getMessage());
     }
-    /*
 
-    @Test
-    @DisplayName("Add a product to inventory using empty ID and returns failure")
-
-    @Test
-    @DisplayName("Search for product by ID and return failure)
-
-     */
 
 
 }
