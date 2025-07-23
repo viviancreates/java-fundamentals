@@ -31,6 +31,11 @@ public class CsvProductRepository implements ProductRepository {
     @Value("${inventory.csv.filepath:data/inventory.csv}")
     private String filename;
 
+    public CsvProductRepository(String filename) {
+        this.filename = filename;
+
+    }
+
     @PostConstruct
     public void init() {
         loadFromFile();

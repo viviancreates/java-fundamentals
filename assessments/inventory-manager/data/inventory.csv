@@ -1,5 +1,6 @@
 ProductID,ProductName,Quantity,Price,Type,Platform,StoreLocation,Condition,DownloadKey,MerchType,Size,WeightInOz,PerkName,ExpirationDate,IsTradeable,PerkDownloadCode
 1,example,1,5.00,PhysicalGame,XBox,Chicago,New,,,,,,,,
+2,example,1,5.00,GamePerk,,,,,,,,run faster,2026-01-01,true,dsfkdsklgf
 33333,exmerch,4,1.00,PhysicalMerch,,,,,shirts,one size,8.00,,,,
 4444,gameperk,5,1010.00,GamePerk,,,,,,,,skin,2026-01-01,true,2103i210eiqwoek
 11111,game,20,20.00,PhysicalGame,switch,chicago,used,,,,,,,,

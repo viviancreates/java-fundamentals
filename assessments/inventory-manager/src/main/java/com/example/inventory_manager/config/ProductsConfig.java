@@ -10,12 +10,13 @@ import org.springframework.context.annotation.Configuration;
 public class ProductsConfig {
     @Value("${inventory.repository.type:csv}")
     private String repositoryType;
+    private String filepath;
 
     @Bean
     public ProductRepository productRepository() {
         switch (repositoryType.toLowerCase()) {
             case "csv":
-                return new CsvProductRepository();
+                return new CsvProductRepository(filepath);
             default:
                 throw new IllegalArgumentException(
                         "Invalid repository type: " + repositoryType +

@@ -6,7 +6,7 @@ public class DigitalGame extends Product {
     private String platform;
     private String downloadKey;
 
-    public DigitalGame(String productId, String productName, int quantity, BigDecimal price, String plaform, String downloadKey) {
+    public DigitalGame(String productId, String productName, int quantity, BigDecimal price, String platform, String downloadKey) {
         super(productId, productName, quantity, price);
         this.platform = platform;
         this.downloadKey = downloadKey;
