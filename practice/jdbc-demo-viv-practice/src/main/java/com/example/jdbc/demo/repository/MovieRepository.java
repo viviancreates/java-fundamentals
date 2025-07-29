@@ -24,4 +24,8 @@ public interface MovieRepository {
     //there might not be by id, and want to handle gracefully
     Optional<Movie> getById(int movieID);
 
+    Movie update(Movie movie);
+
+    boolean delete(int movieID);
+
 }

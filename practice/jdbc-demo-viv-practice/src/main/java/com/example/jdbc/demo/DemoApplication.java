@@ -1,5 +1,6 @@
 package com.example.jdbc.demo;
 
+import com.example.jdbc.demo.model.MovieDetails;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.CommandLineRunner;
@@ -30,9 +31,56 @@ public class DemoApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		//displayAll();
 		//createMovie();
-		getById();
+		//getById();
+		//update();
+		//delete();
+		getByGenre();
 	}
 
+	private void update() {
+		Movie updated = new Movie();
+		String input;
+		System.out.print("Enter Movie ID: ");
+		updated.setMovieID(Integer.parseInt(scanner.nextLine()));
+
+		Optional<Movie> existing = movieRepo.getById(updated.getMovieID());
+
+		if (existing.isPresent()) {
+			System.out.println("Leave blank if unchanged!");
+
+			System.out.printf("Enter Title (%s): ", existing.get().getTitle());
+			input = scanner.nextLine();
+			if(!input.isEmpty()) {
+				updated.setTitle(input);
+			} else {
+				updated.setTitle(existing.get().getTitle());
+			}
+
+			System.out.print("Enter Release Date: ");
+			updated.setReleaseDate(LocalDate.parse(scanner.nextLine()));
+
+			System.out.print("Enter Genre ID: ");
+			updated.setGenreID(Integer.parseInt(scanner.nextLine()));
+
+			System.out.print("Enter Rating ID: ");
+			updated.setRatingID(Integer.parseInt(scanner.nextLine()));
+
+			updated = movieRepo.update(updated);
+			System.out.printf("Movie with id: %d was updated!%n", updated.getMovieID());
+		}
+
+	}
+
+	private void delete() {
+		System.out.print("Enter Movie ID: ");
+		int id = Integer.parseInt(scanner.nextLine());
+
+		if (movieRepo.delete(id)) {
+			System.out.println("Movie deleted!");
+		} else {
+			System.out.println("Movie was not found!");
+		}
+	}
 
 	private void getById() {
 		System.out.print("Enter Movie ID: ");
@@ -77,5 +125,16 @@ public class DemoApplication implements CommandLineRunner {
 
 		movie = movieRepo.add(movie);
 		System.out.printf("Movie with id: %d was created!%n", movie.getMovieID());
+	}
+
+	private void getByGenre() {
+		System.out.print("Enter Genre ID: ");
+		int id = Integer.parseInt(scanner.nextLine());
+
+		List<MovieDetails> movies = movieRepo.getByGenre(id);
+
+		for(MovieDetails deets : movies) {
+			System.out.printf("%d\t%s\t%s\t%s%n", deets.getMovieID(), deets.getTitle(), deets.getGenreName(), deets.getRatingCode());
+		}
 	}
 }

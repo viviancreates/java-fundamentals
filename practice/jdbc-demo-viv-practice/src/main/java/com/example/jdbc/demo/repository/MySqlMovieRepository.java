@@ -1,6 +1,7 @@
 package com.example.jdbc.demo.repository;
 
 import com.example.jdbc.demo.model.Movie;
+import com.example.jdbc.demo.model.MovieDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -79,6 +80,61 @@ public class MySqlMovieRepository implements MovieRepository {
         return movie;
     }
 
+    @Override
+    public Movie update(Movie movie) {
+        String sql = "UPDATE movie SET Title = ?, ReleaseDate = ?, GenreID = ?, RatingID = ? WHERE MovieID = ?";
+
+        try {
+            int rowsAffected = jdbcTemplate.update(sql,
+                    movie.getTitle(),
+                    movie.getReleaseDate(),
+                    movie.getGenreID(),
+                    movie.getRatingID(),
+                    movie.getMovieID());
+
+            if (rowsAffected == 0) {
+                throw new RuntimeException("Movie with ID " + movie.getMovieID() + " is not found!");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return movie;
+    }
+
+    @Override
+    public boolean delete(int movieID) {
+        String sql = "DELETE FROM movie WHERE MovieID = ?";
+        try {
+            int rowsAffected = jdbcTemplate.update(sql, movieID);
+            return rowsAffected > 0;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return false;
+    }
+
+    @Override
+    public List<MovieDetails> getByGenre(int genreID) {
+        String sql = """
+                SELECT MovieID, Title, GenreName, RatingCode 
+                FROM movie m 
+                    INNER JOIN genre g ON m.GenreID = g.GenreID 
+                    INNER JOIN rating r ON m.RatingID = r.RatingID 
+                WHERE g.GenreID = ?
+                """;
+
+        try {
+            return jdbcTemplate.query(sql, movieDetailRowMapper(), genreID);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return List.of();
+    }
+
+
     //this is the function takig the data from the SQL database and it's turning it into a java obejct
     /*
     I'm about to use some objects that aren't being passed in as parameters, but this is part of the magic.
@@ -109,6 +165,19 @@ public class MySqlMovieRepository implements MovieRepository {
 
             return movie;
         };
+
+        private RowMapper<MovieDetails> movieDetailRowMapper() {
+            return (rs, rowNum) -> {
+                MovieDetails movie = new MovieDetails();
+
+                movie.setMovieID(rs.getInt("MovieID"));
+                movie.setTitle(rs.getString("Title"));
+                movie.setGenreName(rs.getString("GenreName"));
+                movie.setRatingCode(rs.getString("RatingCode"));
+
+                return movie;
+            };
+        }
     }
 
 
