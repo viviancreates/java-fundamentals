@@ -1,0 +1,49 @@
+package org.example.data.impl;
+
+import org.example.data.ItemRepo;
+import org.example.data.exceptions.InternalErrorException;
+import org.example.data.exceptions.RecordNotFoundException;
+import org.example.data.mappers.ItemMapper;
+import org.example.model.Item;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import java.time.LocalDate;
+import java.util.List;
+import org.example.model.Item;
+import org.example.model.ItemCategory;
+
+@Repository
+public class ItemRepoImpl implements ItemRepo {
+
+    @Autowired
+    private JdbcTemplate jdbc;
+
+    @Override
+    public Item getItemById(int id) throws RecordNotFoundException, InternalErrorException {
+        String sql = "SELECT * FROM `Item` WHERE ItemID = ?";
+        try {
+            return jdbc.queryForObject(sql, ItemMapper.map(), id);
+        } catch (org.springframework.dao.EmptyResultDataAccessException e) {
+            throw new RecordNotFoundException();
+        } catch (Exception e) {
+            throw new InternalErrorException();
+        }
+    }
+
+    @Override
+    public List<Item> getAllAvailableItems(LocalDate today) throws InternalErrorException {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    @Override
+    public List<Item> getItemsByCategory(LocalDate today, int itemCategoryID) throws InternalErrorException {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    @Override
+    public List<ItemCategory> getAllItemCategories() throws InternalErrorException {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+}

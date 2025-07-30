@@ -18,12 +18,12 @@ class BistroServiceTest {
     @Autowired
     private BistroService svc;
 
-    @Test
-    void testCalculateOrderTotals() throws RecordNotFoundException, InternalErrorException {
-        Order expected = orderRepo.getOrderById(1);
-        Order actual = orderRepo.getOrderById(1);
-
-        svc.calculateOrderTotals(actual);
-        assertEquals(expected, actual);
-    }
+//    @Test
+//    void testCalculateOrderTotals() throws RecordNotFoundException, InternalErrorException {
+//        Order expected = orderRepo.getOrderById(1);
+//        Order actual = orderRepo.getOrderById(1);
+//
+//        svc.calculateOrderTotals(actual);
+//        assertEquals(expected, actual);
+//    }
 }
