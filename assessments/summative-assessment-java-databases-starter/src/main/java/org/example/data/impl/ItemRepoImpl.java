@@ -1,10 +1,12 @@
 package org.example.data.impl;
 
 import org.example.data.ItemRepo;
+import org.example.data.mappers.ItemMapper;
+import org.example.data.mappers.ItemCategoryMapper;
+import org.example.model.Item;
+
 import org.example.data.exceptions.InternalErrorException;
 import org.example.data.exceptions.RecordNotFoundException;
-import org.example.data.mappers.ItemMapper;
-import org.example.model.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -34,16 +36,31 @@ public class ItemRepoImpl implements ItemRepo {
 
     @Override
     public List<Item> getAllAvailableItems(LocalDate today) throws InternalErrorException {
-        throw new UnsupportedOperationException("Not yet implemented");
+        String sql = "SELECT * FROM `Item` WHERE StartDate <= ? AND (EndDate IS NULL OR EndDate >= ?)";
+        try {
+            return jdbc.query(sql, ItemMapper.map(), today, today);
+        } catch (Exception e) {
+            throw new InternalErrorException();
+        }
     }
 
     @Override
     public List<Item> getItemsByCategory(LocalDate today, int itemCategoryID) throws InternalErrorException {
-        throw new UnsupportedOperationException("Not yet implemented");
+        String sql = "SELECT * FROM `Item` WHERE ItemCategoryID = ? AND StartDate <= ? AND (EndDate IS NULL OR EndDate >= ?)";
+        try {
+            return jdbc.query(sql, ItemMapper.map(), itemCategoryID, today, today);
+        } catch (Exception e) {
+            throw new InternalErrorException();
+        }
     }
 
     @Override
     public List<ItemCategory> getAllItemCategories() throws InternalErrorException {
-        throw new UnsupportedOperationException("Not yet implemented");
+        String sql = "SELECT * FROM `ItemCategory`";
+        try {
+            return jdbc.query(sql, ItemCategoryMapper.map());
+        } catch (Exception e) {
+            throw new InternalErrorException();
+        }
     }
 }
