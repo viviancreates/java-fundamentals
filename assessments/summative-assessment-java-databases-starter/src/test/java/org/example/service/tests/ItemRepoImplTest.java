@@ -20,19 +20,18 @@ public class ItemRepoImplTest {
     private ItemRepo itemRepo;
 
     @Test
-    void testGetItemById_ReturnsItem() throws Exception {
+    void getItemByIdAndReturnsItem() throws Exception {
         Item item = itemRepo.getItemById(1);
         assertNotNull(item);
         assertEquals(1, item.getItemID());
     }
 
     @Test
-    void testGetAllItemCategories_ReturnsList() throws Exception {
+    void getAllItemCategoriesAndReturnsList() throws Exception {
         List<ItemCategory> categories = itemRepo.getAllItemCategories();
         assertNotNull(categories);
         assertFalse(categories.isEmpty(), "Category list should not be empty");
 
-        // Optionally check first category's structure
         ItemCategory first = categories.get(0);
         assertNotNull(first.getItemCategoryID());
         assertNotNull(first.getItemCategoryName());
