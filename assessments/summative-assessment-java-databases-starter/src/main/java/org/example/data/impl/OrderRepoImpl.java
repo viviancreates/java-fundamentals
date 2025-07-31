@@ -39,8 +39,12 @@ public class OrderRepoImpl implements OrderRepo {
             WHERE o.orderID = ?
         """;
 
+
         try {
-            return jdbc.queryForObject(sql, orderMapper, id);
+            Order order = jdbc.queryForObject(sql, orderMapper, id);
+            order.setItems(new ArrayList<>()); // Optional: to avoid null pointer if not loading items yet
+            order.setPayments(new ArrayList<>());   // prevent null pointer in payment loop
+            return order;
         } catch (org.springframework.dao.EmptyResultDataAccessException e) {
             throw new RecordNotFoundException();
         } catch (Exception e) {
@@ -55,6 +59,7 @@ public class OrderRepoImpl implements OrderRepo {
             FROM `order` o
             INNER JOIN `Server` s ON o.ServerID = s.ServerID       
         """;
+
         try {
             return jdbc.query(sql, orderMapper);
         } catch (Exception e) {
