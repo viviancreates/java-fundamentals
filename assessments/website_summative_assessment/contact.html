@@ -14,6 +14,27 @@
              </ul>
         </nav>
         <h1>Vivian's Travel Blog</h1>
-        <p>This is the contact page</p>
+        <p>Contact Me</p>
+
+        <form action="/submit-form" method="post">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" cols="30"></textarea>
+            </div>
+
+            <div>
+                <button type="submit">Send Message</button>
+            </div>
+        </form>
     </body>
 </html>
