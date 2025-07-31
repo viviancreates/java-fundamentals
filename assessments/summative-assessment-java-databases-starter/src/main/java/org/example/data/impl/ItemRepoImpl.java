@@ -10,6 +10,7 @@ import org.example.data.exceptions.RecordNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.dao.EmptyResultDataAccessException;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -21,12 +22,23 @@ public class ItemRepoImpl implements ItemRepo {
 
     @Autowired
     private JdbcTemplate jdbc;
+    private ItemMapper itemMapper;
+    private ItemCategoryMapper itemCategoryMapper;
+
+    @Autowired
+    public ItemRepoImpl(JdbcTemplate jdbc,
+                        ItemMapper itemMapper,
+                        ItemCategoryMapper itemCategoryMapper) {
+        this.jdbc = jdbc;
+        this.itemMapper = itemMapper;
+        this.itemCategoryMapper = itemCategoryMapper;
+    }
 
     @Override
     public Item getItemById(int id) throws RecordNotFoundException, InternalErrorException {
         String sql = "SELECT * FROM `Item` WHERE ItemID = ?";
         try {
-            return jdbc.queryForObject(sql, ItemMapper.map(), id);
+            return jdbc.queryForObject(sql, itemMapper, id);
         } catch (org.springframework.dao.EmptyResultDataAccessException e) {
             throw new RecordNotFoundException();
         } catch (Exception e) {
@@ -38,7 +50,7 @@ public class ItemRepoImpl implements ItemRepo {
     public List<Item> getAllAvailableItems(LocalDate today) throws InternalErrorException {
         String sql = "SELECT * FROM `Item` WHERE StartDate <= ? AND (EndDate IS NULL OR EndDate >= ?)";
         try {
-            return jdbc.query(sql, ItemMapper.map(), today, today);
+            return jdbc.query(sql, itemMapper, today, today);
         } catch (Exception e) {
             throw new InternalErrorException();
         }
@@ -48,7 +60,7 @@ public class ItemRepoImpl implements ItemRepo {
     public List<Item> getItemsByCategory(LocalDate today, int itemCategoryID) throws InternalErrorException {
         String sql = "SELECT * FROM `Item` WHERE ItemCategoryID = ? AND StartDate <= ? AND (EndDate IS NULL OR EndDate >= ?)";
         try {
-            return jdbc.query(sql, ItemMapper.map(), itemCategoryID, today, today);
+            return jdbc.query(sql, itemMapper, itemCategoryID, today, today);
         } catch (Exception e) {
             throw new InternalErrorException();
         }
@@ -58,7 +70,7 @@ public class ItemRepoImpl implements ItemRepo {
     public List<ItemCategory> getAllItemCategories() throws InternalErrorException {
         String sql = "SELECT * FROM `ItemCategory`";
         try {
-            return jdbc.query(sql, ItemCategoryMapper.map());
+            return jdbc.query(sql, itemCategoryMapper);
         } catch (Exception e) {
             throw new InternalErrorException();
         }

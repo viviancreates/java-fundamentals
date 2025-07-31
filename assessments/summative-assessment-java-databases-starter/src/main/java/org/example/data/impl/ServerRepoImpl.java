@@ -18,12 +18,17 @@ import java.util.List;
 public class ServerRepoImpl implements ServerRepo {
     @Autowired
     private JdbcTemplate jdbc;
+    private ServerMapper serverMapper;
 
+    public ServerRepoImpl(JdbcTemplate jdbc, ServerMapper serverMapper) {
+        this.jdbc = jdbc;
+        this.serverMapper = serverMapper;
+    }
     @Override
     public Server getServerById(int id) throws InternalErrorException, RecordNotFoundException {
         String sql = "SELECT * FROM Server WHERE ServerID = ?";
         try {
-            return jdbc.queryForObject(sql, ServerMapper.map(), id);
+            return jdbc.queryForObject(sql, serverMapper, id);
         } catch (EmptyResultDataAccessException e) {
             throw new RecordNotFoundException();
         } catch (Exception e) {
@@ -39,7 +44,7 @@ public class ServerRepoImpl implements ServerRepo {
               AND (TermDate IS NULL OR TermDate >= ?)
         """;
         try {
-            return jdbc.query(sql, ServerMapper.map(), date, date);
+            return jdbc.query(sql, serverMapper, date, date);
         } catch (Exception e) {
             throw new InternalErrorException(e);
         }
