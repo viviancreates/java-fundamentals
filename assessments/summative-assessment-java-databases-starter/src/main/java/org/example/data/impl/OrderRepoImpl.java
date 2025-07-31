@@ -32,7 +32,13 @@ public class OrderRepoImpl implements OrderRepo {
 
     @Override
     public Order getOrderById(int id) throws RecordNotFoundException, InternalErrorException {
-        String sql = "SELECT * FROM `Order` WHERE OrderID = ?";
+        String sql = """
+            SELECT o.orderID, o.ServerID, OrderDate, SubTotal, Tax, Tip, Total, FirstName, LastName
+            FROM `Order` o
+            JOIN `Server` s ON o.ServerID = s.ServerID
+            WHERE o.orderID = ?
+        """;
+
         try {
             return jdbc.queryForObject(sql, orderMapper, id);
         } catch (org.springframework.dao.EmptyResultDataAccessException e) {
@@ -44,7 +50,11 @@ public class OrderRepoImpl implements OrderRepo {
 
     @Override
     public List<Order> getAllOrders() throws InternalErrorException, RecordNotFoundException {
-        String sql = "SELECT * FROM `Order` ORDER BY OrderDate DESC";
+        String sql = """
+            SELECT o.orderID, o.ServerID, OrderDate, SubTotal, Tax, Tip, Total, FirstName, LastName, HireDate, TermDate 
+            FROM `order` o
+            INNER JOIN `Server` s ON o.ServerID = s.ServerID       
+        """;
         try {
             return jdbc.query(sql, orderMapper);
         } catch (Exception e) {
@@ -100,27 +110,32 @@ public class OrderRepoImpl implements OrderRepo {
 
     @Override
     public Order deleteOrder(int id) throws InternalErrorException {
+        String sql = """
+            SELECT o.OrderID, o.ServerID, OrderDate, SubTotal, Tax, Tip, Total,
+               s.FirstName, s.LastName
+            FROM `Order` o
+            JOIN `Server` s ON o.ServerID = s.ServerID
+            WHERE o.OrderID = ?
+        """;
+
         String deleteOrderItemsSql = "DELETE FROM OrderItem WHERE OrderID = ?";
         String deleteOrderSql = "DELETE FROM `Order` WHERE OrderID = ?";
 
         try {
-            // Step 1: Check if order exists
-            Order existing = getOrderById(id); // this throws RecordNotFoundException if not found
+            Order order = jdbc.queryForObject(sql, orderMapper, id);
 
-            // Step 2: Delete related OrderItem rows (child records)
             jdbc.update(deleteOrderItemsSql, id);
 
-            // Step 3: Delete the Order itself (parent)
             int rowsAffected = jdbc.update(deleteOrderSql, id);
 
             if (rowsAffected == 0) {
                 throw new InternalErrorException(new Exception("Delete failed."));
             }
 
-            return existing;
+            return order;
 
-        } catch (RecordNotFoundException e) {
-            throw new InternalErrorException(e);
+        } catch (EmptyResultDataAccessException e) {
+            throw new InternalErrorException();
         } catch (Exception e) {
             throw new InternalErrorException(e);
         }
