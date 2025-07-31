@@ -123,14 +123,15 @@ public class OrderRepoImpl implements OrderRepo {
             WHERE o.OrderID = ?
         """;
 
+        String deletePaymentsSql = "DELETE FROM Payment WHERE OrderID = ?";
         String deleteOrderItemsSql = "DELETE FROM OrderItem WHERE OrderID = ?";
         String deleteOrderSql = "DELETE FROM `Order` WHERE OrderID = ?";
 
         try {
             Order order = jdbc.queryForObject(sql, orderMapper, id);
 
+            jdbc.update(deletePaymentsSql, id);
             jdbc.update(deleteOrderItemsSql, id);
-
             int rowsAffected = jdbc.update(deleteOrderSql, id);
 
             if (rowsAffected == 0) {
