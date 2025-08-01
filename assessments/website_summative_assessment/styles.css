@@ -1,21 +1,84 @@
+body {
+    background: linear-gradient(to bottom right, #EDEDED, #A4C3B2);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #2F3E34;
+}
+
 p {
-    color: blue;
+    color: #2F3E34;
+}
+
+.vivian-img {
+  max-width: 200px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.title-poppins {
+  font-family: 'Poppins', sans-serif;
+  font-size: 4rem;
+  color: #d17269;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.title-poppins-sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  color: #3A6351; 
+  font-weight: 400;
+}
+
+.navbar {
+    background-color: #1E352F !important;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #1E352F !important;
+}
+
+.contact-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 40px;
+}
+
+form {
+  max-width: 400px;
+  width: 100%;
+}
+
+.contact-info {
+  margin-top: 30px;
+}
+
+.mountain-icon {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
 }
 
 .hike-img {
-  height: 600px;        /* You can adjust this height */
-  object-fit: cover;    /* Keeps the image proportionate and fills the box */
-  width: 100%;          /* Makes sure it fills the card width */
+    height: 600px;
+    object-fit: cover;
+    width: 100%;
 }
 
 form {
     max-width: 400px;
     margin: 20px;
-    padding: 10px;
+    padding: 15px;
     color: white;
-    border: 1px solid #23402f;
-    background: #2e643e;
+    background: #3A6351;
+    border: none;
     border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 form div {
@@ -29,7 +92,10 @@ label {
 
 input, textarea {
     padding: 8px;
+    width: 100%;
     box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
 }
 
 button {
@@ -38,11 +104,53 @@ button {
     color: white;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6A4F48;
 }
 
 footer {
-  font-size: 0.95rem;
-  background-color: #f8f9fa;
-  border-top: 1px solid #e0e0e0;
+    background-color: #1E352F !important;
+    font-size: 0.95rem;
+    border-top: 1px solid #A4C3B2;
+}
+
+.mountain-icon {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .hike-img {
+        height: 300px;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.5rem;
+    }
+
+    p, li {
+        font-size: 1rem;
+    }
+
+    form {
+        margin: 10px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hike-img {
+        height: 200px;
+    }
+
+    nav .navbar-brand, nav .nav-link {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
 }
