@@ -42,8 +42,8 @@ public class OrderRepoImpl implements OrderRepo {
 
         try {
             Order order = jdbc.queryForObject(sql, orderMapper, id);
-            order.setItems(new ArrayList<>()); // Optional: to avoid null pointer if not loading items yet
-            order.setPayments(new ArrayList<>());   // prevent null pointer in payment loop
+            order.setItems(new ArrayList<>());
+            order.setPayments(new ArrayList<>());
             return order;
         } catch (org.springframework.dao.EmptyResultDataAccessException e) {
             throw new RecordNotFoundException();
@@ -114,6 +114,8 @@ public class OrderRepoImpl implements OrderRepo {
     }
 
     @Override
+    //@Transactional
+    //find import for transactional
     public Order deleteOrder(int id) throws InternalErrorException {
         String sql = """
             SELECT o.OrderID, o.ServerID, OrderDate, SubTotal, Tax, Tip, Total,
