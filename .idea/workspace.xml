@@ -4,7 +4,338 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cfbb0f4-5b8e-40f6-979c-4a0bbd07df34" name="Changes" comment="" />
+    <list default="true" id="8cfbb0f4-5b8e-40f6-979c-4a0bbd07df34" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/notes.MD" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/notes.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/data/ItemRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/data/ItemRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/data/OrderRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/data/OrderRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/data/PaymentTypeRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/data/PaymentTypeRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/data/ServerRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/data/ServerRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/data/TaxRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/data/TaxRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/data/exceptions/InternalErrorException.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/data/exceptions/InternalErrorException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/data/exceptions/RecordNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/data/exceptions/RecordNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/data/impl/ItemRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/data/impl/ItemRepoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/data/impl/OrderRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/data/impl/OrderRepoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/data/impl/PaymentTypeRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/data/impl/PaymentTypeRepoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/data/impl/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/data/impl/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/data/impl/ServerRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/data/impl/ServerRepoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/data/impl/TaxRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/data/impl/TaxRepoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/data/mappers/ItemCategoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/data/mappers/ItemCategoryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/data/mappers/ItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/data/mappers/ItemMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/data/mappers/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/data/mappers/OrderMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/data/mappers/PaymentTypeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/data/mappers/PaymentTypeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/data/mappers/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/data/mappers/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/data/mappers/ServerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/data/mappers/ServerMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/data/mappers/TaxMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/data/mappers/TaxMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/model/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/model/ItemCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/model/ItemCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/model/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/model/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/model/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/model/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/model/PaymentType.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/model/PaymentType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/model/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/model/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/model/Tax.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/model/Tax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/service/BistroService.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/service/BistroService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/view/ConsoleIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/view/ConsoleIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/java/org/example/view/IO.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/java/org/example/view/IO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/test/java/org/example/service/BistroServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/test/java/org/example/service/BistroServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/test/java/org/example/service/tests/ItemRepoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/test/java/org/example/service/tests/ItemRepoImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/test/java/org/example/service/tests/OrderRepoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/test/java/org/example/service/tests/OrderRepoImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/test/java/org/example/service/tests/PaymentTypeRepoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/test/java/org/example/service/tests/PaymentTypeRepoImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/test/java/org/example/service/tests/ServerRepoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/test/java/org/example/service/tests/ServerRepoImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/test/java/org/example/service/tests/TaxRepoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/test/java/org/example/service/tests/TaxRepoImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/test/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/test/resources/logback-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/test/resources/logback-test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/test/resources/sql/01-simple-bistro-db-create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/test/resources/sql/01-simple-bistro-db-create.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/test/resources/sql/02-lookup-data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/test/resources/sql/02-lookup-data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/test/resources/sql/03-server-data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/test/resources/sql/03-server-data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/test/resources/sql/04-item-data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/test/resources/sql/04-item-data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/test/resources/sql/05-order-data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/test/resources/sql/05-order-data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/test/resources/sql/06-order-item-data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/test/resources/sql/06-order-item-data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/test/resources/sql/07-data-cleanup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/test/resources/sql/07-data-cleanup.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/test/resources/sql/08-payment-data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/test/resources/sql/08-payment-data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/test/resources/sql/reset_db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/test/resources/sql/reset_db.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/test/resources/sql/set_known_good_state_mysql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/test/resources/sql/set_known_good_state_mysql.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/summative-assessment-java-databases-starter/src/test/resources/sql/set_known_good_state_sqlserver.sql" beforeDir="false" afterPath="$PROJECT_DIR$/assessments/summative-assessment-java-databases/src/test/resources/sql/set_known_good_state_sqlserver.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/website_summative_assessment/about.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/website_summative_assessment/contact.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/website_summative_assessment/images/azores.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/website_summative_assessment/images/brazil.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/website_summative_assessment/images/colombia.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/website_summative_assessment/images/jordan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/website_summative_assessment/images/mountain.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/website_summative_assessment/images/oregon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/website_summative_assessment/images/seattle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/website_summative_assessment/images/vivian.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/website_summative_assessment/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessments/website_summative_assessment/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/.idea/notes.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/adventure-game/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/adventure-game/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/adventure-game/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/adventure-game/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/adventure-game/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/adventure-game/.mvn/jvm.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/adventure-game/.mvn/maven.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/adventure-game/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/adventure-game/src/main/java/com/example/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/adventure-game/src/main/java/com/example/areas/Room.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/adventure-game/src/main/java/com/example/areas/cave/CaveEntrance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/adventure-game/src/main/java/com/example/base/Living.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/adventure-game/src/main/java/com/example/commands/Command.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/adventure-game/src/main/java/com/example/commands/player/Look.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/adventure-game/src/main/java/com/example/commands/player/Move.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/adventure-game/src/main/java/com/example/commands/player/Quit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/adventure-game/src/main/java/com/example/player/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/adventure-game/src/test/java/com/example/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/data/inventory.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/src/main/java/com/example/bookstore/BookstoreApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/src/main/java/com/example/bookstore/config/InventoryConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/src/main/java/com/example/bookstore/model/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/src/main/java/com/example/bookstore/model/CartItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/src/main/java/com/example/bookstore/model/InventoryItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/src/main/java/com/example/bookstore/model/Result.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/src/main/java/com/example/bookstore/repository/CsvInventoryRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/src/main/java/com/example/bookstore/repository/InMemoryInventoryRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/src/main/java/com/example/bookstore/repository/InventoryRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/src/main/java/com/example/bookstore/service/CartService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/src/main/java/com/example/bookstore/service/InventoryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/src/main/java/com/example/bookstore/view/Inventory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/src/main/java/com/example/bookstore/view/InventoryIO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/src/main/java/com/example/bookstore/view/Kiosk.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/src/main/java/com/example/bookstore/view/KioskIO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/src/test/java/com/example/bookstore/BookstoreApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bookstore/src/test/java/com/example/bookstore/CartServiceTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/file_io_demo/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/file_io_demo/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/file_io_demo/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/file_io_demo/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/file_io_demo/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/file_io_demo/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/file_io_demo/FileIODemo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/file_io_demo/data/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/file_io_demo/data/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/file_io_demo/data/output1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/file_io_demo/data/poem.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/file_io_demo/example.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/file_io_demo/notes.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/file_io_demo/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/flight-demo/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/flight-demo/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/flight-demo/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/flight-demo/data/flights.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/flight-demo/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/flight-demo/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/flight-demo/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/flight-demo/src/main/java/com/flights/demo/DemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/flight-demo/src/main/java/com/flights/demo/config/RepositoryConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/flight-demo/src/main/java/com/flights/demo/model/Flight.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/flight-demo/src/main/java/com/flights/demo/repository/CSVFlightRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/flight-demo/src/main/java/com/flights/demo/repository/FlightRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/flight-demo/src/main/java/com/flights/demo/repository/SampleFlightRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/flight-demo/src/main/java/com/flights/demo/service/ReservationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/flight-demo/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/flight-demo/src/test/java/com/flights/demo/DemoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo-sprocs/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo-sprocs/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo-sprocs/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo-sprocs/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo-sprocs/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo-sprocs/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo-sprocs/src/main/java/com/example/jdbc/demo/DemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo-sprocs/src/main/java/com/example/jdbc/demo/model/Movie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo-sprocs/src/main/java/com/example/jdbc/demo/model/MovieDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo-sprocs/src/main/java/com/example/jdbc/demo/repository/MovieRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo-sprocs/src/main/java/com/example/jdbc/demo/repository/MySqlMovieRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo-sprocs/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo-sprocs/src/test/java/com/example/jdbc/demo/DemoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo-sprocs/src/test/java/com/example/jdbc/demo/MovieRepositoryTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo/src/main/java/com/example/jdbc/demo/DemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo/src/main/java/com/example/jdbc/demo/model/Movie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo/src/main/java/com/example/jdbc/demo/model/MovieDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo/src/main/java/com/example/jdbc/demo/repository/MovieRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo/src/main/java/com/example/jdbc/demo/repository/MySqlMovieRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo/src/test/java/com/example/jdbc/demo/DemoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo1/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo1/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo1/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo1/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo1/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo1/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo1/src/main/java/com/example/jdbc/demo/DemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo1/src/main/java/com/example/jdbc/demo/model/Movie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo1/src/main/java/com/example/jdbc/demo/model/MovieDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo1/src/main/java/com/example/jdbc/demo/repository/MovieRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo1/src/main/java/com/example/jdbc/demo/repository/MySqlMovieRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo1/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo1/src/test/java/com/example/jdbc/demo/DemoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo2/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo2/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo2/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo2/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo2/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo2/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo2/src/main/java/com/example/jdbc/demo/DemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo2/src/main/java/com/example/jdbc/demo/model/Movie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo2/src/main/java/com/example/jdbc/demo/model/MovieDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo2/src/main/java/com/example/jdbc/demo/repository/MovieRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo2/src/main/java/com/example/jdbc/demo/repository/MySqlMovieRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo2/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo2/src/test/java/com/example/jdbc/demo/DemoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/jdbc-demo2/src/test/java/com/example/jdbc/demo/MovieRepositoryTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/library_manager/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/library_manager/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/library_manager/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/library_manager/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/library_manager/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/library_manager/.mvn/jvm.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/library_manager/.mvn/maven.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/library_manager/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/library_manager/src/main/java/com/example/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/library_manager/src/main/java/com/example/model/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/library_manager/src/main/java/com/example/model/BookShelfItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/library_manager/src/main/java/com/example/service/ShelfService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/library_manager/src/test/java/com/example/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/library_manager/src/test/java/com/example/ShelfServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/other_example/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/other_example/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/other_example/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/other_example/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/other_example/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/other_example/other_example.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/other_example/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/.mvn/jvm.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/.mvn/maven.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/src/main/java/com/example/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/src/main/java/com/example/choice/ChoiceStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/src/main/java/com/example/choice/RandomChoiceStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/src/main/java/com/example/choice/TerminalChoiceStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/src/main/java/com/example/factory/PlayerFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/src/main/java/com/example/model/Choice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/src/main/java/com/example/model/GameResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/src/main/java/com/example/model/Outcome.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/src/main/java/com/example/model/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/src/main/java/com/example/model/PlayerType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/src/main/java/com/example/service/GameService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/src/test/java/GameServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/src/test/java/com/example/choice/AlwaysPicksPaperStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/src/test/java/com/example/choice/AlwaysPicksRockStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/rock-paper-scissors/src/test/java/com/example/choice/AlwaysPicksScissorsStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring-demo/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring-demo/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring-demo/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring-demo/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring-demo/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring-demo/src/main/java/com/example/spring_demo/SpringDemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring-demo/src/main/java/com/example/spring_demo/service/EmailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring-demo/src/main/java/com/example/spring_demo/service/GmailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring-demo/src/main/java/com/example/spring_demo/service/NotificationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring-demo/src/main/java/com/example/spring_demo/service/OutlookService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring-demo/src/main/java/com/example/spring_demo/service/XmlNotificationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring-demo/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring-demo/src/main/resources/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring-demo/src/test/java/com/example/spring_demo/SpringDemoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring_props_demo/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring_props_demo/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring_props_demo/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring_props_demo/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring_props_demo/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring_props_demo/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring_props_demo/src/main/java/com/example/spring_props_demo/SpringPropsDemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring_props_demo/src/main/java/com/example/spring_props_demo/config/EmailConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring_props_demo/src/main/java/com/example/spring_props_demo/service/EmailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring_props_demo/src/main/java/com/example/spring_props_demo/service/GmailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring_props_demo/src/main/java/com/example/spring_props_demo/service/OutlookService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring_props_demo/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/spring_props_demo/src/test/java/com/example/spring_props_demo/SpringPropsDemoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/.mvn/jvm.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/.mvn/maven.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/data/waitlist.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/data/waitlist.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/notes.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/photos/in-mem-wl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/photos/in-mem.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/photos/wl-test-setup.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/src/main/java/com/example/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/src/main/java/com/example/model/Party.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/src/main/java/com/example/repository/CsvWaitlist.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/src/main/java/com/example/repository/InMemoryWaitlist.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/src/main/java/com/example/repository/JsonWaitlist.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/src/main/java/com/example/repository/WaitlistRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/src/main/java/com/example/service/WaitlistService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/src/test/java/com/example/CsvWaitlistTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/src/test/java/com/example/JsonWaitlistTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist-2/src/test/java/com/example/WaitlistTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist_example/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist_example/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist_example/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist_example/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist_example/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist_example/.mvn/jvm.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist_example/.mvn/maven.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist_example/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist_example/src/main/java/org/example/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist_example/src/main/java/org/example/model/Party.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist_example/src/main/java/org/example/repository/InMemoryWaitlist.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist_example/src/main/java/org/example/repository/WaitlistRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist_example/src/main/java/org/example/service/WaitlistService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/waitlist_example/src/test/java/org/example/WaitlistTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/jdbc-demo-viv-practice/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/jdbc-demo-viv-practice/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/jdbc-demo-viv-practice/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/jdbc-demo-viv-practice/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/jdbc-demo-viv-practice/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/jdbc-demo-viv-practice/notes.MD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/jdbc-demo-viv-practice/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/jdbc-demo-viv-practice/src/main/java/com/example/jdbc/demo/DemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/jdbc-demo-viv-practice/src/main/java/com/example/jdbc/demo/model/Movie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/jdbc-demo-viv-practice/src/main/java/com/example/jdbc/demo/model/MovieDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/jdbc-demo-viv-practice/src/main/java/com/example/jdbc/demo/repository/MovieRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/jdbc-demo-viv-practice/src/main/java/com/example/jdbc/demo/repository/MySqlMovieRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/jdbc-demo-viv-practice/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/jdbc-demo-viv-practice/src/test/java/com/example/jdbc/demo/DemoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/jdbc-demo-viv-practice/src/test/java/com/example/jdbc/demo/MovieRepositoryTests.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,24 +344,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2zYVVf62VAWeY5CRQMSrVUE20ZI" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/viviandavila/Git/java-fundamentals",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/viviandavila/Git/java-fundamentals&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="8cfbb0f4-5b8e-40f6-979c-4a0bbd07df34" name="Changes" comment="" />
