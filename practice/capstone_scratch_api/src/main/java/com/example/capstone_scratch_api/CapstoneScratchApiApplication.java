@@ -1,13 +1,13 @@
-package com.example.capstone_scratch;
+package com.example.capstone_scratch_api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CapstoneScratchApplication {
+public class CapstoneScratchApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CapstoneScratchApplication.class, args);
+		SpringApplication.run(CapstoneScratchApiApplication.class, args);
 		System.out.println("\n🚀 Crypto API Test Server Started!");
 		System.out.println("📖 Test the 3 core actions:");
 		System.out.println("   1. POST /api/test/create-wallet");

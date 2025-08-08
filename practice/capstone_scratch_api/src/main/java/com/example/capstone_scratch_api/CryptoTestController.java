@@ -1,4 +1,4 @@
-package com.example.capstone_scratch;
+package com.example.capstone_scratch_api;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
