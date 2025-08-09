@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Plaid Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        button { padding: 12px 24px; margin: 10px; font-size: 16px; cursor: pointer; }
+        .step { background: #f5f5f5; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        .success { background: #d4edda; border: 1px solid #c3e6cb; padding: 10px; }
+        .error { background: #f8d7da; border: 1px solid #f5c6cb; padding: 10px; }
+        pre { background: #f8f9fa; padding: 10px; border-radius: 4px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+<h1>🏦 Plaid Test App</h1>
+
+<div class="step">
+    <h3>Step 1: Get Link Token</h3>
+    <button onclick="getLinkToken()">Get Link Token</button>
+    <div id="linkTokenResult"></div>
+</div>
+
+<div class="step">
+    <h3>Step 2: Get Sandbox Public Token (no Link)</h3>
+    <p><em>This calls a backend route that creates a real sandbox <code>public_token</code>.</em></p>
+    <button onclick="useSandboxToken()">Get Sandbox Public Token</button>
+    <div id="linkResult"></div>
+</div>
+
+<div class="step">
+    <h3>Step 3: Exchange Token</h3>
+    <button id="exchangeButton" onclick="exchangeToken()" disabled>Exchange Token</button>
+    <div id="exchangeResult"></div>
+</div>
+
+<div class="step">
+    <h3>Step 4: Get Transactions</h3>
+    <button id="transactionsButton" onclick="getTransactions()" disabled>Fetch Transactions</button>
+    <div id="transactionsResult"></div>
+</div>
+
+<script>
+    let linkToken = null;
+    let publicToken = null;
+
+    async function getLinkToken() {
+      try {
+        const response = await fetch('/test/link-token');
+        const data = await response.json();
+
+        if (data.success) {
+          linkToken = data.link_token;
+          document.getElementById('linkTokenResult').innerHTML =
+            `<div class="success">✅ Link token created: ${linkToken.substring(0, 30)}...</div>`;
+        } else {
+          document.getElementById('linkTokenResult').innerHTML =
+            `<div class="error">❌ Error: ${data.error}</div>`;
+        }
+      } catch (error) {
+        document.getElementById('linkTokenResult').innerHTML =
+          `<div class="error">❌ Error: ${error.message}</div>`;
+      }
+    }
+
+    // NEW: Ask backend for a real sandbox public_token
+    async function useSandboxToken() {
+      try {
+        const res = await fetch('/test/sandbox-public-token', { method: 'POST' });
+        const data = await res.json();
+        if (data.success) {
+          publicToken = data.public_token;
+          document.getElementById('linkResult').innerHTML =
+            `<div class="success">✅ Using sandbox public token: ${publicToken.substring(0, 30)}...</div>`;
+          document.getElementById('exchangeButton').disabled = false;
+        } else {
+          document.getElementById('linkResult').innerHTML =
+            `<div class="error">❌ ${data.error}</div>`;
+        }
+      } catch (e) {
+        document.getElementById('linkResult').innerHTML =
+          `<div class="error">❌ ${e.message}</div>`;
+      }
+    }
+
+    async function exchangeToken() {
+      try {
+        const response = await fetch('/test/exchange', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ public_token: publicToken })
+        });
+        const data = await response.json();
+
+        if (data.success) {
+          document.getElementById('exchangeResult').innerHTML =
+            `<div class="success">✅ Token exchanged! Access token: ${data.access_token_preview}</div>`;
+          document.getElementById('transactionsButton').disabled = false;
+        } else {
+          document.getElementById('exchangeResult').innerHTML =
+            `<div class="error">❌ Error: ${data.error}</div>`;
+        }
+      } catch (error) {
+        document.getElementById('exchangeResult').innerHTML =
+          `<div class="error">❌ Error: ${error.message}</div>`;
+      }
+    }
+
+    async function getTransactions() {
+      try {
+        const response = await fetch('/test/transactions');
+        const data = await response.json();
+
+        if (data.success) {
+          document.getElementById('transactionsResult').innerHTML =
+            `<div class="success">✅ Fetched ${data.count} transactions!</div>
+             <pre>${JSON.stringify(data.transactions, null, 2)}</pre>`;
+        } else {
+          document.getElementById('transactionsResult').innerHTML =
+            `<div class="error">❌ Error: ${data.error}</div>`;
+        }
+      } catch (error) {
+        document.getElementById('transactionsResult').innerHTML =
+          `<div class="error">❌ Error: ${error.message}</div>`;
+      }
+    }
+</script>
+</body>
+</html>
